@@ -252,8 +252,8 @@ crash
 
 ```shell
 201#curl -o /data/ShellCrash/CrashCore.tar.gz -L https://mirror.ghproxy.com/https://github.com/DustinWin/clash_singbox-tools/releases/download/sing-box/sing-box-puernya-linux-armv8.tar.gz && /data/ShellCrash/start.sh restart >/dev/null 2>&1#更新sing-box_PuerNya版内核
-202#curl -o /data/ShellCrash/cn_ip.txt -L https://cdn.jsdelivr.net/gh/DustinWin/geoip@ips/cn_ipv4.txt && curl -o /data/ShellCrash/cn_ipv6.txt -L https://cdn.jsdelivr.net/gh/DustinWin/geoip@ips/cn_ipv6.txt >/dev/null 2>&1#更新CN_IP文件
-203#curl -o /data/AdGuardHome/AdGuardHome -L https://mirror.ghproxy.com/https://github.com/DustinWin/clash_singbox-tools/releases/download/AdGuardHome/AdGuardHome_prerelease_linux_armv8 && /data/AdGuardHome/AdGuardHome -s restart >/dev/null 2>&1#更新AdGuardHome
+202#curl -o /data/ShellCrash/cn_ip.txt -L https://mirror.ghproxy.com/https://github.com/DustinWin/geoip/releases/download/ips/cn_ipv4.txt && curl -o /data/ShellCrash/cn_ipv6.txt -L https://mirror.ghproxy.com/https://github.com/DustinWin/geoip/releases/download/ips/cn_ipv6.txt >/dev/null 2>&1#更新CN_IP文件
+203#curl -o /data/AdGuardHome/AdGuardHome -L https://mirror.ghproxy.com/https://github.com/DustinWin/clash_singbox-tools/releases/download/AdGuardHome/AdGuardHome_beta_linux_armv8 && /data/AdGuardHome/AdGuardHome -s restart >/dev/null 2>&1#更新AdGuardHome
 ```
 
 2. 按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
@@ -266,23 +266,54 @@ crash
 - 1. 因 `outbound_providers` 代理集合配置的 `path` 路径中含有文件夹“*providers*”，须手动新建此文件夹才能使 .yaml 订阅文件保存到本地，否则将保存到内存中（每次启动服务都要重新下载）
 - 2. 因 `route.rule_set` 代理集合配置的 `path` 路径中含有文件夹“*ruleset*”，须手动新建此文件夹才能使 .srs 规则集文件保存到本地，否则将保存到内存中（每次启动服务都要重新下载）
 
-# 六、 设置部分
-## 1. ShellCrash 设置
-- ① 设置可参考《[ShellCrash 搭载 sing-boxp 内核的配置-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-shellcrash-singboxp-ruleset)》，此处只列举配置的不同之处
-- ② 进入主菜单 -> 2 内核功能设置，设置如下：  
+# 六、 ShellCrash 设置
+1. 设置可参考《[ShellCrash 搭载 sing-boxp 内核的配置-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-shellcrash-singboxp-ruleset)》，此处只列举配置的不同之处
+2. 进入主菜单 -> 2 内核功能设置，设置如下：  
 <img src="/assets/img/share/tproxy-mix-cnip.png" alt="设置部分 1" width="60%" />
 
-- ③ 进入主菜单 -> 2 内核功能设置 -> 1 切换防火墙运行模式 -> 9 ipv6 设置，开启 3 CNV6 绕过内核
-- ④ 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，设置如下：  
+3. 进入主菜单 -> 2 内核功能设置 -> 1 切换防火墙运行模式 -> 9 ipv6 设置，开启 3 CNV6 绕过内核
+4. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，设置如下：  
 <img src="/assets/img/share/close-dns-null.png" alt="设置部分 2" width="60%" />
 
-- ⑤ 进入主菜单 -> 7 内核进阶设置 -> 5 自定义端口及秘钥，设置为 `9090`
-- ⑥ 进入主菜单 -> 6 导入配置文件 -> 2 在线获取完整配置文件，粘贴第《一》步中生成的配置文件 .json 文件直链，启动服务即可
+5. 进入主菜单 -> 7 内核进阶设置 -> 5 自定义端口及秘钥，设置为 `9090`
+6. 进入主菜单 -> 6 导入配置文件 -> 2 在线获取完整配置文件，粘贴第《一》步中生成的配置文件 .json 文件直链，启动服务即可
 
-## 2. AdGuard Home 设置
-设置可参考《[全网最详细的解锁 SSH ShellCrash 搭载 sing-boxp 内核搭配 AdGuard Home 安装和配置教程/AdGuard Home 配置](https://proxy-tutorials.dustinwin.top/posts/pin-shellcrashadguardhome-singbox/2-adguard-home-%E9%85%8D%E7%BD%AE)》（可跳过“添加 DNS 重写”的步骤）
+# 七、 安装 AdGuard Home
+1. 连接 SSH 后执行如下命令：
 
-# 七、 在线 Dashboard 面板
+```shell
+mkdir -p /data/AdGuardHome
+curl -o /data/AdGuardHome/AdGuardHome -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@AdGuardHome/AdGuardHome_beta_linux_armv8
+chmod +x /data/AdGuardHome/AdGuardHome
+/data/AdGuardHome/AdGuardHome -s install
+/data/AdGuardHome/AdGuardHome -s start
+iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 5353
+iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5353
+ip6tables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 5353
+ip6tables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5353
+vi /data/auto_ssh/auto_ssh.sh
+```
+
+2. 按一下 Ins 键（Insert 键），在末尾粘贴如下内容（保留首尾的空行）：
+
+```shell
+
+sleep 10s
+/data/AdGuardHome/AdGuardHome -s install
+/data/AdGuardHome/AdGuardHome -s start
+iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 5353
+iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5353
+ip6tables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 5353
+ip6tables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5353
+
+```
+
+3. 按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
+
+# 八、 AdGuard Home 设置
+设置可参考《[全网最详细的解锁 SSH ShellCrash 搭载 sing-boxp 内核搭配 AdGuard Home 安装和配置教程/AdGuard Home 配置](https://proxy-tutorials.dustinwin.top/posts/pin-shellcrashadguardhome-singbox/#2-adguard-home-%E9%85%8D%E7%BD%AE)》（可跳过“添加 DNS 重写”的步骤）
+
+# 九、 在线 Dashboard 面板
 推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd>
 1. 需要设置该网站“允许不安全内容”，以 Chrome 浏览器为例，进入设置 -> 隐私和安全 -> 网站设置 -> 更多内容设置 -> 不安全内容（或者直接打开 `chrome://settings/content/insecureContent` 进行设置），在“允许显示不安全内容”内添加 `metacubex.github.io`  
 <img src="/assets/img/share/chrome-setting-dashboard.png" alt="在线 Dashboard 面板 1" width="60%" />
