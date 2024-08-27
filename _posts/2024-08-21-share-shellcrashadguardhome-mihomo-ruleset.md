@@ -287,7 +287,8 @@ ip6tables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5353
 vi /data/auto_ssh/auto_ssh.sh
 ```
 
-2. 按一下 Ins 键（Insert 键），在末尾粘贴如下内容（保留首尾的空行）：
+2. 按一下 Ins 键（Insert 键），在末尾粘贴如下内容：
+- 注：保留首尾的空行
 
 ```shell
 
