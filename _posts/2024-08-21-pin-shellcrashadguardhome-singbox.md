@@ -26,7 +26,7 @@ pin: true
 官方下载：<https://raw.githubusercontent.com/juewuy/ShellCrash/master/bin/ShellCrash.tar.gz>
 
 ## 2. sing-box PuerNya 版内核
-第三方下载：<https://github.com/DustinWin/clash_singbox-tools/blob/main/sing-box-puernya/sing-box-linux-armv8.tar.gz>
+第三方下载：<https://github.com/DustinWin/clash_singbox-tools/releases/download/sing-box/sing-box-puernya-linux-armv8.tar.gz>
 
 ## 3. Termius
 官方下载：<https://autoupdate.termius.com/windows/Termius.exe>
