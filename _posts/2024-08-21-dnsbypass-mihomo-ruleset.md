@@ -9,7 +9,6 @@ tags: [Clash, mihomo, 进阶, DNS, DNS 分流]
 注：
 - 1. 使用 [ShellCrash](https://github.com/juewuy/ShellCrash) 搭配 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) 并将 AdGuard Home 作为上游时不要使用该方法
 - 2. DNS 分流简单来说就是**指定国内域名走国内 DNS 解析，其它域名包括国外域名走 `fake-ip`**
-- 3. 目前须搭载 **mihomo Alpha 版内核**才能使 `dns.fake-ip-filter` 支持 `rule-set` 规则集格式
 
 # 一、 导入规则集合文件
 `rule-providers` 须添加 `fakeip-filter` 和 `cn`，如下：

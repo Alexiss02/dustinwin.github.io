@@ -136,7 +136,7 @@ dns:
   listen: 0.0.0.0:1053
   fake-ip-range: 198.18.0.1/16
   enhanced-mode: fake-ip
-  fake-ip-filter: ['geosite:fakeip-filter,private']
+  fake-ip-filter: ['geosite:fakeip-filter,private,cn']
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query

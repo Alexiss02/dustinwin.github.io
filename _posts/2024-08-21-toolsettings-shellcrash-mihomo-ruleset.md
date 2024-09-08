@@ -13,9 +13,9 @@ tags: [Clash, mihomo, ShellCrash, ruleset, rule-set, 基础, Router]
 # 一、 导入 [mihomo 内核](https://github.com/MetaCubeX/mihomo)
 **mihomo 内核 Linux 版下载链接后缀和 CPU 架构对应关系如下表：**
 
-|CPU 架构|AMD64|ARMv5|ARMv6|ARMv7|ARMv8&ARM64&AArch64|mips-softfloat|mipsle-hardfloat|mipsle-softfloat|
-|-----|-----|-----|-----|-----|:---:|-----|-----|-----|
-|**链接后缀**|`amd64`|`armv5`|`armv6`|`armv7`|`armv8`|`mips-softfloat`|`mipsle-hardfloat`|`mipsle-softfloat`|
+| CPU 架构     | AMD64   | AMD64v3   | ARMv5   | ARMv6   | ARMv7   | ARMv8&ARM64&AArch64 | mips-softfloat   | mipsle-hardfloat   | mipsle-softfloat   |
+| ------------ | ------- | --------- | ------- | ------- | ------- | :-----------------: | ---------------- | ------------------ | ------------------ |
+| **链接后缀** | `amd64` | `amd64v3` | `armv5` | `armv6` | `armv7` |       `armv8`       | `mips-softfloat` | `mipsle-hardfloat` | `mipsle-softfloat` |
 
 连接 SSH 后执行如下命令：
 

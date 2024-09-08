@@ -9,7 +9,6 @@ tags: [Clash, mihomo, 进阶, DNS, DNS 分流]
 注：
 - 1. 使用 [ShellCrash](https://github.com/juewuy/ShellCrash) 搭配 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) 并将 AdGuard Home 作为上游时不要使用该方法
 - 2. DNS 分流简单来说就是**指定国内域名走国内 DNS 解析，其它域名包括国外域名走 `fake-ip`**
-- 3. 目前须搭载 **mihomo Alpha 版内核**才能使 `dns.fake-ip-filter` 支持 `geosite` 规则集格式
 
 # 一、 导入路由规则文件
 geosite.dat 文件须包含 `fakeip-filter` 和 `cn`，推荐导入我定制的[路由规则文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%B8%80-geodata-%E8%A7%84%E5%88%99%E9%9B%86%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
