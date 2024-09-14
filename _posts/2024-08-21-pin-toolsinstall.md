@@ -128,8 +128,8 @@ chmod +x /data/AdGuardHome/AdGuardHome
 
 ```shell
 # AdGuard Home Release 版
-curl -o /data/AdGuardHome/AdGuardHome -L https://mirror.ghproxy.com/https://github.com/DustinWin/clash_singbox-tools/releases/download/AdGuardHome/AdGuardHome_release_linux_armv8
+curl -o /data/AdGuardHome/AdGuardHome -L https://ghp.ci/https://github.com/DustinWin/clash_singbox-tools/releases/download/AdGuardHome/AdGuardHome_release_linux_armv8
 # AdGuard Home Beta 版
-curl -o /data/AdGuardHome/AdGuardHome -L https://mirror.ghproxy.com/https://github.com/DustinWin/clash_singbox-tools/releases/download/AdGuardHome/AdGuardHome_beta_linux_armv8
+curl -o /data/AdGuardHome/AdGuardHome -L https://ghp.ci/https://github.com/DustinWin/clash_singbox-tools/releases/download/AdGuardHome/AdGuardHome_beta_linux_armv8
 /data/AdGuardHome/AdGuardHome -s restart
 ```
