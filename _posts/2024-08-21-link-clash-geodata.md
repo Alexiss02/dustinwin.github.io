@@ -120,10 +120,10 @@ proxy-groups:
 # 规则
 rules:
   # 自定义规则优先放前面
-  - GEOSITE,ads,🛑 广告拦截
-  # 为过滤 P2P 流量（BT 下载），可添加一条 `DST-PORT` 规则（ShellCrash 会默认开启“只代理常用端口”，可删除此条 `DST-PORT`）
+  # 为了使 P2P 流量（BT 下载）走直连，可添加一条 `DST-PORT` 规则（ShellCrash 会默认开启“只代理常用端口”，可删除此条 `DST-PORT`）
   - DST-PORT,6881-6889,🎯 全球直连
   - GEOSITE,private,🔒 私有网络
+  - GEOSITE,ads,🛑 广告拦截
   - GEOSITE,microsoft-cn,🪟 微软服务
   - GEOSITE,apple-cn,🍎 苹果服务
   - GEOSITE,google-cn,🇬 谷歌服务
@@ -211,6 +211,7 @@ proxy-groups:
   - {name: 🤖 人工智能, type: select, proxies: [🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点]}
   - {name: 🪜 代理域名, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
   - {name: 📲 电报消息, type: select, proxies: [🚀 节点选择]}
+  - {name: 🔒 私有网络, type: select, proxies: [🎯 全球直连]}
   - {name: 🛑 广告拦截, type: select, proxies: [REJECT]}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
 
@@ -227,6 +228,7 @@ proxy-groups:
 # 规则
 rules:
   # 自定义规则优先放前面
+  - GEOSITE,private,🔒 私有网络
   - GEOSITE,ads,🛑 广告拦截
   - GEOSITE,ai,🤖 人工智能
   - GEOSITE,networktest,📈 网络测试

@@ -137,8 +137,8 @@ tags: [sing-box, sing-boxp, ShellCrash, geodata, geosite, 进阶, 本地, Router
     // 规则
     "rules": [
       // 自定义规则优先放前面
-      { "geosite": [ "ads" ], "outbound": "🛑 广告拦截" },
       { "geosite": [ "private" ], "outbound": "🔒 私有网络" },
+      { "geosite": [ "ads" ], "outbound": "🛑 广告拦截" },
       { "geosite": [ "microsoft-cn" ], "outbound": "🪟 微软服务" },
       { "geosite": [ "apple-cn" ], "outbound": "🍎 苹果服务" },
       { "geosite": [ "google-cn" ], "outbound": "🇬 谷歌服务" },

@@ -121,14 +121,6 @@ proxy-groups:
 
 # 规则集（yaml 文件每天自动更新）
 rule-providers:
-  ads:
-    type: http
-    behavior: domain
-    format: mrs
-    path: ./rules/ads.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/ads.mrs"
-    interval: 86400
-
   # 若使用 ShellCrash，由于无法判断本机进程（默认 `find-process-mode: off`），需删除此条 `applications`
   applications:
     type: http
@@ -144,6 +136,14 @@ rule-providers:
     format: mrs
     path: ./rules/private.mrs
     url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/private.mrs"
+    interval: 86400
+
+  ads:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/ads.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/ads.mrs"
     interval: 86400
 
   microsoft-cn:
@@ -236,12 +236,13 @@ rule-providers:
 
 # 规则
 rules:
-  - RULE-SET,ads,🛑 广告拦截
+  # 自定义规则优先放前面
+  # 为了使 P2P 流量（BT 下载）走直连，可添加一条 `DST-PORT` 规则（ShellCrash 会默认开启“只代理常用端口”，可删除此条 `DST-PORT`）
+  - DST-PORT,6881-6889,🎯 全球直连
   # 若使用 ShellCrash，由于无法判断本机进程（默认 `find-process-mode: off`），需删除此条 `RULE-SET`
   - RULE-SET,applications,🖥️ 直连软件
-  # 为过滤 P2P 流量（BT 下载），可添加一条 `DST-PORT` 规则（ShellCrash 会默认开启“只代理常用端口”，可删除此条 `DST-PORT`）
-  - DST-PORT,6881-6889,🎯 全球直连
   - RULE-SET,private,🔒 私有网络
+  - RULE-SET,ads,🛑 广告拦截
   - RULE-SET,microsoft-cn,🪟 微软服务
   - RULE-SET,apple-cn,🍎 苹果服务
   - RULE-SET,google-cn,🇬 谷歌服务
@@ -329,6 +330,7 @@ proxy-groups:
   - {name: 🤖 人工智能, type: select, proxies: [🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点]}
   - {name: 🪜 代理域名, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
   - {name: 📲 电报消息, type: select, proxies: [🚀 节点选择]}
+  - {name: 🔒 私有网络, type: select, proxies: [🎯 全球直连]}
   - {name: 🛑 广告拦截, type: select, proxies: [REJECT]}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
 
@@ -344,6 +346,14 @@ proxy-groups:
 
 # 规则集（yaml 文件每天自动更新）
 rule-providers:
+  private:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/private.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/private.mrs"
+    interval: 86400
+
   ads:
     type: http
     behavior: domain
@@ -386,6 +396,7 @@ rule-providers:
 
 # 规则
 rules:
+  - RULE-SET,private,🔒 私有网络
   - RULE-SET,ads,🛑 广告拦截
   - RULE-SET,ai,🤖 人工智能
   - RULE-SET,networktest,📈 网络测试

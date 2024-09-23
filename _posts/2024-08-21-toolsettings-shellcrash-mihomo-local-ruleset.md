@@ -69,20 +69,20 @@ proxy-providers:
 
 # 规则集（yaml 文件每天自动更新）
 rule-providers:
-  ads:
-    type: http
-    behavior: domain
-    format: mrs
-    path: ./rules/ads.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/ads.mrs"
-    interval: 86400
-
   private:
     type: http
     behavior: domain
     format: mrs
     path: ./rules/private.mrs
     url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/private.mrs"
+    interval: 86400
+
+  ads:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/ads.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/ads.mrs"
     interval: 86400
 
   microsoft-cn:
@@ -345,8 +345,8 @@ rule-providers:
 # 规则
 
 # 自定义规则优先放前面
-- RULE-SET,ads,🛑 广告拦截
 - RULE-SET,private,🔒 私有网络
+- RULE-SET,ads,🛑 广告拦截
 - RULE-SET,microsoft-cn,🪟 微软服务
 - RULE-SET,apple-cn,🍎 苹果服务
 - RULE-SET,google-cn,🇬 谷歌服务

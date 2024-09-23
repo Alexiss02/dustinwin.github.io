@@ -126,10 +126,10 @@ tags: [sing-box, sing-boxp, 直链, 订阅, geodata, geosite, 基础]
       { "clash_mode": [ "Direct" ], "outbound": "DIRECT" },
       { "clash_mode": [ "Global" ], "outbound": "GLOBAL" },
       // 自定义规则优先放前面
-      { "geosite": [ "ads" ], "outbound": "🛑 广告拦截" },
-      // 为过滤 P2P 流量（BT 下载），可添加一条 `port_range` 规则（ShellCrash 会默认开启“只代理常用端口”，可删除此条 `port_range`）
+      // 为了使 P2P 流量（BT 下载）走直连，可添加一条 `DST-PORT` 规则（ShellCrash 会默认开启“只代理常用端口”，可删除此条 `DST-PORT`）
       { "port_range": [ "6881:6889" ], "outbound": "🎯 全球直连" },
       { "geosite": [ "private" ], "outbound": "🔒 私有网络" },
+      { "geosite": [ "ads" ], "outbound": "🛑 广告拦截" },
       { "geosite": [ "microsoft-cn" ], "outbound": "🪟 微软服务" },
       { "geosite": [ "apple-cn" ], "outbound": "🍎 苹果服务" },
       { "geosite": [ "google-cn" ], "outbound": "🇬 谷歌服务" },
@@ -178,6 +178,7 @@ tags: [sing-box, sing-boxp, 直链, 订阅, geodata, geosite, 基础]
     { "tag": "🤖 人工智能", "type": "selector", "outbounds": [ "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "🇸🇬 新加坡节点", "🇺🇸 美国节点" ] },
     { "tag": "🪜 代理域名", "type": "selector", "outbounds": [ "🚀 节点选择", "🎯 全球直连" ] },
     { "tag": "📲 电报消息", "type": "selector", "outbounds": [ "🚀 节点选择" ] },
+    { "tag": "🔒 私有网络", "type": "selector", "outbounds": [ "🎯 全球直连" ] },
     { "tag": "🛑 广告拦截", "type": "selector", "outbounds": [ "REJECT" ] },
     { "tag": "🎯 全球直连", "type": "selector", "outbounds": [ "DIRECT" ] },
     { "tag": "REJECT", "type": "block" },
@@ -259,6 +260,7 @@ tags: [sing-box, sing-boxp, 直链, 订阅, geodata, geosite, 基础]
       { "clash_mode": [ "Direct" ], "outbound": "DIRECT" },
       { "clash_mode": [ "Global" ], "outbound": "GLOBAL" },
       // 自定义规则优先放前面
+      { "geosite": [ "private" ], "outbound": "🔒 私有网络" },
       { "geosite": [ "ads" ], "outbound": "🛑 广告拦截" },
       { "geosite": [ "ai" ], "outbound": "🤖 人工智能" },
       { "geosite": [ "networktest" ], "outbound": "📈 网络测试" },

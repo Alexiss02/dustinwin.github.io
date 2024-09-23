@@ -240,8 +240,8 @@ proxy-providers:
 # 规则
 
 # 自定义规则优先放前面
-- GEOSITE,ads,🛑 广告拦截
 - GEOSITE,private,🔒 私有网络
+- GEOSITE,ads,🛑 广告拦截
 - GEOSITE,microsoft-cn,🪟 微软服务
 - GEOSITE,apple-cn,🍎 苹果服务
 - GEOSITE,google-cn,🇬 谷歌服务

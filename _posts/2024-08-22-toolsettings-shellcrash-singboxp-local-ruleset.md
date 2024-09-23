@@ -141,8 +141,8 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, 本地, Route
       // 规则
       "rules": [
         // 自定义规则优先放前面
-        { "rule_set": [ "ads" ], "outbound": "🛑 广告拦截" },
         { "rule_set": [ "private" ], "outbound": "🔒 私有网络" },
+        { "rule_set": [ "ads" ], "outbound": "🛑 广告拦截" },
         { "rule_set": [ "microsoft-cn" ], "outbound": "🪟 微软服务" },
         { "rule_set": [ "apple-cn" ], "outbound": "🍎 苹果服务" },
         { "rule_set": [ "google-cn" ], "outbound": "🇬 谷歌服务" },
@@ -158,18 +158,18 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, 本地, Route
       // 规则集（binary 文件每天自动更新）
       "rule_set": [
         {
-          "tag": "ads",
-          "type": "remote",
-          "format": "binary",
-          "path": "./ruleset/ads.srs",
-          "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/ads.srs"
-        },
-        {
           "tag": "private",
           "type": "remote",
           "format": "binary",
           "path": "./ruleset/private.srs",
           "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/private.srs"
+        },
+        {
+          "tag": "ads",
+          "type": "remote",
+          "format": "binary",
+          "path": "./ruleset/ads.srs",
+          "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/ads.srs"
         },
         {
           "tag": "microsoft-cn",

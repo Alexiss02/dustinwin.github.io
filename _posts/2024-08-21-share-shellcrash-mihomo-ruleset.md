@@ -79,20 +79,20 @@ rule-providers:
     url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/fakeip-filter.mrs"
     interval: 86400
 
-  ads:
-    type: http
-    behavior: domain
-    format: mrs
-    path: ./rules/ads.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/ads.mrs"
-    interval: 86400
-
   private:
     type: http
     behavior: domain
     format: mrs
     path: ./rules/private.mrs
     url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/private.mrs"
+    interval: 86400
+
+  ads:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./rules/ads.mrs
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/ads.mrs"
     interval: 86400
 
   microsoft-cn:
@@ -184,8 +184,8 @@ rule-providers:
     interval: 86400
 
 rules:
-  - RULE-SET,ads,🛑 广告拦截
   - RULE-SET,private,🔒 私有网络
+  - RULE-SET,ads,🛑 广告拦截
   - RULE-SET,microsoft-cn,🪟 微软服务
   - RULE-SET,apple-cn,🍎 苹果服务
   - RULE-SET,google-cn,🇬 谷歌服务

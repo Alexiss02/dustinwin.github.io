@@ -128,12 +128,12 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
       { "clash_mode": [ "Direct" ], "outbound": "DIRECT" },
       { "clash_mode": [ "Global" ], "outbound": "GLOBAL" },
       // 自定义规则优先放前面
-      { "rule_set": [ "ads" ], "outbound": "🛑 广告拦截" },
+      // 为了使 P2P 流量（BT 下载）走直连，可添加一条 `DST-PORT` 规则（ShellCrash 会默认开启“只代理常用端口”，可删除此条 `DST-PORT`）
+      { "port_range": [ "6881:6889" ], "outbound": "🎯 全球直连"},
       // 若使用 ShellCrash，由于无法判断本机进程（默认删除 `process_name` 规则），需删除此条 `rule_set`
       { "rule_set": [ "applications" ], "outbound": "🖥️ 直连软件" },
-      // 为过滤 P2P 流量（BT 下载），可添加一条 `port_range` 规则（ShellCrash 会默认开启“只代理常用端口”，可删除此条 `port_range`）
-      { "port_range": [ "6881:6889" ], "outbound": "🎯 全球直连"},
       { "rule_set": [ "private" ], "outbound": "🔒 私有网络" },
+      { "rule_set": [ "ads" ], "outbound": "🛑 广告拦截" },
       { "rule_set": [ "microsoft-cn" ], "outbound": "🪟 微软服务" },
       { "rule_set": [ "apple-cn" ], "outbound": "🍎 苹果服务" },
       { "rule_set": [ "google-cn" ], "outbound": "🇬 谷歌服务" },
@@ -148,13 +148,6 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
     ],
     // 规则集（binary 文件每天自动更新）
     "rule_set": [
-      {
-        "tag": "ads",
-        "type": "remote",
-        "format": "binary",
-        "path": "./ruleset/ads.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/ads.srs"
-      },
       // 若使用 ShellCrash，由于无法判断本机进程（默认删除 `process_name` 规则），需删除此条 `applications`
       {
         "tag": "applications",
@@ -169,6 +162,13 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
         "format": "binary",
         "path": "./ruleset/private.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/private.srs"
+      },
+      {
+        "tag": "ads",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/ads.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/ads.srs"
       },
       {
         "tag": "microsoft-cn",
@@ -274,6 +274,7 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
     { "tag": "🤖 人工智能", "type": "selector", "outbounds": [ "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "🇸🇬 新加坡节点", "🇺🇸 美国节点" ] },
     { "tag": "🪜 代理域名", "type": "selector", "outbounds": [ "🚀 节点选择", "🎯 全球直连" ] },
     { "tag": "📲 电报消息", "type": "selector", "outbounds": [ "🚀 节点选择" ] },
+    { "tag": "🔒 私有网络", "type": "selector", "outbounds": [ "🎯 全球直连" ] },
     { "tag": "🛑 广告拦截", "type": "selector", "outbounds": [ "REJECT" ] },
     { "tag": "🎯 全球直连", "type": "selector", "outbounds": [ "DIRECT" ] },
     { "tag": "REJECT", "type": "block" },
@@ -355,6 +356,7 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
       { "clash_mode": [ "Direct" ], "outbound": "DIRECT" },
       { "clash_mode": [ "Global" ], "outbound": "GLOBAL" },
       // 自定义规则优先放前面
+      { "rule_set": [ "private" ], "outbound": "🔒 私有网络" },
       { "rule_set": [ "ads" ], "outbound": "🛑 广告拦截" },
       { "rule_set": [ "ai" ], "outbound": "🤖 人工智能" },
       { "rule_set": [ "networktest" ], "outbound": "📈 网络测试" },
@@ -363,6 +365,14 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
     ],
     // 规则集（binary 文件每天自动更新）
     "rule_set": [
+      {
+        "tag": "private",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/private.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/private.srs",
+        "download_detour": "PROXY"
+      },
       {
         "tag": "ads",
         "type": "remote",
