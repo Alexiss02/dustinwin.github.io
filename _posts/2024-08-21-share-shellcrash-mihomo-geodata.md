@@ -120,6 +120,8 @@ tcp-concurrent: true
 global-client-fingerprint: chrome
 profile: {store-selected: true}
 
+geodata-mode: true
+
 sniffer:
   enable: true
   parse-pure-ip: true
