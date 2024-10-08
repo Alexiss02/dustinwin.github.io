@@ -10,7 +10,7 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, DNS, DNS 分�
 - 1. [ShellCrash](https://github.com/juewuy/ShellCrash) 搭配 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) 并将 AdGuard Home 作为上游时不要使用该方法
 - 2. DNS 分流简单来说就是**指定国内域名走国内 DNS 解析，其它域名包括国外域名走 `fake-ip`**
 
-# 一、 导入规则集合文件
+## 一、 导入规则集合文件
 `route.rule_set` 须添加 `fakeip-filter` 和 `cn`，如下：
 
 ```json
@@ -36,7 +36,7 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, DNS, DNS 分�
 }
 ```
 
-# 二、 DNS 分流配置（以 ShellCrash 为例）
+## 二、 DNS 分流配置（以 ShellCrash 为例）
 1. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，将“当前基础 DNS”和“PROXY-DNS”都设置为“null”  
 <img src="/assets/img/dns/dns-null.png" alt="ShellCrash 设置" width="60%" />
 

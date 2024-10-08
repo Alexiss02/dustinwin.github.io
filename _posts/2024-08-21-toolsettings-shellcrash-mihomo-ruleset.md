@@ -10,7 +10,7 @@ tags: [Clash, mihomo, ShellCrash, ruleset, rule-set, 基础, Router]
 - 1. 本教程中的下载链接以 CPU 架构 ARMv8 为例，若为别的 CPU 架构，请注意修改链接后缀
 - 2. 查看 CPU 架构可连接 SSH 后执行命令 `uname -ms`，若执行结果是 `linux aarch64`，就是搭载的 ARMv8 架构
 
-# 一、 导入 [mihomo 内核](https://github.com/MetaCubeX/mihomo)
+## 一、 导入 [mihomo 内核](https://github.com/MetaCubeX/mihomo)
 **mihomo 内核 Linux 版下载链接后缀和 CPU 架构对应关系如下表：**
 
 | CPU 架构     | AMD64   | AMD64v3   | ARMv5   | ARMv6   | ARMv7   | ARMv8&ARM64&AArch64 | mips-softfloat   | mipsle-hardfloat   | mipsle-softfloat   |
@@ -23,7 +23,7 @@ tags: [Clash, mihomo, ShellCrash, ruleset, rule-set, 基础, Router]
 curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@mihomo/mihomo-meta-linux-armv8.tar.gz | tar -zx -C /tmp/
 ```
 
-# 二、 添加定时任务
+## 二、 添加定时任务
 连接 SSH 后执行 `vi $CRASHDIR/task/task.user`，按一下 Ins 键（Insert 键），粘贴（快捷键 Ctrl+Shift+V）如下内容：
 - 注：ShellCrash 安装路径为 */data/ShellCrash*
 
@@ -34,7 +34,7 @@ curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@mihomo/mihomo-
 
 按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
 
-# 三、 设置部分
+## 三、 设置部分
 1. 连接 SSH 后执行 `crash` 命令打开 [ShellCrash](https://github.com/juewuy/ShellCrash) 配置脚本  
 首次打开会进入新手引导，路由设备配置局域网透明代理（此处选择 1）  
 启用推荐的自动任务配置  
@@ -58,7 +58,7 @@ curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@mihomo/mihomo-
 
 12. 进入 Dashboard 面板 -> 代理 -> 代理提供者，点击“转圈图标”（Update），也可手动更新节点
 
-# 四、 在线 Dashboard 面板
+## 四、 在线 Dashboard 面板
 推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd>
 1. 需要设置该网站“允许不安全内容”，以 Chrome 浏览器为例，进入设置 -> 隐私和安全 -> 网站设置 -> 更多内容设置 -> 不安全内容（或者直接打开 `chrome://settings/content/insecureContent` 进行设置），在“允许显示不安全内容”内添加 `metacubex.github.io`  
 <img src="/assets/img/tools/chrome-setting-dashboard.png" alt="在线 Dashboard 面板 1" width="60%" />

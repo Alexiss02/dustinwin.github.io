@@ -10,7 +10,7 @@ tags: [Clash, mihomo, 进阶, DNS, DNS 分流]
 - 1. 使用 [ShellCrash](https://github.com/juewuy/ShellCrash) 搭配 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) 并将 AdGuard Home 作为上游时不要使用该方法
 - 2. DNS 分流简单来说就是**指定国内域名走国内 DNS 解析，其它域名包括国外域名走 `fake-ip`**
 
-# 一、 导入规则集合文件
+## 一、 导入规则集合文件
 `rule-providers` 须添加 `fakeip-filter` 和 `cn`，如下：
 
 ```yaml
@@ -32,7 +32,7 @@ rule-providers:
     interval: 86400
 ```
 
-# 二、 ShellCrash 设置
+## 二、 ShellCrash 设置
 1. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，将“当前基础 DNS”和“PROXY-DNS”都设置为“null”  
 <img src="/assets/img/dns/dns-null.png" alt="ShellCrash 设置" width="60%" />
 
@@ -54,7 +54,7 @@ dns:
 
 按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
 
-# 三、 [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev) 设置
+## 三、 [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev) 设置
 进入 Clash Verge -> 订阅，右击“全局扩展配置”，选择“编辑文件”，将 `dns` 部分修改为如下内容并“保存”：
 
 ```yaml

@@ -8,7 +8,7 @@ tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享, Windows]
 
 - 声明：请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 
-# 一、 生成配置文件 .json 文件直链
+## 一、 生成配置文件 .json 文件直链
 具体方法请参考《[生成带有自定义出站和规则的 sing-box 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-ruleset)》，贴一下我使用的配置：
 
 ```json
@@ -248,8 +248,8 @@ tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享, Windows]
 }
 ```
 
-# 二、 导入 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box/tree/building)和配置文件并启动 sing-box
-## 1. 导入内核和配置文件
+## 二、 导入 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box/tree/building)和配置文件并启动 sing-box
+### 1. 导入内核和配置文件
 - ① 编辑本文文档，粘贴如下内容：  
   注：
   - 1. 将第《一》步生成的配置文件 .json 文件直链替换下面命令中的 `{.json 配置文件直链}`
@@ -274,7 +274,7 @@ tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享, Windows]
 
 - ② 另存为 .bat 文件，右击并选择“以管理员身份运行”
 
-## 2. 启动 sing-box
+### 2. 启动 sing-box
 - ① 编辑本文文档，粘贴如下内容：
 
   ```shell
@@ -289,7 +289,7 @@ tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享, Windows]
   - 2. 右击快捷方式并点击“属性” -> “高级”，勾选“以管理员身份运行”并“确定”
   - 3. 若想开机启动 sing-box，可搜索“Windows 添加任务计划”教程自行添加
 
-# 三、 更新 sing-box PuerNya 版内核和配置文件
+## 三、 更新 sing-box PuerNya 版内核和配置文件
 编辑本文文档，粘贴如下内容：  
 注：
 - 1. 将第《一》步生成的配置文件 .json 文件直链替换下面命令中的 `{.json 配置文件直链}`
@@ -310,7 +310,7 @@ pause
 
 另存为 .bat 文件，右击并选择“以管理员身份运行”
 
-# 四、 在线 Dashboard 面板
+## 四、 在线 Dashboard 面板
 推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd>  
 首次进入 <https://metacubex.github.io/metacubexd> 需要添加“后端地址”，输入 `http://127.0.0.1:9090` 并点击“添加”即可访问 Dashboard 面板  
 <img src="/assets/img/share/127-9090-dashboard.png" alt="在线 Dashboard 面板" width="60%" />

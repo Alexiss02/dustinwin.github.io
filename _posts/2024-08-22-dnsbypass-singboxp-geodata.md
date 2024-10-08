@@ -11,10 +11,10 @@ tags: [sing-box, sing-boxp, geodata, geosite, 进阶, DNS, DNS 分流]
 - 2. DNS 分流简单来说就是**指定国内域名走国内 DNS 解析，其它域名包括国外域名走 `fake-ip`**
 - 3. 所有步骤完成后，请连接 SSH 执行命令 `$CRASHDIR/start.sh restart` 后生效
 
-# 一、 导入路由规则文件
+## 一、 导入路由规则文件
 geosite.db 文件须包含 `fakeip-filter` 和 `cn`，推荐导入我定制的[路由规则文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%B8%80-geodata-%E8%A7%84%E5%88%99%E9%9B%86%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
 
-# 二、 DNS 分流配置（以 ShellCrash 为例）
+## 二、 DNS 分流配置（以 ShellCrash 为例）
 1. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，将“当前基础 DNS”和“PROXY-DNS”都设置为“null”  
 <img src="/assets/img/dns/dns-null.png" alt="ShellCrash 设置" width="60%" />
 

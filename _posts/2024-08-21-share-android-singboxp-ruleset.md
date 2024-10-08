@@ -6,11 +6,11 @@ categories: [分享配置, Android]
 tags: [sing-box, sing-boxp, Android, ruleset, rule_set, 分享]
 ---
 
-## 声明：
+### 声明：
 1. 请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 2. 由于 [sing-boxp for Android](https://github.com/PuerNya/sing-box/actions/workflows/sfa.yml) v1.10.0+ 版本迟迟没有出来，所以改回 v1.9.0 版本的配置，现在可以正常使用了
 
-# 一、 生成配置文件 .json 文件直链
+## 一、 生成配置文件 .json 文件直链
 具体方法请参考《[生成带有自定义出站和规则的 sing-box 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-ruleset)》，贴一下我使用的配置：
 
 ```json
@@ -252,12 +252,12 @@ tags: [sing-box, sing-boxp, Android, ruleset, rule_set, 分享]
 }
 ```
 
-# 二、 导入配置文件并启动 sing-box
+## 二、 导入配置文件并启动 sing-box
 1. 进入 sing-box for Android -> Profiles -> New Profile，“Type”选择“Remote”，在“URL”处粘贴第《一》中生成的配置文件 .json 直链，“Auto Update Interval”填写“1440”，最后点击“Create”
 2. 进入 sing-boxp for Android -> Dashboard，点击“▶️”图标即可启动 sing-box 服务
 - 注：首次启用可能会报错，重试几次即可
 
-# 三、 在线 Dashboard 面板
+## 三、 在线 Dashboard 面板
 推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd>  
 首次进入 <https://metacubex.github.io/metacubexd> 需要添加“后端地址”，输入 `http://127.0.0.1:9090` 并点击“添加”即可访问 Dashboard 面板  
 <img src="/assets/img/share/127-9090-dashboard.png" alt="在线 Dashboard 面板" width="60%" />

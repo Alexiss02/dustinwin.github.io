@@ -8,14 +8,14 @@ tags: [Clash, Clash.Meta, mihomo, Android, ruleset, rule-set, 分享]
 
 - 声明：请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 
-# 一、 生成配置文件 .yaml 文件直链
+## 一、 生成配置文件 .yaml 文件直链
 具体方法请参考《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
 
 ```yaml
 proxy-providers:
   🛫 我的机场:
     type: http
-    # 修改为你的 Clash 订阅链接
+    ## 修改为你的 Clash 订阅链接
     url: "https://example.com/xxx/xxx&flag=clash"
     path: ./proxies/airport.yaml
     interval: 86400
@@ -66,7 +66,7 @@ dns:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
 
-# 若没有单个出站代理节点，须删除所有 `🆓 免费节点` 相关内容
+## 若没有单个出站代理节点，须删除所有 `🆓 免费节点` 相关内容
 proxies:
   - name: 🆓 免费节点
     type: vless
@@ -85,7 +85,7 @@ proxies:
 
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🆓 免费节点]}
-  # 若机场的 UDP 质量不是很好，导致某游戏无法登录或进入房间，可以添加 `disable-udp: true` 配置项解决
+  ## 若机场的 UDP 质量不是很好，导致某游戏无法登录或进入房间，可以添加 `disable-udp: true` 配置项解决
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
   - {name: 📈 网络测试, type: select, proxies: [🎯 全球直连, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🆓 免费节点]}
   - {name: 🤖 人工智能, type: select, proxies: [🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点]}
@@ -248,7 +248,7 @@ rules:
   - MATCH,🐟 漏网之鱼
 ```
 
-# 二、 导入配置文件并启动 Clash
+## 二、 导入配置文件并启动 Clash
 1. 进入 [Clash.Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid) -> 配置 -> 创建配置 -> 从 URL 导入，“URL”输入第《一》中生成的配置文件 .yaml 直链，“自动更新”填写“1440”，最后点击右上角的“保存图标”
 2. 进入 Clash.Meta for Android -> 设置 -> 网络，将“系统代理”关闭
 3. 返回到主界面，点击“点此启用”即可启动 Clash 服务

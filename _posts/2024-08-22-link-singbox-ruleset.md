@@ -6,7 +6,7 @@ categories: [直链配置, sing-box 直链]
 tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
 ---
 
-# 前言：
+## 前言：
 1. 本教程可以生成扩展名为 .json 配置文件直链，可以**一键导入使用了 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box/tree/building)的客户端**
 如：[ShellCrash](https://github.com/juewuy/ShellCrash) 和 [sing-box for Android](https://github.com/PuerNya/sing-box/actions/workflows/sfa.yml) 等
 2. 生成的订阅链接地址不会改变，支持更新订阅，**支持国内访问，支持同步机场节点**
@@ -15,19 +15,19 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
 5. 推荐使用 [Visual Studio Code](https://code.visualstudio.com/Download) 等专业编辑器来修改配置文件
 6. ShellCrash 支持本地导入配置文件，可以直接将下方的 .json 直链文件内容复制到 *$CRASHDIR/jsons/config.json* 文件中，可代替通过 ShellCrash 配置脚本 -> 6 -> 2 导入配置文件的方式
 
-# 一、 准备编辑 .json 直链文件
-## 1. 注册 [Gist](https://gist.github.com)
+## 一、 准备编辑 .json 直链文件
+### 1. 注册 [Gist](https://gist.github.com)
 进入 <https://gist.github.com> 网站并注册
 
-## 2. 打开编辑页面
+### 2. 打开编辑页面
 登录并打开 Gist 可以直接编辑文件，或者点击页面右上角头像左边的“+”图标新建文件
 
-## 3. 输入描述和完整文件名
+### 3. 输入描述和完整文件名
 “Gist description...”输入描述，随意填写；“Filename including extension...”输入完整文件名**包括扩展名**，如 singboxlink.json  
 <img src="/assets/img/link/file-extension-json.png" alt="输入描述和完整文件名" width="60%" />
 
-# 二、 添加模板和配置文件
-## 1. 白名单模式（没有命中规则的网络流量统统使用代理，适用于服务器线路网络质量稳定、快速，不缺服务器流量的用户，推荐）
+## 二、 添加模板和配置文件
+### 1. 白名单模式（没有命中规则的网络流量统统使用代理，适用于服务器线路网络质量稳定、快速，不缺服务器流量的用户，推荐）
 
 ```json
 {
@@ -260,7 +260,7 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
 **贴一张面板效果图（举个例子：我手动选择 `🇹🇼 台湾节点` 策略组，而该策略组是将机场内所有台湾节点按照 url 测试结果自动选择延迟最低的台湾节点）：**  
 <img src="/assets/img/link/show-dashboard.png" alt="面板效果图" width="60%" />
 
-## 2. 黑名单模式（只有命中规则的网络流量才使用代理，适用于服务器线路网络质量不稳定或不够快，或服务器流量紧缺的用户。通常也是软路由用户、家庭网关用户的常用模式）
+### 2. 黑名单模式（只有命中规则的网络流量才使用代理，适用于服务器线路网络质量不稳定或不够快，或服务器流量紧缺的用户。通常也是软路由用户、家庭网关用户的常用模式）
 
 ```json
 {
@@ -424,7 +424,7 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
 
 将模板内容复制到自己 Gist 新建的 .json 文件中
 
-# 三、 修改模板
+## 三、 修改模板
 1. 将代理集合 `outbound_providers` 中的 `download_url` 链接改成自己机场的订阅链接（必须为 Clash 订阅链接，详见《前言：4》）
 2. 确定自己机场中有哪些国家或地区的节点，然后对模板文件里 `outbounds` 中“**国家或地区出站**”以及 `🚀 节点选择`、`📈 网络测速`、 `🤖 人工智能` 和 `GLOBAL` 出站下的 `outbounds` 里面的国家或地区进行增删改
    - 注：两者中的国家或地区必须一一对应，新增就全部新增，删除就全部删除，修改就全部修改（重要）
@@ -493,7 +493,7 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
 
 6. 若有其它需求，可以进入 [MetaCubeX/meta-rules-dat/sing/geo](https://github.com/MetaCubeX/meta-rules-dat/tree/sing/geo) 的 *geosite* 和 *geoip* 目录搜索关键字，通过能够搜索到的关键字来编写规则（推荐使用 .srs 文件）
 
-# 四、 生成 .json 文件链接
+## 四、 生成 .json 文件链接
 1. 编辑完成后，点击右下角的“Create secret gist”按钮，然后点击右上角的“Raw”按钮  
 <img src="/assets/img/link/click-raw-json.png" alt="生成 .json 文件链接 1" width="60%" />
 
@@ -504,7 +504,7 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
 删除后变成：  
 `https://gist.githubusercontent.com/DustinWin/40c0611fda5d6fcd0795ee5a15de7c73/raw/singboxlink.json`
 
-# 五、 导入订阅链接（以 ShellCrash 导入订阅链接为例）
+## 五、 导入订阅链接（以 ShellCrash 导入订阅链接为例）
 1. 连接 SSH 后执行命令 `mkdir -p $CRASHDIR/providers/ $CRASHDIR/ruleset/`  
 注：
    - 1. 因 `outbound_providers` 代理集合配置的 `path` 路径中含有文件夹“*providers*”，须手动新建此文件夹才能使 .yaml 订阅文件保存到本地，否则将保存到内存中（每次启动服务都要重新下载）

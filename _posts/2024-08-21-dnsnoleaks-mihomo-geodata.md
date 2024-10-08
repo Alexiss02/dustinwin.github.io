@@ -10,10 +10,10 @@ tags: [Clash, mihomo, 进阶, DNS, DNS 泄露]
 - 1. 此方案彻底防止了 DNS 泄露（针对不在规则集内的域名和 IP 全部走 `fake-ip` 或国外 DNS 解析），配置简单粗暴，兼容性无法保证，请慎用
 - 2. 可进入 <https://ipleak.net> 测试 DNS 是否泄露，“DNS Addresses” 栏目下没有中国国旗（因 `ipleak.net` 域名默认走代理），即代表 DNS 没有发生泄露
 
-# 一、 导入路由规则文件
+## 一、 导入路由规则文件
 geosite.dat 文件须包含 `fakeip-filter`，推荐导入我定制的[路由规则文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%B8%80-geodata-%E8%A7%84%E5%88%99%E9%9B%86%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
 
-# 二、 额外编辑配置文件
+## 二、 额外编辑配置文件
 在《[生成带有自定义策略组和规则的 Clash 配置文件直链-geodata 方案/添加模板](https://proxy-tutorials.dustinwin.top/posts/link-clash-geodata/#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%A8%A1%E6%9D%BF)》编辑 .yaml 配置文件时，将 `rules` 里的所有 `GEOIP` 规则末尾加上 `no-resolve`，即修改为：
 
 ```yaml
@@ -22,7 +22,7 @@ geosite.dat 文件须包含 `fakeip-filter`，推荐导入我定制的[路由规
   - GEOIP,cn,🇨🇳 直连 IP,no-resolve
 ```
 
-# 三、 [ShellCrash](https://github.com/juewuy/ShellCrash) 设置
+## 三、 [ShellCrash](https://github.com/juewuy/ShellCrash) 设置
 1. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，将“当前基础 DNS”和“PROXY-DNS”都设置为 `null`  
 <img src="/assets/img/dns/dns-null.png" alt="ShellCrash 设置" width="60%"  />
 
@@ -71,7 +71,7 @@ geosite.dat 文件须包含 `fakeip-filter`，推荐导入我定制的[路由规
 
   按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
 
-# 四、 [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev) 设置
+## 四、 [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev) 设置
 1. DNS 模式为 `fake-ip`
 进入 Clash Verge -> 订阅，右击“全局扩展配置”，选择“编辑文件”，将 `dns` 部分修改为如下内容并“保存”：
 

@@ -7,14 +7,14 @@ tags: [sing-box, sing-boxp, ShellCrash, AdGuard Home, 解锁, SSH]
 pin: true
 ---
 
-# 前言
+## 前言
 1. 本教程基于 Redmi AX6000 [官方固件](https://www1.miwifi.com/miwifi_download.html) v1.0.70 版，[ShellCrash](https://github.com/juewuy/ShellCrash) v1.9.1 版，[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) v0.108.0 版编写
 2. 恢复 SSH，安装 ShellCrash 和 AdGuard Home 的方法也适用于其它已解锁 SSH 的路由器
 3. 安装 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box/tree/building) 内核和 AdGuard Home 时须注意路由器 CPU 架构，查看 CPU 架构可连接 SSH 后执行命令 `uname -ms`，若执行结果是 `linux aarch64`，就下载 armv8 或 arm64 版安装包；若是其它架构请下载相匹配的安装包
 4. ShellCrash 和 AdGuard Home 中所有没有提到的配置保持默认即可
 5. ShellCrash 和 AdGuard Home 快速安装方法请看《[ShellCrash 和 AdGuard Home 快速安装教程](https://proxy-tutorials.dustinwin.top/posts/pin-toolsinstall)》
 
-# 一、 资源下载
+## 一、 资源下载
 打包下载：<https://dustinwinvip.lanzoum.com/b01qd6p3a>  
 密码：zyxz  
 注：
@@ -22,35 +22,35 @@ pin: true
 - 2. 不保证实时更新，想用新版请安装后自行升级
 - 3. 版本信息请查看打包文件内的 Readme.txt 文本
 
-## 1. ShellCrash
+### 1. ShellCrash
 官方下载：<https://raw.githubusercontent.com/juewuy/ShellCrash/master/bin/ShellCrash.tar.gz>
 
-## 2. sing-box PuerNya 版内核
+### 2. sing-box PuerNya 版内核
 第三方下载：<https://github.com/DustinWin/clash_singbox-tools/releases/download/sing-box/sing-box-puernya-linux-armv8.tar.gz>
 
-## 3. Termius
+### 3. Termius
 官方下载：<https://autoupdate.termius.com/windows/Termius.exe>
 
-## 4. AdGuard Home
+### 4. AdGuard Home
 官方下载：<https://github.com/AdguardTeam/AdGuardHome/releases>  
 下载 AdGuardHome_linux_arm64.tar.gz 文件
 
-## 5. UPX
+### 5. UPX
 官方下载：<https://github.com/upx/upx/releases>  
 下载 upx-xxx-win64.zip 文件
 
-## 6. WinSCP
+### 6. WinSCP
 官方下载：<https://winscp.net/eng/downloads.php>
 - 注：中文绿色版请下载打包文件
 
 下载 WinSCP-xxx-Portable.zip 文件
 
-# 二、 解锁 SSH
-## 1. 复制 stok 值
+## 二、 解锁 SSH
+### 1. 复制 stok 值
 进入路由器管理页面 http://192.168.31.1 ，登录后复制地址栏中的 stok 值  
 <img src="/assets/img/pin/copy-stok.png" alt="复制 stok 值" width="60%" />
 
-## 2. 开启调试模式
+### 2. 开启调试模式
 将复制的 stok 值替换如下网址的 `{stok}` 并访问：
 
 ```text
@@ -59,7 +59,7 @@ http://192.168.31.1/cgi-bin/luci/;stok={stok}/api/misystem/set_sys_time?timezone
 
 网页内容显示 `{"code":0}` 表示成功开启调试模式
 
-## 3. 通过浏览器请求重启路由器
+### 3. 通过浏览器请求重启路由器
 继续将复制的 stok 值替换如下网址的 `{stok}` 并访问：
 
 ```text
@@ -68,10 +68,10 @@ http://192.168.31.1/cgi-bin/luci/;stok={stok}/api/misystem/set_sys_time?timezone
 
 网页内容显示 `{"code":0}`，此时路由器会重启
 
-## 4. 再次复制 stok 值
+### 4. 再次复制 stok 值
 重启完成后进入路由器管理页面并登录，再次复制 stok 值
 
-## 5. 设置 Bdata 永久开启 Telnet
+### 5. 设置 Bdata 永久开启 Telnet
 将复制的 stok 值替换如下网址的 `{stok}` 并访问：
 
 ```text
@@ -80,7 +80,7 @@ http://192.168.31.1/cgi-bin/luci/;stok={stok}/api/misystem/set_sys_time?timezone
 
 网页内容显示 `{"code":0}` 表示成功设置 Bdata 永久开启 Telnet
 
-## 6. 再次通过浏览器请求重启路由器
+### 6. 再次通过浏览器请求重启路由器
 继续将复制的 stok 值替换如下网址的 `{stok}` 并访问：
 
 ```text
@@ -89,11 +89,11 @@ http://192.168.31.1/cgi-bin/luci/;stok={stok}/api/misystem/set_sys_time?timezone
 
 网页内容显示 `{"code":0}`，此时路由器会再次重启
 
-## 7. 连接 Telnet
+### 7. 连接 Telnet
 显示“ARE U OK”表示成功解锁 SSH  
 <img src="/assets/img/pin/connect-telnet.png" alt="连接 Telnet" width="60%" />
 
-## 8. 永久开启并固化 SSH
+### 8. 永久开启并固化 SSH
 直接粘贴如下所有命令：
 - 注：第一行命令是将 Telnet 或 SSH 登录密码设置为 `12345678`，可自定义
 
@@ -122,14 +122,14 @@ reboot
 最后一行 `reboot` 命令需要手动回车（下同），回车后路由器会重启  
 **SSH 解锁成功！**
 
-# 三、 恢复 SSH
+## 三、 恢复 SSH
 若已解锁并固化过 SSH 的路由器在升级固件或恢复出厂设置后 SSH 丢失，可快速再次解锁 SSH
 
-## 1. 计算 Telnet 登录密码
+### 1. 计算 Telnet 登录密码
 打开网站 <https://miwifi.dev/ssh>，在 SN 处输入路由器背面的 SN 号，点击“Calc”按钮  
 <img src="/assets/img/pin/caculate-ssh-password.png" alt="计算 Telnet 登录密码" width="60%" />
 
-## 2. 连接 Telnet
+### 2. 连接 Telnet
 用户名为：`root`，密码为第 1 步中计算出的 Telnet 登录密码  
 <img src="/assets/img/pin/login-telnet.png" alt="连接 Telnet" width="60%" />
 
@@ -144,12 +144,12 @@ chmod +x /data/auto_ssh/auto_ssh.sh
 echo -e '12345678\n12345678' | passwd root
 ```
 
-## 3. 更改 Telnet 和 SSH 登录密码（可选）
+### 3. 更改 Telnet 和 SSH 登录密码（可选）
 执行命令 `passwd root`，输入密码如：`12341234`，回车后输入同样的密码，再次回车即可  
 **SSH 恢复成功！**
 
-# 四、 连接 SSH
-## 1. 给 Windows 操作系统添加 SSH 支持（任选一）
+## 四、 连接 SSH
+### 1. 给 Windows 操作系统添加 SSH 支持（任选一）
 - ① 启用 Telnet 客户端  
 进入控制面板 -> 程序和功能 -> 启用或关闭 Windows 功能，勾选“Telnet 客户端”  
 <img src="/assets/img/pin/add-windows-telnet.png" alt="启用 Telnet 客户端" width="60%" />
@@ -176,7 +176,7 @@ echo -e '12345678\n12345678' | passwd root
   显示“ARE U OK”表示成功登录 SSH  
   <img src="/assets/img/pin/show-ssh-windows.png" alt="连接 SSH 3" />
 
-## 2. 通过 SSH 工具添加 SSH 支持（任选一）
+### 2. 通过 SSH 工具添加 SSH 支持（任选一）
 - ① 打开 Termius  
 安装 Termius 并打开（登录后可一直免费试用），现暂时点击“l don't want a free trial”  
 <img src="/assets/img/pin/skip-termius.png" alt="打开 Termius" width="60%" />
@@ -205,15 +205,15 @@ echo -e '12345678\n12345678' | passwd root
   显示“ARE U OK”表示成功登录 SSH  
   <img src="/assets/img/pin/show-ssh-termius.png" alt="连接 Telnet 或 SSH 3" width="60%" />
 
-## 3. 通过 WinSCP 连接路由器文件管理
+### 3. 通过 WinSCP 连接路由器文件管理
 将下载的 WinSCP-xxx-Portable.zip 文件解压，路径随意，打开 WinSCP，“文件协议”选择“SCP”，其它按图输入，“密码”为 SSH 登录密码，完成后点击登录  
 <img src="/assets/img/pin/login-winscp.png" alt="通过 WinSCP 连接路由器文件管理 1" width="60%" />
 
 左侧为电脑本地文件，右侧为路由器文件  
 <img src="/assets/img/pin/show-winscp.png" alt="通过 WinSCP 连接路由器文件管理 2" width="60%" />
 
-# 五、 ShellCrash 安装和配置
-## 1. ShellCrash 安装
+## 五、 ShellCrash 安装和配置
+### 1. ShellCrash 安装
 - ① 打开 WinSCP，将下载的 ShellCrash.tar.gz 文件移动到路由器的 */tmp* 目录中  
 <img src="/assets/img/pin/move-shellcrash.png" alt="ShellCrash 安装 1" width="60%" />
 
@@ -229,7 +229,7 @@ echo -e '12345678\n12345678' | passwd root
 
   **ShellCrash 安装成功！**
 
-## 2. ShellCrash 配置
+### 2. ShellCrash 配置
 - ① 连接 SSH 后执行 `crash` 命令打开 ShellCrash 配置脚本  
 首次打开会进入新手引导，选择 1 路由设备配置局域网透明代理  
 启用推荐的自动任务配置  
@@ -288,11 +288,11 @@ echo -e '12345678\n12345678' | passwd root
 5. 更新订阅：`$CRASHDIR/start.sh update_config`
 6. 查看帮助和说明：`crash -h`
 
-## 3. ShellCrash 升级
+### 3. ShellCrash 升级
 进入主菜单 -> 9 更新/卸载，查看“管理脚本”、“内核文件”和“数据库文件”有无新版本，有则选择对应的数字进行升级即可  
 <img src="/assets/img/pin/update-shellcrash.png" alt="ShellCrash 升级" width="60%" />
 
-## 4. ShellCrash 卸载
+### 4. ShellCrash 卸载
 - ① 通过脚本命令进行卸载（任选一）  
 连接 SSH 后，执行如下命令：
 
@@ -303,8 +303,8 @@ echo -e '12345678\n12345678' | passwd root
 - ② 通过 ShellCrash 配置进行卸载（任选一）  
 进入主菜单 -> 9 更新/卸载，选择 9 卸载 ShellCrash
 
-# 六 、 AdGuard Home 安装和配置
-## 1. AdGuard Home 安装
+## 六 、 AdGuard Home 安装和配置
+### 1. AdGuard Home 安装
 - ① 将下载的 upx-xxx-win64.zip 文件解压到桌面，目录结构为 *C:\Users\\[用户名]\Desktop\upx*
 - ② 将下载的 AdGuardHome_linux_arm64.tar.gz 文件复制到桌面，以管理员身份运行 PowerShell，依次执行如下命令：
 
@@ -370,7 +370,7 @@ echo -e '12345678\n12345678' | passwd root
 
   **AdGuard Home 安装成功！**
 
-## 2. AdGuard Home 配置
+### 2. AdGuard Home 配置
 - ① 打开网页 http://192.168.31.1:3000  
 点击“开始配置”，**“网页管理界面端口”输入“3000”，“DNS 服务器端口”输入“5353”**  
 “身份认证”设置用户名和密码
@@ -430,7 +430,7 @@ echo -e '12345678\n12345678' | passwd root
 3. 重启服务：`/data/AdGuardHome/AdGuardHome -s restart`
 4. 显示当前服务状态：`/data/AdGuardHome/AdGuardHome -s status`
 
-## 3. AdGuard Home 升级
+### 3. AdGuard Home 升级
 为了节约路由器内存，请按照如下步骤进行操作：
 - ① 执行《六、 1. ① ② ③ ④ ⑤（替换）》的操作步骤  
 - ② 连接 SSH，直接粘贴如下所有命令：
@@ -439,7 +439,7 @@ echo -e '12345678\n12345678' | passwd root
   chmod +x /data/AdGuardHome/AdGuardHome && /data/AdGuardHome/AdGuardHome -s restart
   ```
 
-## 4. AdGuard Home 卸载
+### 4. AdGuard Home 卸载
 - ① 删除开机启动项  
 执行《六、 1. ⑥》的操作步骤，删除添加的内容：
 
@@ -467,17 +467,17 @@ echo -e '12345678\n12345678' | passwd root
 
 - ③ 重启路由器
 
-# 七、 效果图
-## 1. IPv6 效果
+## 七、 效果图
+### 1. IPv6 效果
 <img src="https://github.com/DustinWin/clash-tutorials/assets/45238096/962cef1b-b772-4c18-8040-0a370da8be0a" alt="IPv6 效果 1" /><img src="https://github.com/DustinWin/clash-tutorials/assets/45238096/5a26417a-cd29-4605-bafe-0458f23e19aa" alt="IPv6 效果 2" />
 
-## 2. BT 下载效果
+### 2. BT 下载效果
 UDP 连接正常，使用的是移动 500M 带宽  
 <img src="https://user-images.githubusercontent.com/45238096/224113233-4d76dec2-495c-4790-a00e-538fc1469639.png" alt="BT 下载效果" />
 
-## 3. ShellCrash 效果
+### 3. ShellCrash 效果
 使用的是移动 300M 带宽  
 <img src="https://github.com/DustinWin/clash-tutorials/assets/45238096/695f0f5d-7757-4b65-ac30-535544c5c440" alt="ShellCrash 效果" />
 
-## 4. AdGuard Home 效果
+### 4. AdGuard Home 效果
 <img src="https://github.com/DustinWin/clash-tutorials/assets/45238096/b2b322e4-2ac9-4d94-bb14-21eb9e3dc7dd" alt="AdGuard Home 效果" />

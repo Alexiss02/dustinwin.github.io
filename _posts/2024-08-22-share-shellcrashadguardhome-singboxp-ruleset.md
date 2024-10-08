@@ -6,14 +6,14 @@ categories: [分享配置, Router]
 tags: [sing-box, sing-boxp, ShellCrash, AdGuard Home, ruleset, rule_set, 分享, Router]
 ---
 
-# 声明：
+## 声明：
 1. 此方案采用 [ShellCrash](https://github.com/juewuy/ShellCrash) 作为上游，[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) 作为下游的模式
 2. 请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 3. 此方案中 ShellCrash 采用了**绕过 CN_IP** 的模式（仍与 AdGuard Home 配合完美）
 4. 此方案适用于 ShellCrash（以 arm64 架构为例，且安装路径为 */data/ShellCrash*）
 5. 此方案适用于 AdGuard Home（以 arm64 架构为例，且安装路径为 */data/AdGuardHome*）
 
-# 一、 生成配置文件 .json 文件直链
+## 一、 生成配置文件 .json 文件直链
 具体方法此处不再赘述，请看《[生成带有自定义出站和规则的 sing-box 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-ruleset)》，贴一下我使用的配置：
 
 ```json
@@ -186,7 +186,7 @@ tags: [sing-box, sing-boxp, ShellCrash, AdGuard Home, ruleset, rule_set, 分享,
 }
 ```
 
-# 二、 导入 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box/tree/building)和 CN_IP 文件
+## 二、 导入 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box/tree/building)和 CN_IP 文件
 连接 SSH 后执行如下命令：
 
 ```shell
@@ -198,7 +198,7 @@ crash
 
 此时脚本会自动“发现可用的内核文件”，选择 1 加载，后选择 5 Sing-Box-Puer 内核
 
-# 三、 编辑 dns.json 文件
+## 三、 编辑 dns.json 文件
 连接 SSH 后执行 `vi $CRASHDIR/jsons/dns.json`，按一下 Ins 键（Insert 键），粘贴如下内容：  
 注：
 - 1. 由于 ShellCrash 采用的 DNS 模式为 `mix`，**ShellCrash 传给 AdGuard Home 的国外域名对应 IP 为假 IP**，会导致 AdGuard Home 检查更新和下载更新 DNS 黑名单时失败
@@ -247,7 +247,7 @@ crash
 
 按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
 
-# 四、 添加定时任务
+## 四、 添加定时任务
 1. 连接 SSH 后执行 `vi $CRASHDIR/task/task.user`，按一下 Ins 键（Insert 键），粘贴如下内容：
 
 ```shell
@@ -260,13 +260,13 @@ crash
 3. 执行 `crash`，进入 ShellCrash -> 5 配置自动任务 -> 1 添加自动任务，可以看到末尾就有添加的定时任务，输入对应的数字并回车后可设置执行条件  
 <img src="/assets/img/share/task-singbox-adguardhome.png" alt="添加定时任务" width="60%" />
 
-# 五、 新建文件夹
+## 五、 新建文件夹
 连接 SSH 后执行命令 `mkdir -p $CRASHDIR/providers/ $CRASHDIR/ruleset/`  
 注：
 - 1. 因 `outbound_providers` 代理集合配置的 `path` 路径中含有文件夹“*providers*”，须手动新建此文件夹才能使 .yaml 订阅文件保存到本地，否则将保存到内存中（每次启动服务都要重新下载）
 - 2. 因 `route.rule_set` 代理集合配置的 `path` 路径中含有文件夹“*ruleset*”，须手动新建此文件夹才能使 .srs 规则集文件保存到本地，否则将保存到内存中（每次启动服务都要重新下载）
 
-# 六、 ShellCrash 设置
+## 六、 ShellCrash 设置
 1. 设置可参考《[ShellCrash 搭载 sing-boxp 内核的配置-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-shellcrash-singboxp-ruleset)》，此处只列举配置的不同之处
 2. 进入主菜单 -> 2 内核功能设置，设置如下：  
 <img src="/assets/img/share/tproxy-mix-cnip.png" alt="设置部分 1" width="60%" />
@@ -278,7 +278,7 @@ crash
 5. 进入主菜单 -> 7 内核进阶设置 -> 5 自定义端口及秘钥，设置为 `9090`
 6. 进入主菜单 -> 6 导入配置文件 -> 2 在线获取完整配置文件，粘贴第《一》步中生成的配置文件 .json 文件直链，启动服务即可
 
-# 七、 安装 AdGuard Home
+## 七、 安装 AdGuard Home
 1. 连接 SSH 后执行如下命令：
 
 ```shell
@@ -311,10 +311,10 @@ ip6tables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5353
 
 3. 按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
 
-# 八、 AdGuard Home 设置
+## 八、 AdGuard Home 设置
 设置可参考《[全网最详细的解锁 SSH ShellCrash 搭载 sing-boxp 内核搭配 AdGuard Home 安装和配置教程/AdGuard Home 配置](https://proxy-tutorials.dustinwin.top/posts/pin-shellcrashadguardhome-singbox/#2-adguard-home-%E9%85%8D%E7%BD%AE)》（可跳过“添加 DNS 重写”的步骤）
 
-# 九、 在线 Dashboard 面板
+## 九、 在线 Dashboard 面板
 推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd>
 1. 需要设置该网站“允许不安全内容”，以 Chrome 浏览器为例，进入设置 -> 隐私和安全 -> 网站设置 -> 更多内容设置 -> 不安全内容（或者直接打开 `chrome://settings/content/insecureContent` 进行设置），在“允许显示不安全内容”内添加 `metacubex.github.io`  
 <img src="/assets/img/share/chrome-setting-dashboard.png" alt="在线 Dashboard 面板 1" width="60%" />

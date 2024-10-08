@@ -8,14 +8,14 @@ tags: [Clash, mihomo, Clash Verge, ruleset, rule-set, 分享]
 
 - 声明：请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 
-# 一、 生成配置文件 .yaml 文件直链
+## 一、 生成配置文件 .yaml 文件直链
 具体方法此处不再赘述，请看《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
 
 ```yaml
 proxy-providers:
   🛫 我的机场:
     type: http
-    # 修改为你的 Clash 订阅链接
+    ## 修改为你的 Clash 订阅链接
     url: "https://example.com/xxx/xxx&flag=clash"
     path: ./proxies/airport.yaml
     interval: 86400
@@ -25,7 +25,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 600
 
-# 若没有单个出站代理节点，须删除所有 `🆓 免费节点` 相关内容
+## 若没有单个出站代理节点，须删除所有 `🆓 免费节点` 相关内容
 proxies:
   - name: 🆓 免费节点
     type: vless
@@ -44,7 +44,7 @@ proxies:
 
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🆓 免费节点]}
-  # 若机场的 UDP 质量不是很好，导致某游戏无法登录或进入房间，可以添加 `disable-udp: true` 配置项解决
+  ## 若机场的 UDP 质量不是很好，导致某游戏无法登录或进入房间，可以添加 `disable-udp: true` 配置项解决
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
   - {name: 📈 网络测试, type: select, proxies: [🎯 全球直连, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🆓 免费节点]}
   - {name: 🤖 人工智能, type: select, proxies: [🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点]}
@@ -207,7 +207,7 @@ rules:
   - MATCH,🐟 漏网之鱼
 ```
 
-# 二、 设置部分
+## 二、 设置部分
 1. 设置可参考《[Clash Verge 搭载 mihomo 内核的配置-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-clashverge-mihomo-ruleset)》，此处只列举配置的不同之处
 2. 进入 [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev) -> 设置 -> Clash 设置 -> Clash 内核，点击右边的“螺帽”图标后选择“Mihomo Alpha”，即**切换到 [mihomo Alpha 版内核](https://github.com/MetaCubeX/mihomo/tree/Alpha)**
 3. Clash Verge -> 订阅，右击“全局扩展配置”，选择“编辑文件”，将原配置全部删除后粘贴如下内容并“保存”：
@@ -246,7 +246,7 @@ dns:
     - https://dns.alidns.com/dns-query
 ```
 
-# 三、 在线 Dashboard 面板
+## 三、 在线 Dashboard 面板
 推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd>  
 首次进入 <https://metacubex.github.io/metacubexd> 需要添加“后端地址”，输入 `http://127.0.0.1:9090` 并点击“添加”，最后点击下方新增的 <http://127.0.0.1:9090> 即可访问 Dashboard 面板  
 <img src="/assets/img/share/127-9090-dashboard.png" alt="Dashboard 面板" width="60%" />
