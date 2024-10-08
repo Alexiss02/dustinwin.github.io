@@ -16,10 +16,13 @@
 6. sing-box 采用 ruleset 方案，采用 `rule_set` 规则搭配 .srs 和 .json [规则集文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%BA%8C-ruleset-%E8%A7%84%E5%88%99%E9%9B%86%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
 
 # 对下载源的说明
-1. 本教程默认下载源为 [jsDelivr 源](https://www.jsdelivr.com/github)，地址前缀为 <https://cdn.jsdelivr.net/gh/xxx>，此源中**文件更新有 12 小时延迟**
+1. 本教程默认下载源为 [jsDelivr 源](https://www.jsdelivr.com/github)，地址前缀为 `https://cdn.jsdelivr.net/gh/xxx`，此源中**文件更新有 12 小时延迟**
 2. 若 jsDelivr 源无法访问，可将地址前缀改为 `https://fastly.jsdelivr.net/gh/xxx`
-3. 推荐使用 [GitHub 源](https://github.com)，地址前缀分别为 <https://github.com/xx> 和 <https://raw.githubusercontent.com/xxx>
-4. 若 GitHub 源无法访问，可在地址前缀前加上 `https://ghp.ci/`，即将地址前缀分别改为 `https://ghp.ci/https://github.com/xx` 和 `https://ghp.ci/https://raw.githubusercontent.com/xxx`
+3. 推荐使用 [GitHub 源](https://github.com)，地址前缀分别为 `https://github.com/xxx` 和 `https://raw.githubusercontent.com/xxx`
+4. 若 GitHub 源无法访问，可在地址前缀前加上 `https://ghp.ci/`，即将地址前缀分别改为 `https://ghp.ci/https://github.com/xxx` 和 `https://ghp.ci/https://raw.githubusercontent.com/xxx`
+5. jsDelivr 源和 GitHub 源格式如下：  
+① jsDelivr 源格式为 `https://cdn.jsdelivr.net/gh/[username]/[reponame]@[branchename]/[filename]`  
+② GitHub 源格式为 `https://github.com/[username]/[reponame]/releases/download/[branchename]/[filename]`（推荐）和 `https://raw.githubusercontent.com/[username]/[reponame]/[branchename]/[filename]`
 
 # 给作者加鸡腿
 支付宝  
