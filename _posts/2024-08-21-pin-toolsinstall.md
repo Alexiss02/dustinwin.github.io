@@ -73,12 +73,12 @@ curl -o $CRASHDIR/CrashCore.tar.gz -L https://cdn.jsdelivr.net/gh/DustinWin/clas
 ## 三、 安装 Clash dashboard 面板
 **Clash dashboard 面板对应文件名和在线地址关系如下表：**
 
-| 面板类型         | 文件名               | 在线地址                                 |
-| ---------------- | -------------------- | ---------------------------------------- |
-| Razord-meta 面板 | `Razord-meta.tar.gz` | <https://clash.metacubex.one>            |
-| yacd 面板        | `yacd.tar.gz`        | <https://yacd.haishan.me>                |
-| Yacd-meta 面板   | `Yacd-meta.tar.gz`   | <https://yacd.metacubex.one>             |
-| metacubexd 面板  | `metacubexd.tar.gz`  | <https://metacubex.github.io/metacubexd> |
+| 面板类型         | 文件名               | 在线地址                                  |
+| ---------------- | -------------------- | ----------------------------------------- |
+| Razord-meta 面板 | `Razord-meta.tar.gz` | <https://clash.metacubex.one>             |
+| yacd 面板        | `yacd.tar.gz`        | <https://yacd.haishan.me>                 |
+| Yacd-meta 面板   | `Yacd-meta.tar.gz`   | <https://yacd.metacubex.one>              |
+| metacubexd 面板  | `metacubexd.tar.gz`  | <https://metacubex.github.io/metacubexd/> |
 
 连接 SSH 后执行如下命令：
 

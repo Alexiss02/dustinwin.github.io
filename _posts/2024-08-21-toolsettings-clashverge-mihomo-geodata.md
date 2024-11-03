@@ -75,6 +75,6 @@ dns:
 7. 进入设置 -> 系统设置，启用“Tun 模式”
 
 ## 三、 在线 Dashboard 面板
-推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd>  
+推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd/>  
 首次进入需要添加“后端地址”，输入 `http://127.0.0.1:9090` 并点击“添加”即可访问 Dashboard 面板  
 <img src="/assets/img/tools//127-9090-dashboard.png" alt="在线 Dashboard 面板" width="60%" />

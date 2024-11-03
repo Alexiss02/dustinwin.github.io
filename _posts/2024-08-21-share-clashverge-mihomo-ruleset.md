@@ -247,6 +247,6 @@ dns:
 ```
 
 ## 三、 在线 Dashboard 面板
-推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd>  
-首次进入 <https://metacubex.github.io/metacubexd> 需要添加“后端地址”，输入 `http://127.0.0.1:9090` 并点击“添加”，最后点击下方新增的 <http://127.0.0.1:9090> 即可访问 Dashboard 面板  
+推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd/>  
+首次进入 <https://metacubex.github.io/metacubexd/> 需要添加“后端地址”，输入 `http://127.0.0.1:9090` 并点击“添加”，最后点击下方新增的 <http://127.0.0.1:9090> 即可访问 Dashboard 面板  
 <img src="/assets/img/share/127-9090-dashboard.png" alt="Dashboard 面板" width="60%" />
