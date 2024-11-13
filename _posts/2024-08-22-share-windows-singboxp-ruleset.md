@@ -256,7 +256,9 @@ tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享, Windows]
   - 2. 或者删除此条命令，直接进入 *%PROGRAMFILES%\sing-box* 文件夹，新建 config.json 文件并粘贴配置内容
 
   ```shell
-  md "%PROGRAMFILES%\sing-box" "%PROGRAMFILES%\sing-box\providers" "%PROGRAMFILES%\sing-box\ruleset"
+  md "%PROGRAMFILES%\sing-box"
+  "%PROGRAMFILES%\sing-box\providers"
+  "%PROGRAMFILES%\sing-box\ruleset"
   takeown /f "%PROGRAMFILES%\sing-box" /a /r /d y
   icacls "%PROGRAMFILES%\sing-box" /inheritance:r
   icacls "%PROGRAMFILES%\sing-box" /remove[:g] "TrustedInstaller"
@@ -296,15 +298,26 @@ tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享, Windows]
 - 2. 或者删除此条命令，直接进入 *%PROGRAMFILES%\sing-box* 文件夹，修改 config.json 文件内的配置内容
 
 ```shell
+@echo off
+rem 下载 sing-box 相关文件
 curl -o "%USERPROFILE%\Downloads\sing-box.exe" -L https://github.com/DustinWin/clash_singbox-tools/releases/download/sing-box/sing-box-puernya-windows-amd64v3.exe
 curl -o "%USERPROFILE%\Downloads\config.json" -L {.json 配置文件直链}
+echo 下载 sing-box 相关文件成功
+
+rem 结束 sing-box 相关进程
 taskkill /f /t /im sing-box*
+echo 结束 sing-box 相关进程成功
+
+rem 更新 sing-box 内核和配置文件
 copy /y "%USERPROFILE%\Downloads\sing-box.exe" "%PROGRAMFILES%\sing-box"
 copy /y "%USERPROFILE%\Downloads\config.json" "%PROGRAMFILES%\sing-box"
-echo 更新 sing-box 内核和配置文件成功，等待 10 秒启动 sing-box 服务
+echo 更新 sing-box 内核和配置文件成功
+
+rem 更新 sing-box 内核和配置文件成功，等待 10 秒启动 sing-box 服务
 timeout /t 10 /nobreak
 cd "%PROGRAMFILES%\sing-box"
 start /min sing-box.exe run
+echo 启动 sing-box 服务成功
 pause
 ```
 
