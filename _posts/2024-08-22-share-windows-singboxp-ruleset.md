@@ -3,7 +3,7 @@ title: 分享 sing-boxp for Windows 采用 ruleset 方案 的一套配置
 description: 此方案适用于 sing-box，搭载 sing-boxp 内核，采用 `rule_set` 规则搭配 .srs 和 .json 规则集文件
 date: 2024-08-22 20:01:28 +0800
 categories: [分享配置, Windows]
-tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享, Windows]
+tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享]
 ---
 
 - 声明：请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
