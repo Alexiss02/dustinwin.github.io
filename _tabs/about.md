@@ -26,8 +26,8 @@ order: 4
 3. 推荐使用 [GitHub 源](https://github.com)，地址前缀分别为 `https://github.com/xxx` 和 `https://raw.githubusercontent.com/xxx`
 4. 若 GitHub 源无法访问，可在地址前缀前加上 `https://ghp.ci/`，即将地址前缀分别改为 `https://ghp.ci/https://github.com/xxx` 和 `https://ghp.ci/https://raw.githubusercontent.com/xxx`
 5. jsDelivr 源和 GitHub 源格式如下：  
-① jsDelivr 源格式为 `https://cdn.jsdelivr.net/gh/[username]/[reponame]@[branchename]/[filename]`  
-② GitHub 源格式为 `https://github.com/[username]/[reponame]/releases/download/[branchename]/[filename]`（推荐）和 `https://raw.githubusercontent.com/[username]/[reponame]/[branchename]/[filename]`
+① jsDelivr 源格式为 `https://cdn.jsdelivr.net/gh/[username]/[reponame]@[branchname]/[filename]`  
+② GitHub 源格式为 `https://github.com/[username]/[reponame]/releases/download/[branchname]/[filename]`（推荐）和 `https://raw.githubusercontent.com/[username]/[reponame]/[branchname]/[filename]`
 
 ## 给作者加鸡腿
 支付宝  
