@@ -209,8 +209,7 @@ rules:
 
 ## 二、 设置部分
 1. 设置可参考《[Clash Verge 搭载 mihomo 内核的配置-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-clashverge-mihomo-ruleset)》，此处只列举配置的不同之处
-2. 进入 [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev) -> 设置 -> Clash 设置 -> Clash 内核，点击右边的“螺帽”图标后选择“Mihomo Alpha”，即**切换到 [mihomo Alpha 版内核](https://github.com/MetaCubeX/mihomo/tree/Alpha)**
-3. Clash Verge -> 订阅，右击“全局扩展配置”，选择“编辑文件”，将原配置全部删除后粘贴如下内容并“保存”：
+2. Clash Verge -> 订阅，右击“全局扩展配置”，选择“编辑文件”，将原配置全部删除后粘贴如下内容并“保存”：
 
 ```yaml
 mode: rule

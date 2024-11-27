@@ -47,13 +47,12 @@ dns:
 ```
 
 ## 二、 启动 Clash
-1. 进入 Clash Verge -> 设置 -> 系统设置 -> 服务模式，点击“安装”，完成后点击“启用”
-2. 进入设置 -> 系统设置 -> Tun 模式，点击右边的螺帽图标，“Tun 堆栈模式”选择“Mixed”（若无法选择，可重启一下软件），然后点击“保存”
-3. 进入设置 -> Clash 设置，启用“局域网连接”和“IPv6”
+1. 进入设置 -> 系统设置 -> Tun(虚拟网卡)模式，点击右边的螺帽图标，“Tun 堆栈模式”选择“Mixed”，然后点击“保存”
+2. 进入设置 -> Clash 设置，启用“局域网连接”和“IPv6”
+3. 进入设置 -> Clash 设置 -> 外部控制，将“外部控制器监听地址”修改为 `127.0.0.1:9090`，然后点击“保存”
 4. 进入设置 -> Clash 设置 -> UWP 工具，点击“Exempt All”后再点击“Save Changes”
-5. 进入设置 -> Clash 设置 -> 外部控制，将“外部控制器监听地址”修改为 `127.0.0.1:9090`，然后点击“保存”
-6. 进入设置 -> Verge 设置 -> 杂项设置，将“默认测试链接”修改为 `https://www.gstatic.com/generate_204`，然后点击“保存”
-7. 进入设置 -> 系统设置，启用“Tun 模式”
+5. 进入设置 -> Verge 设置 -> 杂项设置，将“默认测试链接”修改为 `https://www.gstatic.com/generate_204`，然后点击“保存”
+6. 进入设置 -> 系统设置，启用“Tun(虚拟网卡)模式”
 
 ## 三、 在线 Dashboard 面板
 推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd/>  
