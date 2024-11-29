@@ -29,4 +29,5 @@
 <img src="/assets/img/about/alipay.jpg" alt="支付宝" width="20%" />
 
 # 机场推荐
-[Bitz Net](https://rd2.bnaffloop.com/#/register?code=HT0ALWZq)（仅次于一线机场，推荐打折时购买）
+[Bitz Net](https://rd2.bnaffloop.com/#/register?code=HT0ALWZq)（仅次于一线机场，推荐打折时购买）  
+85 折优惠码：`TURKEY24`（有效期至 2024 年 12 月 1 日 23:59 分）
