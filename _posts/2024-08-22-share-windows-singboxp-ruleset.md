@@ -1,12 +1,14 @@
 ---
-title: 分享 sing-boxp for Windows 采用 ruleset 方案 的一套配置
+title: 分享 sing-boxp for Windows 采用 ruleset 方案的一套配置
 description: 此方案适用于 sing-box，搭载 sing-boxp 内核，采用 `rule_set` 规则搭配 .srs 和 .json 规则集文件
 date: 2024-08-22 20:01:28 +0800
 categories: [分享配置, Windows]
 tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享]
 ---
 
-- 声明：请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
+## 声明：
+1. 请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
+2. 此方案采用**裸核**的方式运行，更加精简
 
 ## 一、 生成配置文件 .json 文件直链
 具体方法请参考《[生成带有自定义出站和规则的 sing-box 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-ruleset)》，贴一下我使用的配置：
@@ -256,6 +258,7 @@ tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享]
   - 2. 或者删除此条命令，直接进入 *%PROGRAMFILES%\sing-box* 文件夹，新建 config.json 文件并粘贴配置内容
 
   ```shell
+  rem 导入 sing-box 内核和配置文件
   md "%PROGRAMFILES%\sing-box"
   "%PROGRAMFILES%\sing-box\providers"
   "%PROGRAMFILES%\sing-box\ruleset"

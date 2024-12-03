@@ -248,7 +248,7 @@ echo -e '12345678\n12345678' | passwd root
 进入 1 切换防火墙运行模式 -> 9 ipv6 设置，若机场节点支持 IPv6，可开启 1 ipv6 透明代理；根据自身需要开启 3 CNV6 绕过内核  
 <img src="/assets/img/pin/ipv6-setting.png" alt="ShellCrash 配置 2" width="60%" />
 
-  进入 2 切换 DNS 运行模式，选择选择 2 redir_host 模式（更推荐使用 redir-host 模式，兼容性更高，与 AdGuard Home 搭配更简单）  
+  进入 2 切换 DNS 运行模式，选择 3 mix 混合模式  
   进入 4 DNS 进阶设置，选择 4 一键配置加密 DNS，选择 7 禁用 DNS 劫持  
   注：
 
@@ -258,7 +258,7 @@ echo -e '12345678\n12345678' | passwd root
   <img src="/assets/img/pin/dns-setting.png" alt="ShellCrash 配置 3" width="60%" />
 
   返回到 2 内核功能设置，根据自身需要开启 8 CN_IP 绕过内核  
-  <img src="/assets/img/pin/tproxy-redit-host.png" alt="ShellCrash 配置 4" width="60%" />
+  <img src="/assets/img/pin/tproxy-mix.png" alt="ShellCrash 配置 4" width="60%" />
 
 - ⑤ 进入主菜单 -> 4 内核启动设置，选择 1 允许 ShellCrash 开机启动（若重启路由器后服务没有自动运行，可“设置自启延时”为 30 秒，然后在第《六、 1. ⑥》，将 `sleep 10s` 改为 `sleep 40s`）
 - ⑥ 进入主菜单 -> 7 内核进阶设置，选择 4 启用域名嗅探
@@ -276,7 +276,7 @@ echo -e '12345678\n12345678' | passwd root
 - ⑧ 进入主菜单 -> 6 导入配置文件  
 注：
   - 1. 选择 1 在线生成 meta 配置文件，粘贴你的订阅链接并回车，输入“1”并再次回车即可
-  - 2. 选择 2 在线获取完整配置文件，需要一定的 Clash 知识储备，请查看《[生成带有自定义策略组和规则的 Clash 配置文件直链-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-geodata)》或《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》
+  - 2. 选择 2 在线获取完整配置文件，需要一定的 Clash 知识储备，请查看《[生成带有自定义代理组和规则的 Clash 配置文件直链-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-geodata)》或《[生成带有自定义代理组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》
 
   导入配置文件完成后，选择 1 启动/重启服务  
   **ShellCrash 配置成功！**

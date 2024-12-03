@@ -32,16 +32,18 @@ rule-providers:
     interval: 86400
 ```
 
-## 二、 ShellCrash 设置
-1. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，将“当前基础 DNS”和“PROXY-DNS”都设置为“null”  
-<img src="/assets/img/dns/dns-null.png" alt="ShellCrash 设置" width="60%" />
+## 二、 DNS 分流配置（以 ShellCrash 为例）
+1. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式，选择“3 mix混合模式”  
+<img src="/assets/img/dns/dns-mix.png" alt="ShellCrash DNS 运行模式设置" width="60%" />
 
-2. 连接 SSH 后执行命令 `vi $CRASHDIR/yamls/user.yaml`，按一下 Ins 键（Insert 键），粘贴如下内容：
+2. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，将“当前基础 DNS”和“PROXY-DNS”都设置为“null”  
+<img src="/assets/img/dns/dns-null.png" alt="ShellCrash DNS 进阶设置" width="60%" />
+
+3. 连接 SSH 后执行命令 `vi $CRASHDIR/yamls/user.yaml`，按一下 Ins 键（Insert 键），粘贴如下内容：
 
 ```yaml
 dns:
   enable: true
-  prefer-h3: true
   ipv6: true
   listen: 0.0.0.0:1053
   fake-ip-range: 198.18.0.1/16
@@ -53,20 +55,3 @@ dns:
 ```
 
 按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
-
-## 三、 [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev) 设置
-进入 Clash Verge -> 订阅，右击“全局扩展配置”，选择“编辑文件”，将 `dns` 部分修改为如下内容并“保存”：
-
-```yaml
-dns:
-  enable: true
-  prefer-h3: true
-  ipv6: true
-  listen: 0.0.0.0:1053
-  fake-ip-range: 198.18.0.1/16
-  enhanced-mode: fake-ip
-  fake-ip-filter: ['rule-set:fakeip-filter,cn']
-  nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-```

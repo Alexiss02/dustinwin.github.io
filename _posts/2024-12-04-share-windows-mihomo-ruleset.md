@@ -1,15 +1,17 @@
 ---
-title: 分享 Clash Verge 搭载 mihomo 内核采用 ruleset 方案的一套配置
+title: 分享 mihomo for Windows 采用 ruleset 方案的一套配置
 description: 此方案适用于 Clash，搭载 mihomo 内核，采用 `RULE-SET` 规则搭配 .yaml、.text 和 .mrs 规则集合文件
-date: 2024-08-21 08:55:58 +0800
+date: 2024-12-04 02:30:00 +0800
 categories: [分享配置, Windows]
-tags: [Clash, mihomo, Clash Verge, ruleset, rule-set, 分享]
+tags: [mihomo, Windows, ruleset, rule-set, 分享]
 ---
 
-- 声明：请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
+## 声明：
+1. 请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
+2. 此方案采用**裸核**的方式运行，更加精简
 
 ## 一、 生成配置文件 .yaml 文件直链
-具体方法此处不再赘述，请看《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
+具体方法请参考《[生成带有自定义代理组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
 
 ```yaml
 proxy-providers:
@@ -24,6 +26,47 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 600
+
+mode: rule
+log-level: error
+ipv6: true
+allow-lan: true
+mixed-port: 7890
+unified-delay: false
+tcp-concurrent: true
+external-controller: 127.0.0.1:9090
+find-process-mode: strict
+global-client-fingerprint: chrome
+profile: {store-selected: true}
+
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  sniff: {HTTP: {ports: [80, 8080-8880]}, TLS: {ports: [443, 8443]}, QUIC: {ports: [443, 8443]}}
+  skip-domain: ['Mijia Cloud']
+
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack: [any:53]
+  auto-route: true
+  auto-detect-interface: true
+  device: mihomo
+  strict-route: true
+
+hosts:
+  'miwifi.com': 192.168.31.1
+
+dns:
+  enable: true
+  ipv6: true
+  listen: 0.0.0.0:1053
+  fake-ip-range: 198.18.0.1/16
+  enhanced-mode: fake-ip
+  fake-ip-filter: ['rule-set:fakeip-filter,private,cn']
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
 
 ## 若没有单个出站代理节点，须删除所有 `🆓 免费节点` 相关内容
 proxies:
@@ -207,45 +250,81 @@ rules:
   - MATCH,🐟 漏网之鱼
 ```
 
-## 二、 设置部分
-1. 设置可参考《[Clash Verge 搭载 mihomo 内核的配置-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-clashverge-mihomo-ruleset)》，此处只列举配置的不同之处
-2. Clash Verge -> 订阅，右击“全局扩展配置”，选择“编辑文件”，将原配置全部删除后粘贴如下内容并“保存”：
+## 二、 导入 [mihomo 内核](https://github.com/MetaCubeX/mihomo)和配置文件并启动 mihomo
+### 1. 导入内核和配置文件
+- ① 编辑本文文档，粘贴如下内容：  
+  注：
+  - 1. 将第《一》步生成的配置文件 .yaml 文件直链替换下面命令中的 `{.yaml 配置文件直链}`
+  - 2. 或者删除此条命令，直接进入 *%PROGRAMFILES%\mihomo\profiles* 文件夹，新建 config.yaml 文件并粘贴配置内容
 
-```yaml
-mode: rule
-log-level: error
-ipv6: true
-allow-lan: true
-unified-delay: false
-tcp-concurrent: true
-external-controller-tls: 127.0.0.1:9090
-find-process-mode: strict
-global-client-fingerprint: chrome
-profile: {store-selected: true}
+  ```shell
+  rem 导入 mihomo 内核和配置文件
+  md "%PROGRAMFILES%\mihomo\profiles"
+  takeown /f "%PROGRAMFILES%\mihomo" /a /r /d y
+  icacls "%PROGRAMFILES%\mihomo" /inheritance:r
+  icacls "%PROGRAMFILES%\mihomo" /remove[:g] "TrustedInstaller"
+  icacls "%PROGRAMFILES%\mihomo" /remove[:g] "CREATOR OWNER"
+  icacls "%PROGRAMFILES%\mihomo" /remove[:g] "ALL APPLICATION PACKAGES"
+  icacls "%PROGRAMFILES%\mihomo" /remove[:g] "所有受限制的应用程序包"
+  icacls "%PROGRAMFILES%\mihomo" /grant[:r] SYSTEM:(OI)(CI)F
+  icacls "%PROGRAMFILES%\mihomo" /grant[:r] Administrators:(OI)(CI)F
+  icacls "%PROGRAMFILES%\mihomo" /grant[:r] Users:(OI)(CI)F
+  curl -o "%PROGRAMFILES%\mihomo\mihomo.exe" -L https://ghp.ci/https://github.com/DustinWin/clash_singbox-tools/releases/download/mihomo/mihomo-meta-windows-amd64v3.exe
+  curl -o "%PROGRAMFILES%\mihomo\profiles\config.yaml" -L {.yaml 配置文件直链}
+  echo 导入 mihomo 内核和配置文件成功
+  pause
+  ```
 
-sniffer:
-  enable: true
-  parse-pure-ip: true
-  sniff: {HTTP: {ports: [80, 8080-8880]}, TLS: {ports: [443, 8443]}, QUIC: {ports: [443, 8443]}}
-  skip-domain: ['Mijia Cloud']
+- ② 另存为 .bat 文件，右击并选择“以管理员身份运行”
 
-hosts:
-  'miwifi.com': 192.168.31.1
+### 2. 启动 mihomo
+- ① 编辑本文文档，粘贴如下内容：
 
-dns:
-  enable: true
-  prefer-h3: true
-  ipv6: true
-  listen: 0.0.0.0:1053
-  fake-ip-range: 198.18.0.1/16
-  enhanced-mode: fake-ip
-  fake-ip-filter: ['rule-set:fakeip-filter,private,cn']
-  nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+  ```shell
+  cd "%PROGRAMFILES%\mihomo"
+  start /min mihomo.exe -d profiles\
+  ```
+
+- ② 另存为 run.bat 文件并复制到 *%PROGRAMFILES%\mihomo* 文件夹中
+- ③ 右击 run.bat 文件并选择“以管理员身份运行”即可  
+  小窍门：
+  - 1. 右击 run.bat 文件并选择“发送到桌面快捷方式”
+  - 2. 右击快捷方式并点击“属性” -> “高级”，勾选“以管理员身份运行”并“确定”
+  - 3. 若想开机启动 mihomo，可搜索“Windows 添加任务计划”教程自行添加
+
+## 三、 更新 mihomo 内核和配置文件
+编辑本文文档，粘贴如下内容：  
+注：
+- 1. 将第《一》步生成的配置文件 .yaml 文件直链替换下面命令中的 `{.yaml 配置文件直链}`
+- 2. 或者删除此条命令，直接进入 *%PROGRAMFILES%\mihomo* 文件夹，修改 config.yaml 文件内的配置内容
+
+```shell
+@echo off
+rem 下载 mihomo 相关文件
+curl -o "%USERPROFILE%\Downloads\mihomo.exe" -L https://github.com/DustinWin/clash_singbox-tools/releases/download/mihomo/mihomo-meta-windows-amd64v3.exe
+curl -o "%USERPROFILE%\Downloads\config.yaml" -L {.yaml 配置文件直链}
+echo 下载 mihomo 相关文件成功
+
+rem 结束 mihomo 相关进程
+taskkill /f /t /im mihomo*
+echo 结束 mihomo 相关进程成功
+
+rem 更新 mihomo 内核和配置文件
+copy /y "%USERPROFILE%\Downloads\mihomo.exe" "%PROGRAMFILES%\mihomo"
+copy /y "%USERPROFILE%\Downloads\config.yaml" "%PROGRAMFILES%\mihomo\profiles"
+echo 更新 mihomo 内核和配置文件成功
+
+rem 更新 mihomo 内核和配置文件成功，等待 10 秒启动 mihomo 服务
+timeout /t 10 /nobreak
+cd "%PROGRAMFILES%\mihomo"
+start /min mihomo.exe -d profiles\
+echo 启动 mihomo 服务成功
+pause
 ```
 
-## 三、 在线 Dashboard 面板
+另存为 .bat 文件，右击并选择“以管理员身份运行”
+
+## 四、 在线 Dashboard 面板
 推荐使用在线 Dashboard 面板 [metacubexd](https://github.com/metacubex/metacubexd)，访问地址：<https://metacubex.github.io/metacubexd/>  
-首次进入 <https://metacubex.github.io/metacubexd/> 需要添加“后端地址”，输入 `http://127.0.0.1:9090` 并点击“添加”，最后点击下方新增的 <http://127.0.0.1:9090> 即可访问 Dashboard 面板  
-<img src="/assets/img/share/127-9090-dashboard.png" alt="Dashboard 面板" width="60%" />
+首次进入 <https://metacubex.github.io/metacubexd/> 需要添加“后端地址”，输入 `http://127.0.0.1:9090` 并点击“添加”即可访问 Dashboard 面板  
+<img src="/assets/img/share/127-9090-dashboard.png" alt="在线 Dashboard 面板" width="60%" />

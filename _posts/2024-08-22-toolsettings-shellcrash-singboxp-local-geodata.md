@@ -1,5 +1,5 @@
 ---
-title: ShellCrash 搭载 sing-boxp 内核本地配置自定义策略组和规则-geodata 方案
+title: ShellCrash 搭载 sing-boxp 内核本地配置自定义出站和规则-geodata 方案
 description: 此方案适用于 sing-box，搭载 sing-boxp 内核，采用 `geosite` 和 `geoip` 规则搭配 geosite.db 和 geoip.db 路由规则文件
 date: 2024-08-22 18:08:50 +0800
 categories: [工具配置, ShellCrash 配置]

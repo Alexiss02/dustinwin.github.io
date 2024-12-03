@@ -12,7 +12,7 @@ tags: [Clash, mihomo, ShellCrash, ruleset, rule-set, 分享, Router]
 3. 此方案已摒弃 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)，但拦截广告效果依然强劲
 
 ## 一、 生成配置文件 .yaml 文件直链
-具体方法此处不再赘述，请看《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
+具体方法此处不再赘述，请看《[生成带有自定义代理组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
 
 ```yaml
 proxy-providers:
@@ -232,7 +232,6 @@ hosts:
 
 dns:
   enable: true
-  prefer-h3: true
   ipv6: true
   listen: 0.0.0.0:1053
   fake-ip-range: 198.18.0.1/16
@@ -259,7 +258,7 @@ dns:
 ## 五、 设置部分
 1. 设置可参考《[ShellCrash 搭载 mihomo 内核的配置-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-shellcrash-mihomo-ruleset)》，此处只列举配置的不同之处
 2. 进入主菜单 -> 2 内核功能设置，设置如下：  
-<img src="/assets/img/share/tproxy-fake-ip.png" alt="设置部分 1" width="60%" />
+<img src="/assets/img/share/tproxy-mix.png" alt="设置部分 1" width="60%" />
 
 3. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，设置如下：  
 <img src="/assets/img/share/dns-null.png" alt="设置部分 2" width="60%" />

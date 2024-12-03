@@ -14,7 +14,7 @@ tags: [Clash, mihomo, ShellCrash, AdGuard Home, ruleset, rule-set, 分享, Route
 5. 此方案适用于 AdGuard Home（以 arm64 架构为例，且安装路径为 */data/AdGuardHome*）
 
 ## 一、 生成配置文件 .yaml 文件直链
-具体方法此处不再赘述，请看《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
+具体方法此处不再赘述，请看《[生成带有自定义代理组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
 
 ```yaml
 proxy-providers:
@@ -207,7 +207,7 @@ crash
 ## 三、 编辑 user.yaml 文件
 连接 SSH 后执行 `vi $CRASHDIR/yamls/user.yaml`，按一下 Ins 键（Insert 键），粘贴如下内容：  
 注：
-- 1. 由于 ShellCrash 采用的 DNS 模式类似于 [sing-box 内核](https://github.com/SagerNet/sing-box)中的 `mix` 模式（即 `rule-set:cn` 走国内 DNS 解析，其它域名包括国外域名走 `fake-ip`），**ShellCrash 传给 AdGuard Home 的国外域名对应 IP 为假 IP**，会导致 AdGuard Home 检查更新和下载更新 DNS 黑名单时失败
+- 1. 由于 ShellCrash 采用的 DNS 模式为 `mix`，**ShellCrash 传给 AdGuard Home 的国外域名对应 IP 为假 IP**，会导致 AdGuard Home 检查更新和下载更新 DNS 黑名单时失败
 - 2. `dns.fake-ip-filter` 中添加了 AdGuard Home 常用域名，包括：`adguardteam.github.io`（AdGuard Home 自带 DNS 黑名单下载域名）、`adrules.top`（常用广告拦截下载域名）、`anti-ad.net`（常用广告拦截下载域名）和 `static.adtidy.org`（AdGuard Home 检查更新域名），使这些域名不走 `fakeip`
 - 3. 不推荐使用自带更新去更新，推荐第《四》步通过定时任务去自动更新（AdGuard Home 程序已被压缩，节省空间）  
 <img src="/assets/img/share/update-adguardhome.png" alt="编辑 user.yaml 文件" width="60%" />
@@ -232,7 +232,6 @@ hosts:
 
 dns:
   enable: true
-  prefer-h3: true
   ipv6: true
   listen: 0.0.0.0:1053
   fake-ip-range: 198.18.0.1/16
@@ -261,7 +260,7 @@ dns:
 ## 五、 ShellCrash 设置
 1. 设置可参考《[ShellCrash 搭载 mihomo 内核的配置-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-shellcrash-mihomo-ruleset)》，此处只列举配置的不同之处
 2. 进入主菜单 -> 2 内核功能设置，设置如下：  
-<img src="/assets/img/share/tproxy-redir-host.png" alt="ShellCrash 设置 1" width="60%" />
+<img src="/assets/img/share/tproxy-mix-cnip.png" alt="ShellCrash 设置 1" width="60%" />
 
 3. 进入主菜单 -> 2 内核功能设置 -> 1 切换防火墙运行模式 -> 9 ipv6 设置，开启 3 CNV6 绕过内核
 4. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，设置如下：  

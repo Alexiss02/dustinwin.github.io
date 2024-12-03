@@ -9,7 +9,7 @@ tags: [Clash, Clash.Meta, mihomo, Android, ruleset, rule-set, 分享]
 - 声明：请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 
 ## 一、 生成配置文件 .yaml 文件直链
-具体方法请参考《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
+具体方法请参考《[生成带有自定义代理组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
 
 ```yaml
 proxy-providers:
@@ -32,9 +32,10 @@ allow-lan: true
 mixed-port: 7890
 unified-delay: false
 tcp-concurrent: true
-external-controller-tls: 127.0.0.1:9090
+external-controller: 127.0.0.1:9090
 find-process-mode: strict
 global-client-fingerprint: chrome
+profile: {store-selected: true}
 
 sniffer:
   enable: true
@@ -44,7 +45,7 @@ sniffer:
 
 tun:
   enable: true
-  stack: system
+  stack: mixed
   dns-hijack: [any:53]
   auto-route: true
   auto-detect-interface: true
@@ -56,7 +57,6 @@ hosts:
 
 dns:
   enable: true
-  prefer-h3: true
   ipv6: true
   listen: 0.0.0.0:1053
   fake-ip-range: 198.18.0.1/16

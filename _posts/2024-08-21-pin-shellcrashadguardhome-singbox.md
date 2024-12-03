@@ -275,7 +275,7 @@ echo -e '12345678\n12345678' | passwd root
 - ⑦ 进入主菜单 -> 6 导入配置文件  
 注：
   - 1. 选择 1 在线生成 singboxp 配置文件，粘贴你的订阅链接并回车，输入“1”并再次回车即可
-  - 2. 选择 2 在线获取完整配置文件，需要一定的 sing-box 知识储备，请查看《[生成带有自定义策略组和规则的 sing-box 配置文件直链-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-geodata)》或《[生成带有自定义策略组和规则的 sing-box 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-ruleset)》
+  - 2. 选择 2 在线获取完整配置文件，需要一定的 sing-box 知识储备，请查看《[生成带有自定义出站和规则的 sing-box 配置文件直链-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-geodata)》或《[生成带有自定义出站和规则的 sing-box 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-ruleset)》
 
   导入配置文件完成后，选择 1 启动/重启服务  
   **ShellCrash 配置成功！**
