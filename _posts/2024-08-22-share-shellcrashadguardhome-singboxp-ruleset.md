@@ -92,7 +92,7 @@ tags: [sing-box, sing-boxp, ShellCrash, AdGuard Home, ruleset, rule_set, 分享,
         "type": "remote",
         "format": "binary",
         "path": "./ruleset/fakeip-filter.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/fakeip-filter.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/fakeip-filter-lite.srs"
       },
       {
         "tag": "private",

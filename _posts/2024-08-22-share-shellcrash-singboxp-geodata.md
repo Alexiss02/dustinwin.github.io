@@ -158,7 +158,7 @@ curl -o $CRASHDIR/geoip.db -L https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geod
       "enabled": true,
       "inet4_range": "198.18.0.0/15",
       "inet6_range": "fc00::/18",
-      "exclude_rule": { "geosite": [ "fakeip-filter", "private" ] }
+      "exclude_rule": { "geosite": [ "fakeip-filter-lite", "private" ] }
     }
   }
 }

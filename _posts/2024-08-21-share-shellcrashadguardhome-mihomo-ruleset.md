@@ -77,7 +77,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/fakeip-filter.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/fakeip-filter.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/fakeip-filter-lite.mrs"
     interval: 86400
 
   private:

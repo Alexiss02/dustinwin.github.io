@@ -93,7 +93,7 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 分享, Router]
         "type": "remote",
         "format": "binary",
         "path": "./ruleset/fakeip-filter.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/fakeip-filter.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/fakeip-filter-lite.srs"
       },
       {
         "tag": "private",
