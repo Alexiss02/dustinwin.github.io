@@ -30,7 +30,11 @@ dns:
   fake-ip-range: 198.18.0.1/16
   enhanced-mode: fake-ip
   fake-ip-filter: ['geosite:fakeip-filter,cn']
+  respect-rules: true
   nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  proxy-server-nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
 ```

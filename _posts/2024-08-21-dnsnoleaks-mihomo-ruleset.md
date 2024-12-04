@@ -50,15 +50,18 @@ rule-providers:
     fake-ip-range: 198.18.0.1/16
     enhanced-mode: fake-ip
     fake-ip-filter: ['rule-set:fakeip-filter']
+    respect-rules: true
     nameserver:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
+    proxy-server-nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
   ```
 
   按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
 - ② DNS 模式为 `redir-host`  
 连接 SSH 后执行 `vi $CRASHDIR/yamls/user.yaml`，按一下 Ins 键（Insert 键），粘贴如下内容：
-  - 注：代理组 `proxy-groups` 内必须含有 `🪜 代理域名` 且其链路走节点
 
   ```yaml
   dns:
@@ -68,9 +71,10 @@ rule-providers:
     fake-ip-range: 198.18.0.1/16
     enhanced-mode: fake-ip
     fake-ip-filter: ['+.*']
+    respect-rules: true
     nameserver:
-      - 'https://dns.google/dns-query#🪜 代理域名'
-      - 'https://cloudflare-dns.com/dns-query#🪜 代理域名'
+      - https://dns.google/dns-query
+      - https://cloudflare-dns.com/dns-query
     proxy-server-nameserver:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
@@ -82,7 +86,6 @@ rule-providers:
   按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
 - ③ DNS 模式为 `mix`  
 连接 SSH 后执行 `vi $CRASHDIR/yamls/user.yaml`，按一下 Ins 键（Insert 键），粘贴如下内容：
-  - 注：代理组 `proxy-groups` 内必须含有 `🪜 代理域名` 且其链路走节点
 
   ```yaml
   dns:
@@ -92,9 +95,10 @@ rule-providers:
     fake-ip-range: 198.18.0.1/16
     enhanced-mode: fake-ip
     fake-ip-filter: ['rule-set:fakeip-filter,private,cn']
+    respect-rules: true
     nameserver:
-      - 'https://dns.google/dns-query#🪜 代理域名'
-      - 'https://cloudflare-dns.com/dns-query#🪜 代理域名'
+      - https://dns.google/dns-query
+      - https://cloudflare-dns.com/dns-query
     proxy-server-nameserver:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
