@@ -8,7 +8,7 @@ tags: [sing-box, sing-boxp, Android, ruleset, rule_set, 分享]
 
 ### 声明：
 1. 请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
-2. 由于 [sing-boxp for Android](https://github.com/PuerNya/sing-box/actions/workflows/sfa.yml) v1.10.0+ 版本迟迟没有出来，所以改回 v1.9.0 版本的配置，现在可以正常使用了
+2. **规则集暂时不可用**，等 [sing-boxp for Android](https://github.com/PuerNya/sing-box/actions/workflows/sfa.yml) v1.10.0+ 版本吧
 
 ## 一、 生成配置文件 .json 文件直链
 具体方法请参考《[生成带有自定义出站和规则的 sing-box 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-ruleset)》，贴一下我使用的配置：
@@ -135,105 +135,105 @@ tags: [sing-box, sing-boxp, Android, ruleset, rule_set, 分享]
         "type": "remote",
         "format": "binary",
         "path": "./fakeip-filter.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/fakeip-filter-lite.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/fakeip-filter-lite.srs"
       },
       {
         "tag": "applications",
         "type": "remote",
         "format": "binary",
         "path": "./applications.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/applications.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/applications.srs"
       },
       {
         "tag": "private",
         "type": "remote",
         "format": "binary",
         "path": "./private.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/private.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/private.srs"
       },
       {
         "tag": "ads",
         "type": "remote",
         "format": "binary",
         "path": "./ads.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/ads.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/ads.srs"
       },
       {
         "tag": "microsoft-cn",
         "type": "remote",
         "format": "binary",
         "path": "./microsoft-cn.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/microsoft-cn.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/microsoft-cn.srs"
       },
       {
         "tag": "apple-cn",
         "type": "remote",
         "format": "binary",
         "path": "./apple-cn.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/apple-cn.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/apple-cn.srs"
       },
       {
         "tag": "google-cn",
         "type": "remote",
         "format": "binary",
         "path": "./google-cn.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/google-cn.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/google-cn.srs"
       },
       {
         "tag": "games-cn",
         "type": "remote",
         "format": "binary",
         "path": "./games-cn.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/games-cn.srs"
       },
       {
         "tag": "ai",
         "type": "remote",
         "format": "binary",
         "path": "./ai.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/ai.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/ai.srs"
       },
       {
         "tag": "networktest",
         "type": "remote",
         "format": "binary",
         "path": "./networktest.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/networktest.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/networktest.srs"
       },
       {
         "tag": "proxy",
         "type": "remote",
         "format": "binary",
         "path": "./proxy.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/proxy.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/proxy.srs"
       },
       {
         "tag": "cn",
         "type": "remote",
         "format": "binary",
         "path": "./cn.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cn.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/cn.srs"
       },
       {
         "tag": "telegramip",
         "type": "remote",
         "format": "binary",
         "path": "./telegramip.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/telegramip.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/telegramip.srs"
       },
       {
         "tag": "privateip",
         "type": "remote",
         "format": "binary",
         "path": "./privateip.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/privateip.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/privateip.srs"
       },
       {
         "tag": "cnip",
         "type": "remote",
         "format": "binary",
         "path": "./cnip.srs",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/cnip.srs"
       }
     ],
     "final": "🐟 漏网之鱼",
