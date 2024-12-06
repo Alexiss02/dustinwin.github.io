@@ -59,10 +59,11 @@ tags: [sing-box, sing-boxp, ShellCrash, geodata, geosite, 进阶, 本地, Router
       {
         "tag": "🛫 我的机场 2",
         "type": "remote",
-        "download_url": "https://example.com/xxx/xxx&flag=clash",
-        "path": "./providers/airport2.yaml",
+        // 机场订阅链接，使用 sing-box 链接
+        "download_url": "https://example.com/xxx/xxx",
+        "path": "./providers/airport2.json",
         "download_interval": "24h",
-        "download_ua": "clash.meta",
+        "download_ua": "sing-box",
         "includes": [ "香港|台湾|日本|新加坡|美国" ],
         "excludes": "高倍|×10",
         "healthcheck_url": "https://www.gstatic.com/generate_204",
