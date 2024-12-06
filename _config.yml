@@ -214,7 +214,7 @@ exclude:
   - tools
   - README.md
   - LICENSE
-  - "*.config.js"
+  - "*.js"
   - package*.json
 
 jekyll-archives:
