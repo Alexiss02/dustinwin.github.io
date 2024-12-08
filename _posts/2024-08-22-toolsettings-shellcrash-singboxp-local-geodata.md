@@ -25,7 +25,7 @@ tags: [sing-box, sing-boxp, ShellCrash, geodata, geosite, 进阶, 本地, Router
 2. 进入 ShellCrash -> 6 导入配置文件 -> 1 在线生成 singbox 配置文件，输入订阅链接后回车，再输入“1”并回车即可
 
 ## 三、 自定义出站和规则
-### 1. 自定义代理集合 outbound_providers.json（用于添加自定义出站提供者）
+### 1. 自定义代理集合 outbound_providers.json（用于添加自定义出站提供者 `outbound_providers`）
 - ① 连接 SSH 后执行命令 `mkdir -p $CRASHDIR/providers/`  
   - 注：因 `outbound_providers` 代理集合配置的 `path` 路径中含有文件夹“*providers*”，须手动新建此文件夹才能使 .yaml 订阅文件保存到本地，否则将保存到内存中（每次启动服务都要重新下载）
 
@@ -81,7 +81,7 @@ tags: [sing-box, sing-boxp, ShellCrash, geodata, geosite, 进阶, 本地, Router
 
   按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
 
-### 2. 自定义出站 outbounds.json（用于添加自定义出站）
+### 2. 自定义出站 outbounds.json（用于添加自定义出站 `outbounds`）
 连接 SSH 后执行命令 `vi $CRASHDIR/jsons/outbounds.json`，按一下 Ins 键（Insert 键），编辑如下内容并粘贴：
 
 ```json
@@ -128,7 +128,7 @@ tags: [sing-box, sing-boxp, ShellCrash, geodata, geosite, 进阶, 本地, Router
 
 按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
 
-### 3. 自定义规则 route.json（用于添加自定义路由和规则）
+### 3. 自定义规则 route.json（用于添加自定义路由和规则 `route`）
 连接 SSH 后执行命令 `vi $CRASHDIR/jsons/route.json`，按一下 Ins 键（Insert 键），编辑如下内容并粘贴：
 
 ```json

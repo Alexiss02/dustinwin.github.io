@@ -14,7 +14,7 @@ tags: [Clash, mihomo, ShellCrash, AdGuard Home, ruleset, rule-set, 分享, Route
 5. 此方案适用于 AdGuard Home（以 arm64 架构为例，且安装路径为 */data/AdGuardHome*）
 
 ## 一、 生成配置文件 .yaml 文件直链
-具体方法此处不再赘述，请看《[生成带有自定义代理组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
+具体方法此处不再赘述，请看《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
 
 ```yaml
 proxy-providers:

@@ -1,5 +1,5 @@
 ---
-title: 生成带有自定义代理组和规则的 Clash 配置文件直链-geodata 方案
+title: 生成带有自定义策略组和规则的 Clash 配置文件直链-geodata 方案
 description: 此方案适用于 Clash，采用 `GEOSITE` 和 `GEOIP` 规则搭配 geosite.dat 和 geoip.dat（或 Country.mmdb）路由规则文件
 date: 2024-08-21 07:12:24 +0800
 categories: [直链配置, Clash 直链]
@@ -86,9 +86,9 @@ proxies:
       headers:
         host: example.com
 
-## 代理组
+## 策略组
 proxy-groups:
-  ## 手动选择国家或地区节点；根据“国家或地区代理组”名称对 `proxies` 值进行增删改，须一一对应
+  ## 手动选择国家或地区节点；根据“国家或地区策略组”名称对 `proxies` 值进行增删改，须一一对应
   - {name: 🚀 节点选择, type: select, proxies: [🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🆓 免费节点]}
   ## 若机场的 UDP 质量不是很好，导致某游戏无法登录或进入房间，可以添加 `disable-udp: true` 配置项解决
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
@@ -107,10 +107,10 @@ proxy-groups:
   - {name: 🛑 广告拦截, type: select, proxies: [REJECT]}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
 
-  ## ----------------国家或地区代理组---------------------
+  ## ----------------国家或地区策略组---------------------
   ## 自动选择节点，即按照 url 测试结果使用延迟最低的节点；测试后容差大于 50ms 才会切换到延迟低的那个节点；筛选出“香港”节点，支持正则表达式
   - {name: 🇭🇰 香港节点, type: url-test, tolerance: 50, use: [🛫 我的机场 1, 🛫 我的机场 2], filter: "(?i)港|hk|hongkong|hong kong"}
-  ## 节点负载均衡，即将请求均匀分配到多个节点上，优点是更稳定，速度可能有提升；将相同顶级域名的请求分配给代理组内的同一个代理节点；推荐在节点复用比较多的情况下使用
+  ## 节点负载均衡，即将请求均匀分配到多个节点上，优点是更稳定，速度可能有提升；将相同顶级域名的请求分配给策略组内的同一个代理节点；推荐在节点复用比较多的情况下使用
   - {name: 🇹🇼 台湾节点, type: load-balance, strategy: consistent-hashing, use: [🛫 我的机场 1, 🛫 我的机场 2], filter: "(?i)台|tw|taiwan"}
   ## 可使用 `include-all-providers: true` 代替 `use: [🛫 我的机场 1, 🛫 我的机场 2, ...]`，意思为引入所有代理集合
   - {name: 🇯🇵 日本节点, type: url-test, tolerance: 50, include-all-providers: true, filter: "(?i)日本|jp|japan"}
@@ -139,7 +139,7 @@ rules:
 ```
 
 将模板内容复制到自己 Gist 新建的 .yaml 文件中  
-**贴一张面板效果图（举个例子：我手动选择 `🇹🇼 台湾节点` 代理组，而该代理组是将机场内所有台湾节点按照 url 测试结果自动选择延迟最低的台湾节点）：**  
+**贴一张面板效果图（举个例子：我手动选择 `🇹🇼 台湾节点` 策略组，而该策略组是将机场内所有台湾节点按照 url 测试结果自动选择延迟最低的台湾节点）：**  
 <img src="/assets/img/link/show-dashboard.png" alt="面板效果图" width="60%" />
 
 ### 2. 黑名单模式（只有命中规则的网络流量才使用代理，适用于服务器线路网络质量不稳定或不够快，或服务器流量紧缺的用户。通常也是软路由用户、家庭网关用户的常用模式）
@@ -201,9 +201,9 @@ proxies:
       headers:
         host: example.com
 
-## 代理组
+## 策略组
 proxy-groups:
-  ## 手动选择国家或地区节点；根据“国家或地区代理组”名称对 `proxies` 值进行增删改，须一一对应
+  ## 手动选择国家或地区节点；根据“国家或地区策略组”名称对 `proxies` 值进行增删改，须一一对应
   - {name: 🚀 节点选择, type: select, proxies: [🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🆓 免费节点]}
   - {name: 🐟 漏网之鱼, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
   ## 选择`🎯 全球直连`为测试本地网络（运营商网络速度和 IPv6 支持情况），可选择其它节点用于测试机场节点速度和 IPv6 支持情况
@@ -215,10 +215,10 @@ proxy-groups:
   - {name: 🛑 广告拦截, type: select, proxies: [REJECT]}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
 
-  ## ----------------国家或地区代理组---------------------
+  ## ----------------国家或地区策略组---------------------
   ## 自动选择节点，即按照 url 测试结果使用延迟最低的节点；容差大于 50ms 就会切换到延迟低的那个节点；筛选出“香港”节点，支持正则表达式
   - {name: 🇭🇰 香港节点, type: url-test, tolerance: 50, use: [🛫 我的机场 1, 🛫 我的机场 2], filter: "(?i)港|hk|hongkong|hong kong"}
-  ## 节点负载均衡，即将请求均匀分配到多个节点上，优点是更稳定，速度可能有提升；将相同顶级域名的请求分配给代理组内的同一个代理节点；推荐在节点复用比较多的情况下使用
+  ## 节点负载均衡，即将请求均匀分配到多个节点上，优点是更稳定，速度可能有提升；将相同顶级域名的请求分配给策略组内的同一个代理节点；推荐在节点复用比较多的情况下使用
   - {name: 🇹🇼 台湾节点, type: load-balance, strategy: consistent-hashing, use: [🛫 我的机场 1, 🛫 我的机场 2], filter: "(?i)台|tw|taiwan"}
   ## 可使用 `include-all-providers: true` 代替 `use: [🛫 我的机场 1, 🛫 我的机场 2, ...]`，意思为引入所有代理集合
   - {name: 🇯🇵 日本节点, type: url-test, tolerance: 50, include-all-providers: true, filter: "(?i)日本|jp|japan"}
@@ -241,22 +241,22 @@ rules:
 
 ## 三、 修改模板
 1. 将代理集合 `proxy-providers` 中的 `url` 链接改成自己机场的订阅链接（必须为 Clash 订阅链接，详见《前言：4》）  
-2. 确定自己机场中有哪些国家或地区的节点，然后对模板文件中“**国家或地区代理组**”以及 `🚀 节点选择`、`📈 网络测试` 和 `🤖 人工智能` 代理组下的 `proxies` 里面的国家或地区进行增删改
+2. 确定自己机场中有哪些国家或地区的节点，然后对模板文件中“**国家或地区策略组**”以及 `🚀 节点选择`、`📈 网络测试` 和 `🤖 人工智能` 策略组下的 `proxies` 里面的国家或地区进行增删改
    - 注：两者中的国家或地区必须一一对应，新增就全部新增，删除就全部删除，修改就全部修改（重要）
 
-3. 在“国家或地区代理组”中的 `filter` 支持[正则表达式](https://tool.oschina.net/regex)，可以精确地筛选出指定的国家或地区节点  
+3. 在“国家或地区策略组”中的 `filter` 支持[正则表达式](https://tool.oschina.net/regex)，可以精确地筛选出指定的国家或地区节点  
 例如：我想筛选出“香港 IPLC”节点，`filter` 可以这样写：`filter: "香港.*IPLC|IPLC.*香港"`
    - 小窍门：使用 [ChatGPT](https://chatgpt.com) 等 AI 工具查询符合自己要求的正则表达式
 
-4. 在 `🚀 节点选择` 代理组下的 `proxies` 里，可以将最稳定的节点放在最前面，配置完成后会自动选择最稳定的节点  
-5. 在“国家或地区代理组”里，`type` 为 `url-test` 就是自动选择延迟最低的节点，将 `url-test` 改成 `select` 就是手动选择节点  
+4. 在 `🚀 节点选择` 策略组下的 `proxies` 里，可以将最稳定的节点放在最前面，配置完成后会自动选择最稳定的节点  
+5. 在“国家或地区策略组”里，`type` 为 `url-test` 就是自动选择延迟最低的节点，将 `url-test` 改成 `select` 就是手动选择节点  
 举个例子：我的机场包含有 2 个节点，分别是新加坡节点和日本节点，我想让 [Netflix](https://www.netflix.com/) 自动选择延迟最低的新加坡节点，[哔哩哔哩](https://www.bilibili.com)可以手动选择日本任一节点，这个需求怎么写？  
 注：
    - 1. 以下只是节选，请酌情套用
    - 2. 本教程搭配的路由规则文件包含有 `netflix` 和 `bilibili`
 
 ```yaml
-## 代理组
+## 策略组
 proxy-groups:
   ## 默认选择新加坡节点
   - {name: 🎥 奈飞视频, type: select, proxies: [🇸🇬 新加坡节点]}

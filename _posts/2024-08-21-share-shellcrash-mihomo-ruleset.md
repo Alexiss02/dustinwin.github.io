@@ -12,7 +12,7 @@ tags: [Clash, mihomo, ShellCrash, ruleset, rule-set, 分享, Router]
 3. 此方案已摒弃 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)，但拦截广告效果依然强劲
 
 ## 一、 生成配置文件 .yaml 文件直链
-具体方法此处不再赘述，请看《[生成带有自定义代理组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
+具体方法此处不再赘述，请看《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：
 
 ```yaml
 proxy-providers:
