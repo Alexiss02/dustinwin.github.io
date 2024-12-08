@@ -1,5 +1,5 @@
 ---
-title: ShellCrash 搭载 mihomo 内核本地配置自定义规则和策略组-ruleset 方案
+title: ShellCrash 搭载 mihomo 内核本地配置自定义策略组和规则-ruleset 方案
 description: 此方案适用于 Clash，搭载 mihomo 内核，采用 `RULE-SET` 规则搭配 .yaml、.text 和 .mrs 规则集合文件
 date: 2024-08-21 08:39:18 +0800
 categories: [工具配置, ShellCrash 配置]
