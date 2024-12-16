@@ -11,7 +11,7 @@ tags: [Clash, mihomo, 进阶, DNS, DNS 泄露]
 - 2. 可进入 <https://ipleak.net> 测试 DNS 是否泄露，“DNS Addresses” 栏目下没有中国国旗（因 `ipleak.net` 域名默认走代理），即代表 DNS 没有发生泄露
 
 ## 一、 导入路由规则文件
-geosite.dat 文件须包含 `fakeip-filter`，推荐导入我定制的[路由规则文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%B8%80-geodata-%E8%A7%84%E5%88%99%E9%9B%86%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
+geosite.dat 文件须包含 `fakeip-filter`，推荐导入我定制的[路由规则文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%B8%80-geodata-%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
 
 ## 二、 额外编辑配置文件
 在《[生成带有自定义策略组和规则的 Clash 配置文件直链-geodata 方案/添加模板](https://proxy-tutorials.dustinwin.top/posts/link-clash-geodata/#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%A8%A1%E6%9D%BF)》编辑 .yaml 配置文件时，将 `rules` 里的所有 `GEOIP` 规则末尾加上 `no-resolve`，即修改为：

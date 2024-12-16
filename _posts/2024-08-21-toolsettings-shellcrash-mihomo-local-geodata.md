@@ -14,7 +14,7 @@ tags: [Clash, mihomo, ShellCrash, geodata, geosite, 进阶, 本地, Router]
 5. 所有步骤完成后，请连接 SSH 执行命令 `$CRASHDIR/start.sh restart` 后生效
 6. 推荐使用 [Visual Studio Code](https://code.visualstudio.com/Download) 等专业编辑器来修改配置文件
 
-## 一、 导入 [mihomo 内核](https://github.com/MetaCubeX/mihomo)和[路由规则文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%B8%80-geodata-%E8%A7%84%E5%88%99%E9%9B%86%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
+## 一、 导入 [mihomo 内核](https://github.com/MetaCubeX/mihomo)和[路由规则文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%B8%80-geodata-%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
 可参考《[ShellCrash 搭载 mihomo 内核的配置-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-shellcrash-mihomo-geodata)》里的步骤《一、二》进行操作
 
 ## 二、 导入配置文件
