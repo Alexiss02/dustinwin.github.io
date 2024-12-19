@@ -66,7 +66,7 @@ tun:
   strict-route: true
 
 hosts:
-  'miwifi.com': 192.168.31.1
+  miwifi.com: 192.168.31.1
 
 dns:
   enable: true
@@ -76,15 +76,15 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-filter: ['rule-set:fakeip-filter,private,cn']
   respect-rules: true
+  direct-nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
   proxy-server-nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-  nameserver-policy:
-    'rule-set:ads': rcode://success
-    'rule-set:proxy': [https://dns.google/dns-query, https://cloudflare-dns.com/dns-query]
 
 ## 若没有单个出站代理节点，须删除所有 `🆚 vless 节点` 相关内容
 proxies:
