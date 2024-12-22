@@ -43,6 +43,10 @@ rule-providers:
 连接 SSH 后执行 `vi $CRASHDIR/yamls/user.yaml`，按一下 Ins 键（Insert 键），粘贴如下内容：
 
   ```yaml
+  hosts:
+    doh.pub: [1.12.12.12, 120.53.53.53, 2402:4e00::]
+    dns.alidns.com: [223.5.5.5, 223.6.6.6, 2400:3200::1, 2400:3200:baba::1]
+
   dns:
     enable: true
     ipv6: true
@@ -50,13 +54,12 @@ rule-providers:
     fake-ip-range: 198.18.0.1/16
     enhanced-mode: fake-ip
     fake-ip-filter: ['rule-set:fakeip-filter']
-    respect-rules: true
     nameserver:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
-    proxy-server-nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    direct-nameserver:
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
   ```
 
   按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
@@ -64,6 +67,12 @@ rule-providers:
 连接 SSH 后执行 `vi $CRASHDIR/yamls/user.yaml`，按一下 Ins 键（Insert 键），粘贴如下内容：
 
   ```yaml
+  hosts:
+    doh.pub: [1.12.12.12, 120.53.53.53, 2402:4e00::]
+    dns.alidns.com: [223.5.5.5, 223.6.6.6, 2400:3200::1, 2400:3200:baba::1]
+    dns.google: [8.8.8.8, 8.8.4.4, 2001:4860:4860::8888, 2001:4860:4860::8844]
+    cloudflare-dns.com: [1.1.1.1, 1.0.0.1, 2606:4700:4700::1111, 2606:4700:4700::1001]
+
   dns:
     enable: true
     ipv6: true
@@ -78,9 +87,9 @@ rule-providers:
     proxy-server-nameserver:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
-    nameserver-policy:
-      'rule-set:ads': rcode://success
-      'rule-set:fakeip-filter,microsoft-cn,apple-cn,google-cn,games-cn,private,cn': [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
+    direct-nameserver:
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
   ```
 
   按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
@@ -88,6 +97,12 @@ rule-providers:
 连接 SSH 后执行 `vi $CRASHDIR/yamls/user.yaml`，按一下 Ins 键（Insert 键），粘贴如下内容：
 
   ```yaml
+  hosts:
+    doh.pub: [1.12.12.12, 120.53.53.53, 2402:4e00::]
+    dns.alidns.com: [223.5.5.5, 223.6.6.6, 2400:3200::1, 2400:3200:baba::1]
+    dns.google: [8.8.8.8, 8.8.4.4, 2001:4860:4860::8888, 2001:4860:4860::8844]
+    cloudflare-dns.com: [1.1.1.1, 1.0.0.1, 2606:4700:4700::1111, 2606:4700:4700::1001]
+
   dns:
     enable: true
     ipv6: true
@@ -102,9 +117,9 @@ rule-providers:
     proxy-server-nameserver:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
-    nameserver-policy:
-      'rule-set:ads': rcode://success
-      'rule-set:cn': [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
+    direct-nameserver:
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
   ```
 
   按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
