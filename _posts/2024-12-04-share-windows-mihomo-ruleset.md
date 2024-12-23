@@ -126,7 +126,7 @@ proxy-groups:
   - {name: 🇰🇷 韩国节点, type: url-test, tolerance: 50, use: [🛫 我的机场], filter: "🇰🇷"}
   - {name: 🇸🇬 新加坡节点, type: url-test, tolerance: 50, use: [🛫 我的机场], filter: "🇸🇬"}
   - {name: 🇺🇸 美国节点, type: url-test, tolerance: 50, use: [🛫 我的机场], filter: "🇺🇸"}
-  - {name: 🆓 免费节点, type: url-test, tolerance: 100, use: [🆓 免费订阅]}
+  - {name: 🆓 免费节点, type: load-balance, strategy: consistent-hashing, use: [🆓 免费订阅]}
 
 rule-providers:
   fakeip-filter:
