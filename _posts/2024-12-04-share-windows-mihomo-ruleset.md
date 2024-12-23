@@ -299,7 +299,7 @@ rules:
 
   ```shell
   cd "%PROGRAMFILES%\mihomo"
-  start /min mihomo.exe -d profiles\
+  start /min mihomo.exe -d profiles
   ```
 
 - ② 另存为 run.bat 文件并复制到 *%PROGRAMFILES%\mihomo* 文件夹中
@@ -334,7 +334,7 @@ echo 更新 mihomo 内核和配置文件成功
 rem 更新 mihomo 内核和配置文件成功，等待 10 秒启动 mihomo 服务
 timeout /t 10 /nobreak
 cd "%PROGRAMFILES%\mihomo"
-start /min mihomo.exe -d profiles\
+start /min mihomo.exe -d profiles
 echo 启动 mihomo 服务成功
 pause
 ```
