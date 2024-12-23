@@ -393,8 +393,8 @@ echo -e '12345678\n12345678' | passwd root
   “Bootstrap DNS 服务器”设置为：
 
   ```text
-  https://1.12.12.12/dns-query
-  https://223.5.5.5/dns-query
+  119.29.29.29
+  223.5.5.5
   ```
 
   直接点击“应用”即可  
