@@ -53,7 +53,6 @@ dns:
   fake-ip-range: 198.18.0.1/16
   enhanced-mode: fake-ip
   fake-ip-filter: ['rule-set:fakeip-filter,cn']
-  respect-rules: true
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
