@@ -9,7 +9,7 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 分享, Router]
 ## 声明：
 1. 请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 2. 此方案适用于 [ShellCrash](https://github.com/juewuy/ShellCrash)（以 arm64 架构为例，且安装路径为 */data/ShellCrash*）
-3. 此方案已摒弃 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)，但拦截广告效果依然强劲
+3. 本方案绕过了 CNIP 且不搭配 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)，但拦截广告效果依然强劲
 
 ## 一、 生成配置文件 .json 文件直链
 具体方法此处不再赘述，请看《[生成带有自定义出站和规则的 sing-box 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-ruleset)》，贴一下我使用的配置：
@@ -226,7 +226,8 @@ curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@sing-box/sing-
       "dns.alidns.com": [ "223.5.5.5", "223.6.6.6", "2400:3200::1", "2400:3200:baba::1" ],
       "dns.google": [ "8.8.8.8", "8.8.4.4", "2001:4860:4860::8888", "2001:4860:4860::8844" ],
       "cloudflare-dns.com": [ "1.1.1.1", "1.0.0.1", "2606:4700:4700::1111", "2606:4700:4700::1001" ],
-      "miwifi.com": [ "192.168.31.1" ]
+      "miwifi.com": [ "192.168.31.1" ],
+      "services.googleapis.cn": [ "services.googleapis.com" ]
     },
     "servers": [
       { "tag": "dns_block", "address": "rcode://success" },
@@ -238,9 +239,9 @@ curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@sing-box/sing-
       { "outbound": [ "any" ], "server": "dns_direct" },
       { "clash_mode": [ "Direct" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
       { "clash_mode": [ "Global" ], "query_type": [ "A", "AAAA" ], "server": "dns_proxy" },
+      { "rule_set": [ "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
       { "rule_set": [ "ads" ], "server": "dns_block", "disable_cache": true, "rewrite_ttl": 0 },
       { "rule_set": [ "proxy" ], "query_type": [ "A", "AAAA" ], "server": "dns_fakeip", "rewrite_ttl": 1 },
-      { "rule_set": [ "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
       { "fallback_rules": [ { "rule_set": [ "cnip" ], "server": "dns_direct" }, { "match_all": true, "server": "dns_fakeip", "rewrite_ttl": 1 } ], "server": "dns_proxy", "allow_fallthrough": true }
     ],
     "final": "dns_direct",
@@ -266,11 +267,12 @@ curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@sing-box/sing-
 
 ```shell
 201#curl -o /data/ShellCrash/CrashCore.tar.gz -L https://ghp.ci/https://github.com/DustinWin/clash_singbox-tools/releases/download/sing-box/sing-box-puernya-linux-armv8.tar.gz && /data/ShellCrash/start.sh restart >/dev/null 2>&1#更新sing-box_PuerNya版内核
+202#curl -o /data/ShellCrash/cn_ip.txt -L https://ghp.ci/https://github.com/DustinWin/geoip/releases/download/ips/cn_ipv4.txt && curl -o /data/ShellCrash/cn_ipv6.txt -L https://ghp.ci/https://github.com/DustinWin/geoip/releases/download/ips/cn_ipv6.txt >/dev/null 2>&1#更新CN_IP文件
 ```
 
 2. 按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
 3. 执行 `crash`，进入 ShellCrash -> 5 配置自动任务 -> 1 添加自动任务，可以看到末尾就有添加的定时任务，输入对应的数字并回车后可设置执行条件  
-<img src="/assets/img/share/task-singbox.png" alt="添加定时任务" width="60%" />
+<img src="/assets/img/share/task-singbox-ruleset.png" alt="添加定时任务" width="60%" />
 
 ## 五、 新建文件夹
 连接 SSH 后执行命令 `mkdir -p $CRASHDIR/providers/ $CRASHDIR/ruleset/`  
@@ -280,8 +282,8 @@ curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@sing-box/sing-
 
 ## 六、 设置部分
 1. 设置可参考《[ShellCrash 搭载 sing-boxp 内核的配置-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-shellcrash-singboxp-ruleset)》，此处只列举配置的不同之处
-2. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 模式，选择 1 fake-ip 模式（不会与导入 mix 模式的 dns.json 冲突）  
-<img src="/assets/img/share/tproxy-fake-ip.png" alt="设置部分 1" width="60%" />
+2. 进入主菜单 -> 2 内核功能设置，设置如下：  
+<img src="/assets/img/share/tproxy-mix-cnip.png" alt="设置部分 1" width="60%" />
 
 3. 返回到 2 切换 DNS 运行模式，进入 4 DNS 进阶设置，设置如下：  
 <img src="/assets/img/share/dns-null.png" alt="设置部分 2" width="60%" />

@@ -9,7 +9,7 @@ tags: [Clash, mihomo, ShellCrash, geodata, geosite, 分享, Router]
 ## 声明：
 1. 请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 2. 此方案适用于 [ShellCrash](https://github.com/juewuy/ShellCrash)（以 arm64 架构为例，且安装路径为 */data/ShellCrash*）
-3. 此方案已摒弃 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)，但拦截广告效果依然强劲
+3. 本方案绕过了 CNIP 且不搭配 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)，但拦截广告效果依然强劲
 
 ## 一、 生成配置文件 .yaml 文件直链
 具体方法此处不再赘述，请看《[生成带有自定义策略组和规则的 Clash 配置文件直链-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-geodata)》，贴一下我使用的配置：
@@ -118,6 +118,8 @@ curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@mihomo/mihomo-
 curl -o $CRASHDIR/GeoSite.dat -L https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@clash/geosite.dat
 curl -o $CRASHDIR/GeoIP.dat -L https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@clash/geoip-lite.dat
 curl -o $CRASHDIR/Country.mmdb -L https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@clash/Country-lite.mmdb
+curl -o $CRASHDIR/cn_ip.txt -L https://cdn.jsdelivr.net/gh/DustinWin/geoip@ips/cn_ipv4.txt
+curl -o $CRASHDIR/cn_ipv6.txt -L https://cdn.jsdelivr.net/gh/DustinWin/geoip@ips/cn_ipv6.txt
 ```
 
 ## 四、 编辑 user.yaml 文件
@@ -169,6 +171,7 @@ dns:
 ```shell
 201#curl -o /data/ShellCrash/CrashCore.tar.gz -L https://ghp.ci/https://github.com/DustinWin/clash_singbox-tools/releases/download/mihomo/mihomo-alpha-linux-armv8.tar.gz && /data/ShellCrash/start.sh restart >/dev/null 2>&1#更新mihomo内核
 202#curl -o /data/ShellCrash/GeoSite.dat -L https://ghp.ci/https://github.com/DustinWin/ruleset_geodata/releases/download/clash/geosite.dat && curl -o /data/ShellCrash/GeoIP.dat -L https://ghp.ci/https://github.com/DustinWin/ruleset_geodata/releases/download/clash/geoip-lite.dat && curl -o /data/ShellCrash/Country.mmdb -L https://ghp.ci/https://github.com/DustinWin/ruleset_geodata/releases/download/clash/Country-lite.mmdb && /data/ShellCrash/start.sh restart >/dev/null 2>&1#更新geodata路由规则文件
+203#curl -o /data/ShellCrash/cn_ip.txt -L https://ghp.ci/https://github.com/DustinWin/geoip/releases/download/ips/cn_ipv4.txt && curl -o /data/ShellCrash/cn_ipv6.txt -L https://ghp.ci/https://github.com/DustinWin/geoip/releases/download/ips/cn_ipv6.txt >/dev/null 2>&1#更新CN_IP文件
 ```
 
 2. 按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
@@ -178,7 +181,7 @@ dns:
 ## 六、 设置部分
 1. 设置可参考《[ShellCrash 搭载 mihomo 内核的配置-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-shellcrash-mihomo-geodata)》，此处只列举配置的不同之处
 2. 进入主菜单 -> 2 内核功能设置，设置如下：  
-<img src="/assets/img/share/tproxy-mix.png" alt="设置部分 1" width="60%" />
+<img src="/assets/img/share/tproxy-mix-cnip.png" alt="设置部分 1" width="60%" />
 
 3. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，设置如下：  
 <img src="/assets/img/share/dns-null.png" alt="设置部分 2" width="60%" />
