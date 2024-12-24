@@ -47,7 +47,8 @@ tags: [sing-box, sing-boxp, Android, ruleset, rule_set, 分享]
       "dns.alidns.com": [ "223.5.5.5", "223.6.6.6", "2400:3200::1", "2400:3200:baba::1" ],
       "dns.google": [ "8.8.8.8", "8.8.4.4", "2001:4860:4860::8888", "2001:4860:4860::8844" ],
       "cloudflare-dns.com": [ "1.1.1.1", "1.0.0.1", "2606:4700:4700::1111", "2606:4700:4700::1001" ],
-      "miwifi.com": [ "192.168.31.1" ]
+      "miwifi.com": [ "192.168.31.1" ],
+      "services.googleapis.cn": [ "services.googleapis.com" ]
     },
     "servers": [
       { "tag": "dns_block", "address": "rcode://success" },
@@ -60,8 +61,8 @@ tags: [sing-box, sing-boxp, Android, ruleset, rule_set, 分享]
       { "clash_mode": "Direct", "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
       { "clash_mode": "Global", "query_type": [ "A", "AAAA" ], "server": "dns_proxy" },
       { "rule_set": [ "ads" ], "server": "dns_block", "disable_cache": true, "rewrite_ttl": 0 },
-      { "rule_set": [ "proxy" ], "query_type": [ "A", "AAAA" ], "server": "dns_fakeip", "rewrite_ttl": 1 },
       { "rule_set": [ "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
+      { "rule_set": [ "proxy" ], "query_type": [ "A", "AAAA" ], "server": "dns_fakeip", "rewrite_ttl": 1 },
       { "fallback_rules": [ { "rule_set": [ "cnip" ], "server": "dns_direct" }, { "match_all": true, "server": "dns_fakeip", "rewrite_ttl": 1 } ], "server": "dns_proxy", "allow_fallthrough": true }
     ],
     "final": "dns_direct",
