@@ -6,7 +6,7 @@ categories: [分享配置, Router]
 tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 分享, Router]
 ---
 
-## 声明：
+## 声明
 1. 请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 2. 此方案适用于 [ShellCrash](https://github.com/juewuy/ShellCrash)（以 arm64 架构为例，且安装路径为 */data/ShellCrash*）
 3. 本方案绕过了 CNIP 且不搭配 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)，但拦截广告效果依然强劲
@@ -277,8 +277,8 @@ curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@sing-box/sing-
 ## 五、 新建文件夹
 连接 SSH 后执行命令 `mkdir -p $CRASHDIR/providers/ $CRASHDIR/ruleset/`  
 注：
-- 1. 因 `outbound_providers` 代理集合配置的 `path` 路径中含有文件夹“*providers*”，须手动新建此文件夹才能使 .yaml 订阅文件保存到本地，否则将保存到内存中（每次启动服务都要重新下载）
-- 2. 因 `route.rule_set` 代理集合配置的 `path` 路径中含有文件夹“*ruleset*”，须手动新建此文件夹才能使 .srs 规则集文件保存到本地，否则将保存到内存中（每次启动服务都要重新下载）
+- ① 因 `outbound_providers` 代理集合配置的 `path` 路径中含有文件夹“*providers*”，须手动新建此文件夹才能使 .yaml 订阅文件保存到本地，否则将保存到内存中（每次启动服务都要重新下载）
+- ② 因 `route.rule_set` 代理集合配置的 `path` 路径中含有文件夹“*ruleset*”，须手动新建此文件夹才能使 .srs 规则集文件保存到本地，否则将保存到内存中（每次启动服务都要重新下载）
 
 ## 六、 设置部分
 1. 设置可参考《[ShellCrash 搭载 sing-boxp 内核的配置-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/toolsettings-shellcrash-singboxp-ruleset)》，此处只列举配置的不同之处

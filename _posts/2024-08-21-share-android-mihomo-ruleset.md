@@ -6,7 +6,8 @@ categories: [分享配置, Android]
 tags: [Clash, Clash.Meta, mihomo, Android, ruleset, rule-set, 分享]
 ---
 
-- 声明：请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
+## 声明
+请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 
 ## 一、 生成配置文件 .yaml 文件直链
 具体方法请参考《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》，贴一下我使用的配置：

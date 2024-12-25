@@ -6,10 +6,10 @@ categories: [DNS 配置, DNS 防泄漏]
 tags: [Clash, mihomo, 进阶, DNS, DNS 泄露]
 ---
 
-注：
-- 1. 此方案彻底防止了 DNS 泄露（针对未知域名走国外 DNS 解析，解析出 IP 在国内则走国内 DNS 解析和 `🇨🇳 直连 IP` 规则，否则走 `fake-ip` 和 `🐟 漏网之鱼` 规则），兼容性无法保证，请慎用
-- 2. 本教程以 [ShellCrash](https://github.com/juewuy/ShellCrash) 为例，其它客户端亦可参考
-- 3. 可进入 <https://ipleak.net> 测试 DNS 是否泄露，“DNS Addresses” 栏目下没有中国国旗（因 `ipleak.net` 属未知域名，默认走 `🐟 漏网之鱼` 规则），即代表 DNS 没有发生泄露
+## 说明
+1. 此方案彻底防止了 DNS 泄露（针对未知域名走国外 DNS 解析，解析出 IP 在国内则走国内 DNS 解析和 `🇨🇳 直连 IP` 规则，否则走 `fake-ip` 和 `🐟 漏网之鱼` 规则），兼容性无法保证，请慎用
+2. 本教程以 [ShellCrash](https://github.com/juewuy/ShellCrash) 为例，其它客户端亦可参考
+3. 可进入 <https://ipleak.net> 测试 DNS 是否泄露，“DNS Addresses” 栏目下没有中国国旗（因 `ipleak.net` 属未知域名，默认走 `🐟 漏网之鱼` 规则），即代表 DNS 没有发生泄露
 
 ## 一、 导入规则集合文件
 `rule-providers` 须添加 `fakeip-filter`，如下：
@@ -38,7 +38,7 @@ rule-providers:
 <img src="/assets/img/dns/dns-null.png" alt="ShellCrash 设置" width="60%" />
 
 ## 三、 DNS 防泄漏配置
-1. DNS 模式为 `fake-ip`
+### 1. DNS 模式为 `fake-ip`
 - ① 额外编辑配置文件
 在《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案/添加模板](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset/#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%A8%A1%E6%9D%BF)》编辑 .yaml 配置文件时，将 `rules` 里所有 IP 相关的规则末尾加上 `no-resolve`，即修改为：
 
@@ -70,7 +70,8 @@ rule-providers:
   ```
 
   按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
-2. DNS 模式为 `redir-host`
+
+### 2. DNS 模式为 `redir-host`
 - 连接 SSH 后执行 `vi $CRASHDIR/yamls/user.yaml`，按一下 Ins 键（Insert 键），粘贴如下内容：
 
   ```yaml
@@ -100,7 +101,8 @@ rule-providers:
   ```
 
   按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车
-3. DNS 模式为 `mix`
+
+### 3. DNS 模式为 `mix`
 - 连接 SSH 后执行 `vi $CRASHDIR/yamls/user.yaml`，按一下 Ins 键（Insert 键），粘贴如下内容：
 
   ```yaml

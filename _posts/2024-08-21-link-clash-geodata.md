@@ -6,7 +6,7 @@ categories: [直链配置, Clash 直链]
 tags: [Clash, mihomo, 直链, 订阅, geodata, geosite, 基础]
 ---
 
-## 前言：
+## 说明
 1. 本教程可以生成扩展名为 .yaml 配置文件直链，可以**一键导入使用了 [mihomo](https://github.com/MetaCubeX/mihomo) 内核的 Clash 客户端**  
 如：[ShellCrash](https://github.com/juewuy/ShellCrash)、[OpenClash](https://github.com/vernesong/OpenClash) 和 [Clash Verge](https://github.com/clash-verge-rev/clash-verge-rev) 等，详见[支持 mihomo 的工具](https://wiki.metacubex.one/startup/client)
 2. 生成的订阅链接地址不会改变，支持更新订阅，**支持国内访问，支持同步机场节点**
@@ -240,7 +240,7 @@ rules:
 将模板内容复制到自己 Gist 新建的 .yaml 文件中
 
 ## 三、 修改模板
-1. 将代理集合 `proxy-providers` 中的 `url` 链接改成自己机场的订阅链接（必须为 Clash 订阅链接，详见《前言：4》）  
+1. 将代理集合 `proxy-providers` 中的 `url` 链接改成自己机场的订阅链接（必须为 Clash 订阅链接，详见《说明 4》）  
 2. 确定自己机场中有哪些国家或地区的节点，然后对模板文件中“**国家或地区策略组**”以及 `🚀 节点选择`、`📈 网络测试` 和 `🤖 人工智能` 策略组下的 `proxies` 里面的国家或地区进行增删改
    - 注：两者中的国家或地区必须一一对应，新增就全部新增，删除就全部删除，修改就全部修改（重要）
 
@@ -252,8 +252,8 @@ rules:
 5. 在“国家或地区策略组”里，`type` 为 `url-test` 就是自动选择延迟最低的节点，将 `url-test` 改成 `select` 就是手动选择节点  
 举个例子：我的机场包含有 2 个节点，分别是新加坡节点和日本节点，我想让 [Netflix](https://www.netflix.com/) 自动选择延迟最低的新加坡节点，[哔哩哔哩](https://www.bilibili.com)可以手动选择日本任一节点，这个需求怎么写？  
 注：
-   - 1. 以下只是节选，请酌情套用
-   - 2. 本教程搭配的路由规则文件包含有 `netflix` 和 `bilibili`
+   - ① 以下只是节选，请酌情套用
+   - ② 本教程搭配的路由规则文件包含有 `netflix` 和 `bilibili`
 
 ```yaml
 ## 策略组

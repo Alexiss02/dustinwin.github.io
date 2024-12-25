@@ -7,7 +7,7 @@ tags: [ShellCrash, AdGuard Home, mihomo, sing-box, sing-boxp, 安装, Dashboard]
 pin: true
 ---
 
-## 说明：
+## 说明
 1. 本教程中 **[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) 安装目录为 `/data/AdGuardHome`**
 2. 本教程中的下载链接以 CPU 架构 ARMv8 为例，请注意修改链接后缀
 3. 查看 CPU 架构可连接 SSH 后执行命令 `uname -ms`，若执行结果是 `linux aarch64`，就是搭载的 ARMv8 架构

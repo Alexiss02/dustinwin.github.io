@@ -6,9 +6,9 @@ categories: [工具配置, ShellCrash 配置]
 tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 基础, Router]
 ---
 
-注：
-- 1. 本教程中的下载链接以 CPU 架构 ARMv8 为例，若为别的 CPU 架构，请注意修改链接后缀
-- 2. 查看 CPU 架构可连接 SSH 后执行命令 `uname -ms`，若执行结果是 `linux aarch64`，就是搭载的 ARMv8 架构
+## 说明
+1. 本教程中的下载链接以 CPU 架构 ARMv8 为例，若为别的 CPU 架构，请注意修改链接后缀
+2. 查看 CPU 架构可连接 SSH 后执行命令 `uname -ms`，若执行结果是 `linux aarch64`，就是搭载的 ARMv8 架构
 
 ## 一、 导入 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box/tree/building)
 **sing-box 内核 Linux 版下载链接后缀和 CPU 架构对应关系如下表：**

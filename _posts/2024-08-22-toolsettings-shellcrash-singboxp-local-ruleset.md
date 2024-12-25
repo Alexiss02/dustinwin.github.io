@@ -6,7 +6,7 @@ categories: [工具配置, ShellCrash 配置]
 tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, 本地, Router]
 ---
 
-## 前言：
+## 说明
 1. 本教程只适用于 [ShellCrash](https://github.com/juewuy/ShellCrash) 
 2. 本教程**仅适合白名单模式**（没有命中规则的网络流量统统使用代理，适用于服务器线路网络质量稳定、快速，不缺服务器流量的用户）
 3. 本教程最终效果媲美《[生成带有自定义出站和规则的 sing-box 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-ruleset)》（出站分组更直观，操作更方便），但不依赖于网络
@@ -263,8 +263,8 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, 本地, Route
 ## 四、 修改出站或规则
 **举例：我的机场包含有 2 个节点，分别是新加坡节点和日本节点，我想让 [Netflix](https://www.netflix.com/) 自动选择延迟最低的新加坡节点，[哔哩哔哩](https://www.bilibili.com)可以手动选择日本任一节点**  
 注：
-- 1. **一定要保证缩进对齐！一定要保证缩进对齐！一定要保证缩进对齐！**
-- 2. 以下只是节选，请酌情套用
+- ① **一定要保证缩进对齐！一定要保证缩进对齐！一定要保证缩进对齐！**
+- ② 以下只是节选，请酌情套用
 
 ### 1. 修改 outbounds.json 文件
 连接 SSH 后执行命令 `vi $CRASHDIR/jsons/outbounds.json`，按一下 Ins 键（Insert 键），编辑如下内容并粘贴：
@@ -333,8 +333,8 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, 本地, Route
 ## 五、 添加小规则
 仅添加特定网址走直连或走代理，连接 SSH 后执行命令 `vi $CRASHDIR/jsons/route.json`，按一下 Ins 键（Insert 键），在**最上方**粘贴如下内容：  
 注：
-- 1. 以下内容只是举例，请根据自身需要进行增删改
-- 2. 其它规则请参考《[sing-box Wiki](https://sing-box.sagernet.org/zh/configuration/route/rule)》
+- ① 以下内容只是举例，请根据自身需要进行增删改
+- ② 其它规则请参考《[sing-box Wiki](https://sing-box.sagernet.org/zh/configuration/route/rule)》
 
 ```json
 {

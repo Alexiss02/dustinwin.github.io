@@ -7,7 +7,7 @@ tags: [sing-box, sing-boxp, ShellCrash, AdGuard Home, 解锁, SSH]
 pin: true
 ---
 
-## 前言
+## 说明
 1. 本教程基于 Redmi AX6000 [官方固件](https://www1.miwifi.com/miwifi_download.html) v1.0.70 版，[ShellCrash](https://github.com/juewuy/ShellCrash) v1.9.2 版，[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) v0.108.0 版编写
 2. 恢复 SSH，安装 ShellCrash 和 AdGuard Home 的方法也适用于其它已解锁 SSH 的路由器
 3. 安装 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box/tree/building) 内核和 AdGuard Home 时须注意路由器 CPU 架构，查看 CPU 架构可连接 SSH 后执行命令 `uname -ms`，若执行结果是 `linux aarch64`，就下载 armv8 或 arm64 版安装包；若是其它架构请下载相匹配的安装包
@@ -18,9 +18,9 @@ pin: true
 打包下载：<https://dustinwinvip.lanzoum.com/b01qd6p3a>  
 密码：zyxz  
 注：
-- 1. 没有对文件进行任何处理，请自行操作使用
-- 2. 不保证实时更新，想用新版请安装后自行升级
-- 3. 版本信息请查看打包文件内的 Readme.txt 文本
+- ① 没有对文件进行任何处理，请自行操作使用
+- ② 不保证实时更新，想用新版请安装后自行升级
+- ③ 版本信息请查看打包文件内的 Readme.txt 文本
 
 ### 1. ShellCrash
 官方下载：<https://raw.githubusercontent.com/juewuy/ShellCrash/master/bin/ShellCrash.tar.gz>
@@ -253,8 +253,8 @@ echo -e '12345678\n12345678' | passwd root
   进入 2 切换 DNS 运行模式，选择 3 mix 混合模式  
   进入 4 DNS 进阶设置，选择 7 禁用 DNS 劫持  
   注：
-  - 1. 若单独使用 ShellCrash，请不要禁用 DNS 劫持
-  - 2. 推荐设置 DNS 分流（单独使用 ShellCrash 以及 ShellCrash 搭配 AdGuard Home 都适用），请看《[搭载 sing-boxp 内核进行 DNS 分流教程-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/dnsbypass-singboxp-geodata)》或《[搭载 sing-boxp 内核进行 DNS 分流教程-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/dnsbypass-singboxp-ruleset)》
+  - ➊ 若单独使用 ShellCrash，请不要禁用 DNS 劫持
+  - ➋ 推荐设置 DNS 分流（单独使用 ShellCrash 以及 ShellCrash 搭配 AdGuard Home 都适用），请看《[搭载 sing-boxp 内核进行 DNS 分流教程-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/dnsbypass-singboxp-geodata)》或《[搭载 sing-boxp 内核进行 DNS 分流教程-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/dnsbypass-singboxp-ruleset)》
 
   <img src="/assets/img/pin/dns-setting.png" alt="ShellCrash 配置 3" width="60%" />
 
@@ -267,15 +267,15 @@ echo -e '12345678\n12345678' | passwd root
 
   进入 4 安装本地 Dashboard 面板，选择 3 安装 MetaXD 面板  
   注：
-  - 1. 启动 Clash 服务后，面板 Dashboard 访问链接为：http://192.168.31.1:9999/ui
-  - 2. 初次打开需要添加“后端地址”：http://192.168.31.1:9999
+  - ➊ 启动 Clash 服务后，面板 Dashboard 访问链接为：http://192.168.31.1:9999/ui
+  - ➋ 初次打开需要添加“后端地址”：http://192.168.31.1:9999
 
   <img src="/assets/img/pin/install-dashboard.png" alt="ShellCrash 配置 6" width="60%" />
 
 - ⑦ 进入主菜单 -> 6 导入配置文件  
 注：
-  - 1. 选择 1 在线生成 singboxp 配置文件，粘贴你的订阅链接并回车，输入“1”并再次回车即可
-  - 2. 选择 2 在线获取完整配置文件，需要一定的 sing-box 知识储备，请查看《[生成带有自定义出站和规则的 sing-box 配置文件直链-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-geodata)》或《[生成带有自定义出站和规则的 sing-box 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-ruleset)》
+  - ➊ 选择 1 在线生成 singboxp 配置文件，粘贴你的订阅链接并回车，输入“1”并再次回车即可
+  - ➋ 选择 2 在线获取完整配置文件，需要一定的 sing-box 知识储备，请查看《[生成带有自定义出站和规则的 sing-box 配置文件直链-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-geodata)》或《[生成带有自定义出站和规则的 sing-box 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-singbox-ruleset)》
 
   导入配置文件完成后，选择 1 启动/重启服务  
   **ShellCrash 配置成功！**
@@ -327,8 +327,8 @@ echo -e '12345678\n12345678' | passwd root
 
 - ⑤ 进入路由器文件管理的 */data/auto_ssh* 目录，右击“auto_ssh.sh”文件  
 注：
-  - 1. 若没有此目录和文件，可新建
-  - 2. 新建后连接 SSH，直接粘贴如下所有命令：
+  - ➊ 若没有此目录和文件，可新建
+  - ➋ 新建后连接 SSH，直接粘贴如下所有命令：
 
   ```shell
   chmod +x /data/auto_ssh && chmod +x /data/auto_ssh/auto_ssh.sh
@@ -339,9 +339,9 @@ echo -e '12345678\n12345678' | passwd root
 
 - ⑥ 在最下方添加如下内容并保存：  
 注：
-  - 1. AdGuard Home 的“DNS 服务器端口”须设置为“5353”
-  - 2. 若 ShellCrash 设置了自启延时如 30 秒，须将 `sleep 10s` 修改为 `sleep 40s`（即 +10s）
-  - 3. 保留首尾的空行
+  - ➊ AdGuard Home 的“DNS 服务器端口”须设置为“5353”
+  - ➋ 若 ShellCrash 设置了自启延时如 30 秒，须将 `sleep 10s` 修改为 `sleep 40s`（即 +10s）
+  - ➌ 保留首尾的空行
 
   ```shell
 
@@ -416,8 +416,8 @@ echo -e '12345678\n12345678' | passwd root
 
 - ⑥ 进入过滤器 -> DNS 重写 -> 添加 DNS 重写，“输入域”填写 `miwifi.com`，“输入 IP 地址或域名”填写 `192.168.31.1`，然后点击“保存”  
 注：
-  - 1. 此步骤可解决访问 http://miwifi.com 时无法打开小米或红米路由器管理页面的问题，其它型号路由器请根据自身需要填写
-  - 2. 若已在 ShellCrash 配置文件自行添加了 `dns.hosts`，可跳过此步骤
+  - ➊ 此步骤可解决访问 <http://miwifi.com> 时无法打开小米或红米路由器管理页面的问题，其它型号路由器请根据自身需要填写
+  - ➋ 若已在 ShellCrash 配置文件自行添加了 `dns.hosts`，可跳过此步骤
 
   添加成功  
   <img src="https://github.com/DustinWin/clash_singbox-tutorials/assets/45238096/7afe4816-93d6-426f-9e5a-82ace37e4b91" alt="AdGuard Home 配置 7" width="60%" />

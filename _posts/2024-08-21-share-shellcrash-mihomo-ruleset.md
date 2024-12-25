@@ -6,7 +6,7 @@ categories: [分享配置, Router]
 tags: [Clash, mihomo, ShellCrash, ruleset, rule-set, 分享, Router]
 ---
 
-## 声明：
+## 声明
 1. 请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 2. 此方案适用于 [ShellCrash](https://github.com/juewuy/ShellCrash)（以 arm64 架构为例，且安装路径为 */data/ShellCrash*）
 3. 本方案绕过了 CNIP 且不搭配 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)，但拦截广告效果依然强劲

@@ -6,7 +6,7 @@ categories: [分享配置, Android]
 tags: [sing-box, sing-boxp, Android, ruleset, rule_set, 分享]
 ---
 
-### 声明：
+## 声明
 1. 请根据自身情况进行修改，**适合自己的方案才是最好的方案**，如无特殊需求，可以照搬
 2. **规则集暂时不可用**，等 [sing-boxp for Android](https://github.com/PuerNya/sing-box/actions/workflows/sfa.yml) v1.10.0+ 版本吧
 
