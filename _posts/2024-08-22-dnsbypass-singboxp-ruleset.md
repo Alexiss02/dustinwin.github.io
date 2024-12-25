@@ -13,7 +13,7 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, DNS, DNS 分�
 - 4. 部分用户觉得未知域名处理方式导致 DNS 泄露，可以参考《[搭载 sing-boxp 内核配置 DNS 不泄露教程-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/dnsnoleaks-singboxp-ruleset)》
 
 ## 一、 导入规则集合文件
-`route.rule_set` 须添加 `fakeip-filter` 和 `cn`，如下：
+`route.rule_set` 须添加 `fakeip-filter`、`cn`、`proxy` 和 `cnip`，如下：
 
 ```json
 {
@@ -32,6 +32,20 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, DNS, DNS 分�
         "format": "binary",
         "path": "./ruleset/cn.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/cn.srs"
+      },
+      {
+        "tag": "proxy",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/proxy.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/proxy.srs"
+      },
+      {
+        "tag": "cnip",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/cnip.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/cnip.srs"
       }
     ]
   }

@@ -13,7 +13,7 @@ tags: [sing-box, sing-boxp, geodata, geosite, 进阶, DNS, DNS 分流]
 - 4. 部分用户觉得未知域名处理方式导致 DNS 泄露，可以参考《[搭载 sing-boxp 内核配置 DNS 不泄露教程-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/dnsnoleaks-singboxp-geodata)》
 
 ## 一、 导入路由规则文件
-geosite.db 文件须包含 `fakeip-filter` 和 `cn`，推荐导入我定制的[路由规则文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%B8%80-geodata-%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
+geosite.db 文件须包含 `fakeip-filter`、`proxy` 和 `cn`，geoip.db 文件须包含 `cn`，推荐导入我定制的[路由规则文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%B8%80-geodata-%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
 
 ## 二、 DNS 分流配置
 1. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式，选择“3 mix混合模式”  
