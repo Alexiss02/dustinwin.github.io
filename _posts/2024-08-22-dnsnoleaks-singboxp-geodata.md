@@ -37,8 +37,8 @@ geosite.db 文件须包含 `fakeip-filter`，推荐导入我定制的[路由规�
       { "outbound": [ "any" ], "server": "dns_direct" },
       { "clash_mode": [ "Direct" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
       { "clash_mode": [ "Global" ], "query_type": [ "A", "AAAA" ], "server": "dns_proxy" },
-      { "geosite": [ "proxy" ], "query_type": [ "A", "AAAA" ], "server": "dns_fakeip" },
       { "geosite": [ "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
+      { "geosite": [ "proxy" ], "query_type": [ "A", "AAAA" ], "server": "dns_fakeip" },
       { "fallback_rules": [ { "geoip": [ "cn" ], "server": "dns_direct" }, { "match_all": true, "server": "dns_fakeip" } ], "server": "dns_proxy" }
     ],
     "final": "dns_direct",
