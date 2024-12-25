@@ -88,8 +88,8 @@ tags: [sing-box, sing-boxp, 直链, 订阅, geodata, geosite, 基础]
     { "tag": "🍎 苹果服务", "type": "selector", "outbounds": [ "🎯 全球直连", "🚀 节点选择" ] },
     { "tag": "🇨🇳 直连域名", "type": "selector", "outbounds": [ "🎯 全球直连", "🚀 节点选择" ] },
     { "tag": "🇨🇳 直连 IP", "type": "selector", "outbounds": [ "🎯 全球直连", "🚀 节点选择" ] },
-    { "tag": "🪜 代理域名", "type": "selector", "outbounds": [ "🚀 节点选择", "🎯 全球直连" ] },
-    { "tag": "📲 电报消息", "type": "selector", "outbounds": [ "🚀 节点选择" ] },
+    { "tag": "🧱 代理域名", "type": "selector", "outbounds": [ "🚀 节点选择", "🎯 全球直连" ] },
+    { "tag": "📲 电报信息", "type": "selector", "outbounds": [ "🚀 节点选择" ] },
     { "tag": "🔒 私有网络", "type": "selector", "outbounds": [ "🎯 全球直连" ] },
     { "tag": "🛑 广告拦截", "type": "selector", "outbounds": [ "REJECT" ] },
     { "tag": "🎯 全球直连", "type": "selector", "outbounds": [ "DIRECT" ] },
@@ -137,9 +137,9 @@ tags: [sing-box, sing-boxp, 直链, 订阅, geodata, geosite, 基础]
       { "geosite": [ "games-cn" ], "outbound": "🎮 游戏服务" },
       { "geosite": [ "ai" ], "outbound": "🤖 人工智能" },
       { "geosite": [ "networktest" ], "outbound": "📈 网络测试" },
-      { "geosite": [ "proxy" ], "outbound": "🪜 代理域名" },
+      { "geosite": [ "proxy" ], "outbound": "🧱 代理域名" },
       { "geosite": [ "cn" ], "outbound": "🇨🇳 直连域名" },
-      { "geoip": [ "telegram" ], "outbound": "📲 电报消息", "skip_resolve": true },
+      { "geoip": [ "telegram" ], "outbound": "📲 电报信息", "skip_resolve": true },
       { "geoip": [ "private" ],  "outbound": "🔒 私有网络", "skip_resolve": true },
       { "geoip": [ "cn" ], "outbound": "🇨🇳 直连 IP" }
     ],
@@ -222,8 +222,8 @@ tags: [sing-box, sing-boxp, 直链, 订阅, geodata, geosite, 基础]
     // 选择`🎯 全球直连`为测试本地网络（运营商网络速度和 IPv6 支持情况），可选择其它节点用于测试机场节点速度和 IPv6 支持情况
     { "tag": "📈 网络测试", "type": "selector", "outbounds": [ "🎯 全球直连", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 新加坡节点", "🇺🇸 美国节点", "🆓 免费节点" ] },
     { "tag": "🤖 人工智能", "type": "selector", "outbounds": [ "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "🇸🇬 新加坡节点", "🇺🇸 美国节点" ] },
-    { "tag": "🪜 代理域名", "type": "selector", "outbounds": [ "🚀 节点选择", "🎯 全球直连" ] },
-    { "tag": "📲 电报消息", "type": "selector", "outbounds": [ "🚀 节点选择" ] },
+    { "tag": "🧱 代理域名", "type": "selector", "outbounds": [ "🚀 节点选择", "🎯 全球直连" ] },
+    { "tag": "📲 电报信息", "type": "selector", "outbounds": [ "🚀 节点选择" ] },
     { "tag": "🔒 私有网络", "type": "selector", "outbounds": [ "🎯 全球直连" ] },
     { "tag": "🛑 广告拦截", "type": "selector", "outbounds": [ "REJECT" ] },
     { "tag": "🎯 全球直连", "type": "selector", "outbounds": [ "DIRECT" ] },
@@ -266,8 +266,8 @@ tags: [sing-box, sing-boxp, 直链, 订阅, geodata, geosite, 基础]
       { "geosite": [ "ads" ], "outbound": "🛑 广告拦截" },
       { "geosite": [ "ai" ], "outbound": "🤖 人工智能" },
       { "geosite": [ "networktest" ], "outbound": "📈 网络测试" },
-      { "geosite": [ "proxy" ], "outbound": "🪜 代理域名" },
-      { "geoip": [ "telegram" ], "outbound": "📲 电报消息", "skip_resolve": true }
+      { "geosite": [ "proxy" ], "outbound": "🧱 代理域名" },
+      { "geoip": [ "telegram" ], "outbound": "📲 电报信息", "skip_resolve": true }
     ],
     // geosite 配置项
     "geosite": {

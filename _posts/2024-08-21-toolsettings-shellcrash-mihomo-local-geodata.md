@@ -174,13 +174,13 @@ proxy-providers:
     - 🎯 全球直连
     - 🈯 节点指定
 
-- name: 🪜 代理域名
+- name: 🧱 代理域名
   type: select
   proxies:
     - 🈯 节点指定
     - 🎯 全球直连
 
-- name: 📲 电报消息
+- name: 📲 电报信息
   type: select
   proxies:
     - 🈯 节点指定
@@ -248,9 +248,9 @@ proxy-providers:
 - GEOSITE,games-cn,🎮 游戏服务
 - GEOSITE,ai,🤖 人工智能
 - GEOSITE,networktest,📈 网络测速
-- GEOSITE,proxy,🪜 代理域名
+- GEOSITE,proxy,🧱 代理域名
 - GEOSITE,cn,🇨🇳 直连域名
-- GEOIP,telegram,📲 电报消息,no-resolve
+- GEOIP,telegram,📲 电报信息,no-resolve
 - GEOIP,private,🔒 私有网络,no-resolve
 - GEOIP,cn,🇨🇳 直连 IP
 ```

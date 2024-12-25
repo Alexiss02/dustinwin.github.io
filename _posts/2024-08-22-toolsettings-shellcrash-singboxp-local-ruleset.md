@@ -99,8 +99,8 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, 本地, Route
     { "tag": "🍎 苹果服务", "type": "selector", "outbounds": [ "🎯 全球直连", "🈯 节点指定" ] },
     { "tag": "🇨🇳 直连域名", "type": "selector", "outbounds": [ "🎯 全球直连", "🈯 节点指定" ] },
     { "tag": "🇨🇳 直连 IP", "type": "selector", "outbounds": [ "🎯 全球直连", "🈯 节点指定" ] },
-    { "tag": "🪜 代理域名", "type": "selector", "outbounds": [ "🈯 节点指定", "🎯 全球直连" ] },
-    { "tag": "📲 电报消息", "type": "selector", "outbounds": [ "🈯 节点指定" ] },
+    { "tag": "🧱 代理域名", "type": "selector", "outbounds": [ "🈯 节点指定", "🎯 全球直连" ] },
+    { "tag": "📲 电报信息", "type": "selector", "outbounds": [ "🈯 节点指定" ] },
     { "tag": "🔒 私有网络", "type": "selector", "outbounds": [ "🎯 全球直连" ] },
     { "tag": "🛑 广告拦截", "type": "selector", "outbounds": [ "REJECT" ] },
 
@@ -150,9 +150,9 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, 本地, Route
         { "rule_set": [ "games-cn" ], "outbound": "🎮 游戏服务" },
         { "rule_set": [ "ai" ], "outbound": "🤖 人工智能" },
         { "rule_set": [ "networktest" ], "outbound": "📈 网络测试" },
-        { "rule_set": [ "proxy" ], "outbound": "🪜 代理域名" },
+        { "rule_set": [ "proxy" ], "outbound": "🧱 代理域名" },
         { "rule_set": [ "cn" ], "outbound": "🇨🇳 直连域名" },
-        { "rule_set": [ "telegramip" ], "outbound": "📲 电报消息", "skip_resolve": true },
+        { "rule_set": [ "telegramip" ], "outbound": "📲 电报信息", "skip_resolve": true },
         { "rule_set": [ "privateip" ],  "outbound": "🔒 私有网络", "skip_resolve": true },
         { "rule_set": [ "cnip" ], "outbound": "🇨🇳 直连 IP" }
       ],

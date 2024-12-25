@@ -69,8 +69,8 @@ proxy-groups:
   - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
   - {name: 🇨🇳 直连域名, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
   - {name: 🇨🇳 直连 IP, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
-  - {name: 🪜 代理域名, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
-  - {name: 📲 电报消息, type: select, proxies: [🚀 节点选择]}
+  - {name: 🧱 代理域名, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
+  - {name: 📲 电报信息, type: select, proxies: [🚀 节点选择]}
   - {name: 🔒 私有网络, type: select, proxies: [🎯 全球直连]}
   - {name: 🛑 广告拦截, type: select, proxies: [REJECT]}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
@@ -92,9 +92,9 @@ rules:
   - GEOSITE,games-cn,🎮 游戏服务
   - GEOSITE,ai,🤖 人工智能
   - GEOSITE,networktest,📈 网络测试
-  - GEOSITE,proxy,🪜 代理域名
+  - GEOSITE,proxy,🧱 代理域名
   - GEOSITE,cn,🇨🇳 直连域名
-  - GEOIP,telegram,📲 电报消息,no-resolve
+  - GEOIP,telegram,📲 电报信息,no-resolve
   - GEOIP,private,🔒 私有网络,no-resolve
   - GEOIP,cn,🇨🇳 直连 IP
   - MATCH,🐟 漏网之鱼

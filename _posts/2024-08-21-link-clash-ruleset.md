@@ -101,8 +101,8 @@ proxy-groups:
   - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
   - {name: 🇨🇳 直连域名, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
   - {name: 🇨🇳 直连 IP, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
-  - {name: 🪜 代理域名, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
-  - {name: 📲 电报消息, type: select, proxies: [🚀 节点选择]}
+  - {name: 🧱 代理域名, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
+  - {name: 📲 电报信息, type: select, proxies: [🚀 节点选择]}
   ## 若使用 ShellCrash，由于无法判断本机进程（默认 `find-process-mode: off`），需删除此条 `🖥️ 直连软件`
   - {name: 🖥️ 直连软件, type: select, proxies: [🎯 全球直连]}
   - {name: 🔒 私有网络, type: select, proxies: [🎯 全球直连]}
@@ -249,9 +249,9 @@ rules:
   - RULE-SET,games-cn,🎮 游戏服务
   - RULE-SET,ai,🤖 人工智能
   - RULE-SET,networktest,📈 网络测试
-  - RULE-SET,proxy,🪜 代理域名
+  - RULE-SET,proxy,🧱 代理域名
   - RULE-SET,cn,🇨🇳 直连域名
-  - RULE-SET,telegramip,📲 电报消息,no-resolve
+  - RULE-SET,telegramip,📲 电报信息,no-resolve
   - RULE-SET,privateip,🔒 私有网络,no-resolve
   - RULE-SET,cnip,🇨🇳 直连 IP
   - MATCH,🐟 漏网之鱼
@@ -328,8 +328,8 @@ proxy-groups:
   ## 选择`🎯 全球直连`为测试本地网络（运营商网络速度和 IPv6 支持情况），可选择其它节点用于测试机场节点速度和 IPv6 支持情况
   - {name: 📈 网络测试, type: select, proxies: [🎯 全球直连, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🆓 免费节点]}
   - {name: 🤖 人工智能, type: select, proxies: [🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点]}
-  - {name: 🪜 代理域名, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
-  - {name: 📲 电报消息, type: select, proxies: [🚀 节点选择]}
+  - {name: 🧱 代理域名, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
+  - {name: 📲 电报信息, type: select, proxies: [🚀 节点选择]}
   - {name: 🔒 私有网络, type: select, proxies: [🎯 全球直连]}
   - {name: 🛑 广告拦截, type: select, proxies: [REJECT]}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
@@ -400,8 +400,8 @@ rules:
   - RULE-SET,ads,🛑 广告拦截
   - RULE-SET,ai,🤖 人工智能
   - RULE-SET,networktest,📈 网络测试
-  - RULE-SET,proxy,🪜 代理域名
-  - RULE-SET,telegramip,📲 电报消息,no-resolve
+  - RULE-SET,proxy,🧱 代理域名
+  - RULE-SET,telegramip,📲 电报信息,no-resolve
   - MATCH,🐟 漏网之鱼
 ```
 
