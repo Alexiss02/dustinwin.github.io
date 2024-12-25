@@ -9,10 +9,11 @@ pin: true
 
 ## 前言
 1. 本教程基于 Redmi AX6000 [官方固件](https://www1.miwifi.com/miwifi_download.html) v1.0.70 版，[ShellCrash](https://github.com/juewuy/ShellCrash) v1.9.2 版，[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) v0.108.0 版编写
-2. 恢复 SSH，安装 ShellCrash 和 AdGuard Home 的方法也适用于其它已解锁 SSH 的路由器
-3. 安装 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box/tree/building) 内核和 AdGuard Home 时须注意路由器 CPU 架构，查看 CPU 架构可连接 SSH 后执行命令 `uname -ms`，若执行结果是 `linux aarch64`，就下载 armv8 或 arm64 版安装包；若是其它架构请下载相匹配的安装包
-4. ShellCrash 和 AdGuard Home 中所有没有提到的配置保持默认即可
-5. ShellCrash 和 AdGuard Home 快速安装方法请看《[ShellCrash 和 AdGuard Home 快速安装教程](https://proxy-tutorials.dustinwin.top/posts/pin-toolsinstall)》
+2. 此教程采用 ShellCrash 作为上游，AdGuard Home 作为下游的模式
+3. 恢复 SSH，安装 ShellCrash 和 AdGuard Home 的方法也适用于其它已解锁 SSH 的路由器
+4. 安装 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box/tree/building) 内核和 AdGuard Home 时须注意路由器 CPU 架构，查看 CPU 架构可连接 SSH 后执行命令 `uname -ms`，若执行结果是 `linux aarch64`，就下载 armv8 或 arm64 版安装包；若是其它架构请下载相匹配的安装包
+5. ShellCrash 和 AdGuard Home 中所有没有提到的配置保持默认即可
+6. ShellCrash 和 AdGuard Home 快速安装方法请看《[ShellCrash 和 AdGuard Home 快速安装教程](https://proxy-tutorials.dustinwin.top/posts/pin-toolsinstall)》
 
 ## 一、 资源下载
 打包下载：<https://dustinwinvip.lanzoum.com/b01qd6p3a>  
