@@ -159,9 +159,9 @@ curl -o $CRASHDIR/geoip.db -L https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geod
       { "geosite": [ "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
       { "geosite": [ "ads" ], "server": "dns_block", "disable_cache": true, "rewrite_ttl": 0 },
       { "geosite": [ "proxy" ], "query_type": [ "A", "AAAA" ], "server": "dns_fakeip", "rewrite_ttl": 1 },
-      { "fallback_rules": [ { "geoip": [ "cn" ], "server": "dns_direct" }, { "match_all": true, "server": "dns_fakeip", "rewrite_ttl": 1 } ], "server": "dns_proxy", "allow_fallthrough": true }
+      { "fallback_rules": [ { "geoip": [ "cn" ], "server": "dns_direct" }, { "match_all": true, "server": "dns_fakeip", "rewrite_ttl": 1 } ], "server": "dns_direct", "allow_fallthrough": true }
     ],
-    "final": "dns_direct",
+    "final": "dns_proxy",
     "strategy": "prefer_ipv4",
     "independent_cache": true,
     "lazy_cache": true,

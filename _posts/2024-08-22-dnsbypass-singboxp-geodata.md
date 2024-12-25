@@ -1,6 +1,6 @@
 ---
 title: 搭载 sing-boxp 内核进行 DNS 分流教程-geodata 方案
-description: 此方案适用于 sing-box，搭载 sing-boxp 内核，采用 `geosite` 和 `geoip` 规则搭配 geosite.db 和 geoip.db 路由规则文件
+description: 此方案适用于 sing-box，搭载 sing-boxp 内核并使用其特性进行 DNS 分流
 date: 2024-08-22 18:15:49 +0800
 categories: [DNS 配置, DNS 分流]
 tags: [sing-box, sing-boxp, geodata, geosite, 进阶, DNS, DNS 分流]
@@ -8,13 +8,14 @@ tags: [sing-box, sing-boxp, geodata, geosite, 进阶, DNS, DNS 分流]
 
 注：
 - 1. [ShellCrash](https://github.com/juewuy/ShellCrash) 搭配 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) 并将 AdGuard Home 作为上游时不要使用该方法
-- 2. DNS 分流简单来说就是**指定国内域名走国内 DNS 解析，其它域名包括国外域名走 `fake-ip`**
-- 3. 所有步骤完成后，请连接 SSH 执行命令 `$CRASHDIR/start.sh restart` 后生效
+- 2. 本教程以 ShellCrash 为例，其它客户端亦可参考
+- 3. DNS 分流简单来说就是**指定国内域名走国内 DNS 解析，国外域名走 `fake-ip`，未知域名走国内 DNS 解析，解析出 IP 在国内则走国内 DNS 解析和 `🇨🇳 直连 IP` 规则，否则走 `fake-ip` 和 `🐟 漏网之鱼` 规则**
+- 4. 部分用户觉得未知域名处理方式导致 DNS 泄露，可以参考《[搭载 sing-boxp 内核配置 DNS 不泄露教程-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/dnsnoleaks-singboxp-geodata)》
 
 ## 一、 导入路由规则文件
 geosite.db 文件须包含 `fakeip-filter` 和 `cn`，推荐导入我定制的[路由规则文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%B8%80-geodata-%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
 
-## 二、 DNS 分流配置（以 ShellCrash 为例）
+## 二、 DNS 分流配置
 1. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式，选择“3 mix混合模式”  
 <img src="/assets/img/dns/dns-mix.png" alt="ShellCrash DNS 运行模式设置" width="60%" />
 
@@ -42,9 +43,10 @@ geosite.db 文件须包含 `fakeip-filter` 和 `cn`，推荐导入我定制的[�
       { "clash_mode": [ "Direct" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
       { "clash_mode": [ "Global" ], "query_type": [ "A", "AAAA" ], "server": "dns_proxy" },
       { "geosite": [ "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
-      { "query_type": [ "A", "AAAA" ], "server": "dns_fakeip", "rewrite_ttl": 1 }
+      { "geosite": [ "proxy" ], "query_type": [ "A", "AAAA" ], "server": "dns_fakeip" },
+      { "fallback_rules": [ { "geoip": [ "cn" ], "server": "dns_direct" }, { "match_all": true, "server": "dns_fakeip" } ], "server": "dns_direct" }
     ],
-    "final": "dns_direct",
+    "final": "dns_proxy",
     "strategy": "prefer_ipv4",
     "independent_cache": true,
     "lazy_cache": true,

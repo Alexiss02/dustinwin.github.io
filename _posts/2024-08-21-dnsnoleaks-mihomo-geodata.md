@@ -1,14 +1,15 @@
 ---
 title: 搭载 mihomo 内核配置 DNS 不泄露教程-geodata 方案
-description: 此方案适用于 Clash，搭载 mihomo 内核并使用其特性防止 DNS 泄露。包含 ShellCrash 和 Clash Verge 配置方法
+description: 此方案适用于 Clash，搭载 mihomo 内核并使用其特性防止 DNS 泄露
 date: 2024-08-21 08:18:30 +0800
 categories: [DNS 配置, DNS 防泄漏]
 tags: [Clash, mihomo, 进阶, DNS, DNS 泄露]
 ---
 
 注：
-- 1. 此方案彻底防止了 DNS 泄露（针对不在规则集内的域名和 IP 全部走 `fake-ip` 或国外 DNS 解析），配置简单粗暴，兼容性无法保证，请慎用
-- 2. 可进入 <https://ipleak.net> 测试 DNS 是否泄露，“DNS Addresses” 栏目下没有中国国旗（因 `ipleak.net` 域名默认走代理），即代表 DNS 没有发生泄露
+- 1. 此方案彻底防止了 DNS 泄露（针对未知域名走国外 DNS 解析，解析出 IP 在国内则走国内 DNS 解析和 `🇨🇳 直连 IP` 规则，否则走 `fake-ip` 和 `🐟 漏网之鱼` 规则），兼容性无法保证，请慎用
+- 2. 本教程以 [ShellCrash](https://github.com/juewuy/ShellCrash) 为例，其它客户端亦可参考
+- 3. 可进入 <https://ipleak.net> 测试 DNS 是否泄露，“DNS Addresses” 栏目下没有中国国旗（因 `ipleak.net` 属未知域名，默认走 `🐟 漏网之鱼` 规则），即代表 DNS 没有发生泄露
 
 ## 一、 导入路由规则文件
 geosite.dat 文件须包含 `fakeip-filter`，推荐导入我定制的[路由规则文件](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#%E4%B8%80-geodata-%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
@@ -22,9 +23,9 @@ geosite.dat 文件须包含 `fakeip-filter`，推荐导入我定制的[路由规
   - GEOIP,cn,🇨🇳 直连 IP,no-resolve
 ```
 
-## 三、 DNS 防泄漏配置（以 [ShellCrash](https://github.com/juewuy/ShellCrash) 为例）
+## 三、 DNS 防泄漏配置
 1. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，将“当前基础 DNS”和“PROXY-DNS”都设置为 `null`  
-<img src="/assets/img/dns/dns-null.png" alt="ShellCrash 设置" width="60%"  />
+<img src="/assets/img/dns/dns-null.png" alt="ShellCrash 设置" width="60%" />
 
 2. user.yaml 配置
 

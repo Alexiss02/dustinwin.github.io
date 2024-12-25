@@ -1,14 +1,15 @@
 ---
 title: 搭载 mihomo 内核配置 DNS 不泄露教程-ruleset 方案
-description: 此方案适用于 Clash，搭载 mihomo 内核并使用其特性防止 DNS 泄露。包含 ShellCrash 和 Clash Verge 配置方法
+description: 此方案适用于 Clash，搭载 mihomo 内核并使用其特性防止 DNS 泄露
 date: 2024-08-21 07:52:58 +0800
 categories: [DNS 配置, DNS 防泄漏]
 tags: [Clash, mihomo, 进阶, DNS, DNS 泄露]
 ---
 
 注：
-- 1. 此方案彻底防止了 DNS 泄露（针对不在规则集内的域名和 IP 全部走 `fake-ip` 或国外 DNS 解析），配置简单粗暴，兼容性无法保证，请慎用
-- 2. 可进入 <https://ipleak.net> 测试 DNS 是否泄露，“DNS Addresses” 栏目下没有中国国旗（因 `ipleak.net` 域名默认走代理），即代表 DNS 没有发生泄露
+- 1. 此方案彻底防止了 DNS 泄露（针对未知域名走国外 DNS 解析，解析出 IP 在国内则走国内 DNS 解析和 `🇨🇳 直连 IP` 规则，否则走 `fake-ip` 和 `🐟 漏网之鱼` 规则），兼容性无法保证，请慎用
+- 2. 本教程以 [ShellCrash](https://github.com/juewuy/ShellCrash) 为例，其它客户端亦可参考
+- 3. 可进入 <https://ipleak.net> 测试 DNS 是否泄露，“DNS Addresses” 栏目下没有中国国旗（因 `ipleak.net` 属未知域名，默认走 `🐟 漏网之鱼` 规则），即代表 DNS 没有发生泄露
 
 ## 一、 导入规则集合文件
 `rule-providers` 须添加 `fakeip-filter`，如下：

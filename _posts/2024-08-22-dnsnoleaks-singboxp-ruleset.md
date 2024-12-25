@@ -1,14 +1,15 @@
 ---
 title: 搭载 sing-boxp 内核配置 DNS 不泄露教程-ruleset 方案
-description: 此方案适用于 sing-box，搭载 sing-boxp 内核，使用 `rule_set` 规则搭配 .srs 和 .json 规则集文件
+description: 此方案适用于 sing-box，搭载 sing-boxp 内核并使用其特性防止 DNS 泄露
 date: 2024-08-22 16:51:20 +0800
 categories: [DNS 配置, DNS 防泄漏]
 tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, DNS, DNS 泄露]
 ---
 
 注：
-- 1. 此方案彻底防止了 DNS 泄露（针对在规则集内的 `cn` 走国内 DNS 解析；针对在规则集内的 `proxy` 走 `fakeip`；针对不在规则集内的域名由国外 DNS 解析，如果解析结果是国内 IP 则走国内 DNS 解析，否则走 `fakeip`），兼容性高，可放心使用
-- 2. 可进入 <https://ipleak.net> 测试 DNS 是否泄露，“DNS Addresses” 栏目下没有中国国旗（因 `ipleak.net` 域名默认走代理），即代表 DNS 没有发生泄露
+- 1. 此方案彻底防止了 DNS 泄露（针对未知域名走国外 DNS 解析，解析出 IP 在国内则走国内 DNS 解析和 `🇨🇳 直连 IP` 规则，否则走 `fake-ip` 和 `🐟 漏网之鱼` 规则），兼容性无法保证，请慎用
+- 2. 本教程以 [ShellCrash](https://github.com/juewuy/ShellCrash) 为例，其它客户端亦可参考
+- 3. 可进入 <https://ipleak.net> 测试 DNS 是否泄露，“DNS Addresses” 栏目下没有中国国旗（因 `ipleak.net` 属未知域名，默认走 `🐟 漏网之鱼` 规则），即代表 DNS 没有发生泄露
 
 ## 一、 导入规则集合文件
 `route.rule_set` 须添加 `fakeip-filter`，如下：
@@ -29,7 +30,7 @@ tags: [sing-box, sing-boxp, ShellCrash, ruleset, rule_set, 进阶, DNS, DNS 泄�
 }
 ```
 
-## 二、 DNS 防泄漏配置（以 ShellCrash 为例）
+## 二、 DNS 防泄漏配置
 1. 进入主菜单 -> 2 内核功能设置 -> 2 切换 DNS 运行模式 -> 4 DNS 进阶设置，将“当前基础 DNS”和“PROXY-DNS”都设置为 `null`  
 <img src="/assets/img/dns/dns-null.png" alt="ShellCrash 设置" width="60%" />
 
