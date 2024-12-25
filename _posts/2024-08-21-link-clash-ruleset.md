@@ -484,7 +484,7 @@ rules:
 删除后变成：  
 `https://gist.githubusercontent.com/DustinWin/f5995e5002fb729380c02dbc38669149/raw/clashlink.yaml`
 
-- 注：若无法直连访问，可在链接上添加 `https://ghp.ci/` 前缀，即：将链接改为 `https://ghp.ci/https://gist.githubusercontent.com/DustinWin/f5995e5002fb729380c02dbc38669149/raw/clashlink.yaml`
+- 注：若无法直连访问，可在链接上添加 `https://ghgo.xyz/` 前缀，即：将链接改为 `https://ghgo.xyz/https://gist.githubusercontent.com/DustinWin/f5995e5002fb729380c02dbc38669149/raw/clashlink.yaml`
 
 ## 五、 导入订阅链接
 ### 1. 在 ShellCrash 中导入订阅链接

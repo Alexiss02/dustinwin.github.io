@@ -348,7 +348,7 @@ tags: [sing-box, sing-boxp, 直链, 订阅, geodata, geosite, 基础]
 删除后变成：  
 `https://gist.githubusercontent.com/DustinWin/40c0611fda5d6fcd0795ee5a15de7c73/raw/singboxlink.json`
 
-- 注：若无法直连访问，可在链接上添加 `https://ghp.ci/` 前缀，即：将链接改为 `https://ghp.ci/https://gist.githubusercontent.com/DustinWin/40c0611fda5d6fcd0795ee5a15de7c73/raw/singboxlink.json`
+- 注：若无法直连访问，可在链接上添加 `https://ghgo.xyz/` 前缀，即：将链接改为 `https://ghgo.xyz/https://gist.githubusercontent.com/DustinWin/40c0611fda5d6fcd0795ee5a15de7c73/raw/singboxlink.json`
 
 ## 五、 导入订阅链接（以 ShellCrash 导入订阅链接为例）
 1. 连接 SSH 后执行命令 `mkdir -p $CRASHDIR/providers/`

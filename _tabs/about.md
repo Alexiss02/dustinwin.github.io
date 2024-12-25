@@ -24,7 +24,7 @@ order: 4
 1. 本教程默认下载源为 [jsDelivr 源](https://www.jsdelivr.com/github)，地址前缀为 `https://cdn.jsdelivr.net/gh/xxx`，此源中**文件更新有 12 小时延迟**
 2. 若 jsDelivr 源无法访问，可将地址前缀改为 `https://fastly.jsdelivr.net/gh/xxx`
 3. 推荐使用 [GitHub 源](https://github.com)，地址前缀分别为 `https://github.com/xxx` 和 `https://raw.githubusercontent.com/xxx`
-4. 若 GitHub 源无法访问，可在链接上添加 `https://ghp.ci/` 前缀，即：将地址分别改为 `https://ghp.ci/https://github.com/xxx` 和 `https://ghp.ci/https://raw.githubusercontent.com/xxx`
+4. 若 GitHub 源无法访问，可在链接上添加 `https://ghgo.xyz/` 前缀，即：将地址分别改为 `https://ghgo.xyz/https://github.com/xxx` 和 `https://ghgo.xyz/https://raw.githubusercontent.com/xxx`
 5. jsDelivr 源和 GitHub 源格式如下：  
 ① jsDelivr 源格式为 `https://cdn.jsdelivr.net/gh/[username]/[reponame]@[branchname]/[filename]`  
 ② GitHub 源格式为 `https://github.com/[username]/[reponame]/releases/download/[branchname]/[filename]`（推荐）和 `https://raw.githubusercontent.com/[username]/[reponame]/[branchname]/[filename]`

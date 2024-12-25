@@ -183,9 +183,9 @@ curl -o $CRASHDIR/geoip.db -L https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geod
 1. 连接 SSH 后运行 `vi $CRASHDIR/task/task.user`，按一下 Ins 键（Insert 键），粘贴如下内容：
 
 ```shell
-201#curl -o /data/ShellCrash/CrashCore.tar.gz -L https://ghp.ci/https://github.com/DustinWin/clash_singbox-tools/releases/download/sing-box/sing-box-puernya-linux-armv8.tar.gz && /data/ShellCrash/start.sh restart >/dev/null 2>&1#更新sing-box_PuerNya版内核
-202#curl -o /data/ShellCrash/geosite.db -L https://ghp.ci/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box/geosite.db && curl -o /data/ShellCrash/geoip.db -L https://ghp.ci/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box/geoip-lite.db && /data/ShellCrash/start.sh restart >/dev/null 2>&1#更新geodata路由规则文件
-203#curl -o /data/ShellCrash/cn_ip.txt -L https://ghp.ci/https://github.com/DustinWin/geoip/releases/download/ips/cn_ipv4.txt && curl -o /data/ShellCrash/cn_ipv6.txt -L https://ghp.ci/https://github.com/DustinWin/geoip/releases/download/ips/cn_ipv6.txt >/dev/null 2>&1#更新CN_IP文件
+201#curl -o /data/ShellCrash/CrashCore.tar.gz -L https://ghgo.xyz/https://github.com/DustinWin/clash_singbox-tools/releases/download/sing-box/sing-box-puernya-linux-armv8.tar.gz && /data/ShellCrash/start.sh restart >/dev/null 2>&1#更新sing-box_PuerNya版内核
+202#curl -o /data/ShellCrash/geosite.db -L https://ghgo.xyz/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box/geosite.db && curl -o /data/ShellCrash/geoip.db -L https://ghgo.xyz/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box/geoip-lite.db && /data/ShellCrash/start.sh restart >/dev/null 2>&1#更新geodata路由规则文件
+203#curl -o /data/ShellCrash/cn_ip.txt -L https://ghgo.xyz/https://github.com/DustinWin/geoip/releases/download/ips/cn_ipv4.txt && curl -o /data/ShellCrash/cn_ipv6.txt -L https://ghgo.xyz/https://github.com/DustinWin/geoip/releases/download/ips/cn_ipv6.txt >/dev/null 2>&1#更新CN_IP文件
 ```
 
 2. 按一下 Esc 键（退出键），输入英文冒号 `:`，继续输入 `wq` 并回车

@@ -286,7 +286,7 @@ rules:
   icacls "%PROGRAMFILES%\mihomo" /grant[:r] SYSTEM:(OI)(CI)F
   icacls "%PROGRAMFILES%\mihomo" /grant[:r] Administrators:(OI)(CI)F
   icacls "%PROGRAMFILES%\mihomo" /grant[:r] Users:(OI)(CI)F
-  curl -o "%PROGRAMFILES%\mihomo\mihomo.exe" -L https://ghp.ci/https://github.com/DustinWin/clash_singbox-tools/releases/download/mihomo/mihomo-meta-windows-amd64v3.exe
+  curl -o "%PROGRAMFILES%\mihomo\mihomo.exe" -L https://ghgo.xyz/https://github.com/DustinWin/clash_singbox-tools/releases/download/mihomo/mihomo-meta-windows-amd64v3.exe
   curl -o "%PROGRAMFILES%\mihomo\profiles\config.yaml" -L {.yaml 配置文件直链}
   echo 导入 mihomo 内核和配置文件成功
   pause
