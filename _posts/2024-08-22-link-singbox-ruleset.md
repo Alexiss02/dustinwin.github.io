@@ -11,7 +11,7 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
 如：[ShellCrash](https://github.com/juewuy/ShellCrash) 和 [sing-box for Android](https://github.com/PuerNya/sing-box/actions/workflows/sfa.yml) 等
 2. 生成的订阅链接地址不会改变，支持更新订阅，**支持国内访问，支持同步机场节点**
 3. 生成的订阅链接**自带规则集**，规则集来源 [DustinWin/ruleset_geodata/ruleset](https://github.com/DustinWin/ruleset_geodata#%E4%BA%8C-ruleset-%E8%A7%84%E5%88%99%E9%9B%86%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E)
-4. 本教程必须使用支持 `outbound_providers` 代理集合即 [Clash](https://github.com/Dreamacro/clash) 订阅链接的 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box)，请先**确定自己机场的订阅链接是否为 Clash 订阅链接**，若不是，需前往[肥羊在线订阅转换工具](https://sub.v1.mk)进行转换，“生成类型”选择“Clash”，其它参数保持默认即可，转换后的订阅链接需要在末尾添加 `&flag=clash`，然后添加到 .json 文件 `outbound_providers` 代理集合的 `download_url` 中
+4. 本教程必须使用支持 `outbound_providers` 代理集合的 [sing-box PuerNya 版内核](https://github.com/PuerNya/sing-box)，请先**确定自己机场的订阅链接是否为 Clash 或 sing-box 订阅链接**，若不是，需前往[肥羊在线订阅转换工具](https://suburl.v1.mk)进行转换，“生成类型”选择“Clash”或“sing-box”，其它参数保持默认即可，转换后的 Clash 订阅链接需要在末尾添加 `&flag=clash`，然后添加到 .json 文件 `outbound_providers` 代理集合的 `download_url` 中
 5. 推荐使用 [Visual Studio Code](https://code.visualstudio.com/Download) 等专业编辑器来修改配置文件
 6. ShellCrash 支持本地导入配置文件，可以直接将下方的 .json 直链文件内容复制到 *$CRASHDIR/jsons/config.json* 文件中，可代替通过 ShellCrash 配置脚本 -> 6 -> 2 导入配置文件的方式
 
@@ -427,7 +427,7 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
 将模板内容复制到自己 Gist 新建的 .json 文件中
 
 ## 三、 修改模板
-1. 将代理集合 `outbound_providers` 中的 `download_url` 链接改成自己机场的订阅链接（必须为 Clash 订阅链接，详见《说明 4》）
+1. 将代理集合 `outbound_providers` 中的 `download_url` 链接改成自己机场的订阅链接（必须为 Clash 或 sing-box 订阅链接，详见《说明 4》）
 2. 确定自己机场中有哪些国家或地区的节点，然后对模板文件里 `outbounds` 中“**国家或地区出站**”以及 `🚀 节点选择`、`📈 网络测速`、 `🤖 人工智能` 和 `GLOBAL` 出站下的 `outbounds` 里面的国家或地区进行增删改
    - 注：两者中的国家或地区必须一一对应，新增就全部新增，删除就全部删除，修改就全部修改（重要）
 
@@ -500,13 +500,13 @@ tags: [sing-box, sing-boxp, 直链, 订阅, ruleset, rule_set, 基础]
 <img src="/assets/img/link/click-raw-json.png" alt="生成 .json 文件链接 1" width="60%" />
 
 2. 取出地址栏中的网址，删除后面的一串随机码，**完成后该 .json 文件直链才是最终生成的订阅链接**，该订阅链接地址不会改变，在不更改文件名的情况下即使编辑该 .json 文件并提交了 n 次也不会改变。举个例子，这是原地址：  
-`https://gist.githubusercontent.com/DustinWin/40c0611fda5d6fcd0795ee5a15de7c73/raw/b3c63051134510ae9825068bbcf5219817761f57/singboxlink.json`  
-删除后面的一串随机码（当前编辑该文件生成的随机码“b3c63051134510ae9825068bbcf5219817761f57”）  
-<img src="https://github.com/DustinWin/clash_singbox-tutorials/assets/45238096/a409ace5-8f03-4776-b9e3-dce3ba804844" alt="生成 .json 文件链接 2" width="60%" />  
+`https://gist.githubusercontent.com/DustinWin/e712f40922381a8d74304d592d17b90b/raw/2797de01661e33689fc980c7b6537f3d43a7d0b6/singboxlink.json`  
+删除后面的一串随机码（当前编辑该文件生成的随机码“2797de01661e33689fc980c7b6537f3d43a7d0b6”）  
+<img src="/assets/img/link/d0b6-json.png" alt="生成 .json 文件链接 2" width="60%" />  
 删除后变成：  
-`https://gist.githubusercontent.com/DustinWin/40c0611fda5d6fcd0795ee5a15de7c73/raw/singboxlink.json`
+`https://gist.githubusercontent.com/DustinWin/e712f40922381a8d74304d592d17b90b/raw/singboxlink.json`
 
-- 注：若无法直连访问，可在链接上添加 `https://ghgo.xyz/` 前缀，即：将链接改为 `https://ghgo.xyz/https://gist.githubusercontent.com/DustinWin/40c0611fda5d6fcd0795ee5a15de7c73/raw/singboxlink.json`
+- 注：若无法直连访问，可在链接上添加 `https://ghgo.xyz/` 前缀，即：将链接改为 `https://ghgo.xyz/https://gist.githubusercontent.com/DustinWin/e712f40922381a8d74304d592d17b90b/raw/singboxlink.json`
 
 ## 五、 导入订阅链接（以 ShellCrash 导入订阅链接为例）
 1. 连接 SSH 后执行命令 `mkdir -p $CRASHDIR/providers/ $CRASHDIR/ruleset/`  

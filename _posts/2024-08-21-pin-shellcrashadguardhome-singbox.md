@@ -1,6 +1,6 @@
 ---
 title: 全网最详细的解锁 SSH ShellCrash 搭载 sing-boxp 内核搭配 AdGuard Home 安装和配置教程
-description: 此教程适用于 Clash，ShellCrash 搭载 sing-boxp 内核，搭配 AdGuard Home 作下游，配有详细图文
+description: 此教程适用于 sing-box，ShellCrash 搭载 sing-boxp 内核，搭配 AdGuard Home 作下游，配有详细图文
 date: 2024-08-21 22:27:53 +0800
 categories: [置顶]
 tags: [sing-box, sing-boxp, ShellCrash, AdGuard Home, 解锁, SSH]
@@ -26,7 +26,7 @@ pin: true
 官方下载：<https://raw.githubusercontent.com/juewuy/ShellCrash/master/bin/ShellCrash.tar.gz>
 
 ### 2. sing-box PuerNya 版内核
-第三方下载：<https://github.com/DustinWin/clash_singbox-tools/releases/download/sing-box/sing-box-puernya-linux-armv8.tar.gz>
+第三方下载：<https://github.com/DustinWin/proxy-tools/releases/download/sing-box/sing-box-puernya-linux-armv8.tar.gz>
 
 ### 3. Termius
 官方下载：<https://autoupdate.termius.com/windows/Termius.exe>
@@ -237,8 +237,8 @@ echo -e '12345678\n12345678' | passwd root
   - 注：解锁 SSH 时已成功启用软固化
 
   根据需要是否选择 1 确认导入配置文件（此处选择 0）  
-  根据需要是否选择 1 立即启动 clash 服务（此处选择 0）
-  - 注：强烈建议选择 0，待以下配置完成后，最后一步启动 clash 服务
+  根据需要是否选择 1 立即启动服务（此处选择 0）
+  - 注：强烈建议选择 0，待以下配置完成后，最后一步启动服务
 
 - ② 此时脚本会自动“发现可用的内核文件”，选择 1 加载，后选择 5 Sing-Box-Puer 内核  
 <img src="/assets/img/pin/import-sing-boxp.png" alt="ShellCrash 配置 1" width="60%" />
@@ -267,7 +267,7 @@ echo -e '12345678\n12345678' | passwd root
 
   进入 4 安装本地 Dashboard 面板，选择 3 安装 MetaXD 面板  
   注：
-  - ➊ 启动 Clash 服务后，面板 Dashboard 访问链接为：http://192.168.31.1:9999/ui
+  - ➊ 启动服务后，面板 Dashboard 访问链接为：http://192.168.31.1:9999/ui
   - ➋ 初次打开需要添加“后端地址”：http://192.168.31.1:9999
 
   <img src="/assets/img/pin/install-dashboard.png" alt="ShellCrash 配置 6" width="60%" />
@@ -420,7 +420,7 @@ echo -e '12345678\n12345678' | passwd root
   - ➋ 若已在 ShellCrash 配置文件自行添加了 `dns.hosts`，可跳过此步骤
 
   添加成功  
-  <img src="https://github.com/DustinWin/clash_singbox-tutorials/assets/45238096/7afe4816-93d6-426f-9e5a-82ace37e4b91" alt="AdGuard Home 配置 7" width="60%" />
+  <img src="/assets/img/pin/adguardhome-dns-rewrite.png" alt="AdGuard Home 配置 7" width="60%" />
 
   **AdGuard Home 配置成功！**
 
@@ -469,15 +469,16 @@ echo -e '12345678\n12345678' | passwd root
 
 ## 七、 效果图
 ### 1. IPv6 效果
-<img src="https://github.com/DustinWin/clash-tutorials/assets/45238096/962cef1b-b772-4c18-8040-0a370da8be0a" alt="IPv6 效果 1" /><img src="https://github.com/DustinWin/clash-tutorials/assets/45238096/5a26417a-cd29-4605-bafe-0458f23e19aa" alt="IPv6 效果 2" />
+### 1. IPv6 效果
+<img src="/assets/img/pin/show-ipv6-1.png" alt="IPv6 效果 1" /><img src="/assets/img/pin/show-ipv6-2.png" alt="IPv6 效果 2" />
 
 ### 2. BT 下载效果
 UDP 连接正常，使用的是移动 500M 带宽  
-<img src="https://user-images.githubusercontent.com/45238096/224113233-4d76dec2-495c-4790-a00e-538fc1469639.png" alt="BT 下载效果" />
+<img src="/assets/img/pin/show-bt.png" alt="BT 下载效果" />
 
 ### 3. ShellCrash 效果
 使用的是移动 300M 带宽  
-<img src="https://github.com/DustinWin/clash-tutorials/assets/45238096/695f0f5d-7757-4b65-ac30-535544c5c440" alt="ShellCrash 效果" />
+<img src="/assets/img/pin/show-shellcrash.png" alt="ShellCrash 效果" />
 
 ### 4. AdGuard Home 效果
-<img src="https://github.com/DustinWin/clash-tutorials/assets/45238096/b2b322e4-2ac9-4d94-bb14-21eb9e3dc7dd" alt="AdGuard Home 效果" />
+<img src="/assets/img/pin/show-adguardhome.png" alt="AdGuard Home 效果" />

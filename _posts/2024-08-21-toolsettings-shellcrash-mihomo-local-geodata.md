@@ -1,6 +1,6 @@
 ---
 title: ShellCrash 搭载 mihomo 内核本地配置自定义策略组和规则-geodata 方案
-description: 此方案适用于 Clash，搭载 mihomo 内核，采用 `GEOSITE` 和 `GEOIP` 规则搭配 geosite.dat 和 geoip.dat（或 Country.mmdb）路由规则文件
+description: 此方案适用于 mihomo，搭载 mihomo 内核，采用 `GEOSITE` 和 `GEOIP` 规则搭配 geosite.dat 和 geoip.dat（或 Country.mmdb）路由规则文件
 date: 2024-08-21 08:27:14 +0800
 categories: [工具配置, ShellCrash 配置]
 tags: [Clash, mihomo, ShellCrash, geodata, geosite, 进阶, 本地, Router]
@@ -9,7 +9,7 @@ tags: [Clash, mihomo, ShellCrash, geodata, geosite, 进阶, 本地, Router]
 ## 说明
 1. 本教程只适用于 [ShellCrash](https://github.com/juewuy/ShellCrash)
 2. 本教程**仅适合白名单模式**（没有命中规则的网络流量统统使用代理，适用于服务器线路网络质量稳定、快速，不缺服务器流量的用户）
-3. 本教程最终效果媲美《[生成带有自定义策略组和规则的 Clash 配置文件直链-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-geodata)》（策略组更直观，操作更方便），但不依赖于网络
+3. 本教程最终效果媲美《[生成带有自定义策略组和规则的 mihomo 配置文件直链-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/link-mihomo-geodata)》（策略组更直观，操作更方便），但不依赖于网络
 4. 若仅配置自定义策略组和规则，可直接跳过第《二》步
 5. 所有步骤完成后，请连接 SSH 执行命令 `$CRASHDIR/start.sh restart` 后生效
 6. 推荐使用 [Visual Studio Code](https://code.visualstudio.com/Download) 等专业编辑器来修改配置文件

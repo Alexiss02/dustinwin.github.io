@@ -1,6 +1,6 @@
 ---
 title: ShellCrash 搭载 mihomo 内核本地配置自定义策略组和规则-ruleset 方案
-description: 此方案适用于 Clash，搭载 mihomo 内核，采用 `RULE-SET` 规则搭配 .yaml、.text 和 .mrs 规则集合文件
+description: 此方案适用于 mihomo，搭载 mihomo 内核，采用 `RULE-SET` 规则搭配 .yaml、.text 和 .mrs 规则集合文件
 date: 2024-08-21 08:39:18 +0800
 categories: [工具配置, ShellCrash 配置]
 tags: [Clash, ShellCrash, ruleset, rule-set, 进阶, 本地, Router]
@@ -9,7 +9,7 @@ tags: [Clash, ShellCrash, ruleset, rule-set, 进阶, 本地, Router]
 ## 说明
 1. 本教程只适用于 [ShellCrash](https://github.com/juewuy/ShellCrash)
 2. 本教程**仅适合白名单模式**（没有命中规则的网络流量统统使用代理，适用于服务器线路网络质量稳定、快速，不缺服务器流量的用户）
-3. 本教程最终效果媲美《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》（策略组更直观，操作更方便），但不依赖于网络
+3. 本教程最终效果媲美《[生成带有自定义策略组和规则的 mihomo 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-mihomo-ruleset)》（策略组更直观，操作更方便），但不依赖于网络
 4. 若仅配置自定义策略组和规则，可直接跳过第《二》步
 5. 所有步骤完成后，请连接 SSH 执行命令 `$CRASHDIR/start.sh restart` 后生效
 6. 推荐使用 [Visual Studio Code](https://code.visualstudio.com/Download) 等专业编辑器来修改配置文件
@@ -74,7 +74,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/private.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/private.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/private.mrs"
     interval: 86400
 
   ads:
@@ -82,7 +82,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/ads.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/ads.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/ads.mrs"
     interval: 86400
 
   microsoft-cn:
@@ -90,7 +90,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/microsoft-cn.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/microsoft-cn.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/microsoft-cn.mrs"
     interval: 86400
 
   apple-cn:
@@ -98,7 +98,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/apple-cn.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/apple-cn.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/apple-cn.mrs"
     interval: 86400
 
   google-cn:
@@ -106,7 +106,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/google-cn.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/google-cn.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/google-cn.mrs"
     interval: 86400
 
   games-cn:
@@ -114,7 +114,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/games-cn.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/games-cn.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/games-cn.mrs"
     interval: 86400
 
   ai:
@@ -122,7 +122,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/ai.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/ai.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/ai.mrs"
     interval: 86400
 
   networktest:
@@ -130,7 +130,7 @@ rule-providers:
     behavior: classical
     format: text
     path: ./rules/networktest.list
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/networktest.list"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/networktest.list"
     interval: 86400
 
   proxy:
@@ -138,7 +138,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/proxy.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/proxy.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/proxy.mrs"
     interval: 86400
 
   cn:
@@ -146,7 +146,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/cn.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/cn.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cn.mrs"
     interval: 86400
 
   telegramip:
@@ -154,7 +154,7 @@ rule-providers:
     behavior: ipcidr
     format: mrs
     path: ./rules/telegramip.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/telegramip.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/telegramip.mrs"
     interval: 86400
 
   privateip:
@@ -162,7 +162,7 @@ rule-providers:
     behavior: ipcidr
     format: mrs
     path: ./rules/privateip.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/privateip.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/privateip.mrs"
     interval: 86400
 
   cnip:
@@ -170,7 +170,7 @@ rule-providers:
     behavior: ipcidr
     format: mrs
     path: ./rules/cnip.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/cnip.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cnip.mrs"
     interval: 86400
 ```
 
@@ -381,7 +381,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/netflix.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/netflix.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/netflix.mrs"
     interval: 86400
 
   netflixip:
@@ -389,7 +389,7 @@ rule-providers:
     behavior: ipcidr
     format: mrs
     path: ./rules/netflixip.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/netflixip.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/netflixip.mrs"
     interval: 86400
 
   bilibili:
@@ -397,7 +397,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/bilibili.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/bilibili.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/bilibili.mrs"
     interval: 86400
 ```
 

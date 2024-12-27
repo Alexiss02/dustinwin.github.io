@@ -1,6 +1,6 @@
 ---
 title: 搭载 mihomo 内核进行 DNS 分流教程-ruleset 方案
-description: 此方案适用于 Clash，搭载 mihomo 内核并使用其特性进行 DNS 分流
+description: 此方案适用于 mihomo，搭载 mihomo 内核并使用其特性进行 DNS 分流
 date: 2024-08-21 07:52:58 +0800
 categories: [DNS 配置, DNS 分流]
 tags: [Clash, mihomo, 进阶, DNS, DNS 分流]
@@ -22,7 +22,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/fakeip-filter.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/fakeip-filter.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs"
     interval: 86400
 
   cn:
@@ -30,7 +30,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/cn.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/cn.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cn.mrs"
     interval: 86400
 ```
 

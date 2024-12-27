@@ -1,6 +1,6 @@
 ---
 title: 搭载 mihomo 内核配置 DNS 不泄露教程-ruleset 方案
-description: 此方案适用于 Clash，搭载 mihomo 内核并使用其特性防止 DNS 泄露
+description: 此方案适用于 mihomo，搭载 mihomo 内核并使用其特性防止 DNS 泄露
 date: 2024-08-21 07:52:58 +0800
 categories: [DNS 配置, DNS 防泄漏]
 tags: [Clash, mihomo, 进阶, DNS, DNS 泄露]
@@ -21,7 +21,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/fakeip-filter.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/fakeip-filter.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs"
     interval: 86400
 
   cn:
@@ -29,7 +29,7 @@ rule-providers:
     behavior: domain
     format: mrs
     path: ./rules/cn.mrs
-    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/clash-ruleset/cn.mrs"
+    url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/cn.mrs"
     interval: 86400
 ```
 
@@ -40,7 +40,7 @@ rule-providers:
 ## 三、 DNS 防泄漏配置
 ### 1. DNS 模式为 `fake-ip`
 - ① 额外编辑配置文件
-在《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案/添加模板](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset/#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%A8%A1%E6%9D%BF)》编辑 .yaml 配置文件时，将 `rules` 里所有 IP 相关的规则末尾加上 `no-resolve`，即修改为：
+在《[生成带有自定义策略组和规则的 mihomo 配置文件直链-ruleset 方案/添加模板](https://proxy-tutorials.dustinwin.top/posts/link-mihomo-ruleset/#%E4%BA%8C-%E6%B7%BB%E5%8A%A0%E6%A8%A1%E6%9D%BF)》编辑 .yaml 配置文件时，将 `rules` 里所有 IP 相关的规则末尾加上 `no-resolve`，即修改为：
 
   ```yaml
     - RULE-SET,telegramip,📲 电报消息,no-resolve

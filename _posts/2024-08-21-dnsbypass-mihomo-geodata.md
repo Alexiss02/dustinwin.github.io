@@ -1,6 +1,6 @@
 ---
 title: 搭载 mihomo 内核进行 DNS 分流教程-geodata 方案
-description: 此方案适用于 Clash，搭载 mihomo 内核并使用其特性进行 DNS 分流
+description: 此方案适用于 mihomo，搭载 mihomo 内核并使用其特性进行 DNS 分流
 date: 2024-08-21 08:48:20 +0800
 categories: [DNS 配置, DNS 分流]
 tags: [Clash, mihomo, 进阶, DNS, DNS 分流]

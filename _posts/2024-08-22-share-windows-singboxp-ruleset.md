@@ -283,7 +283,7 @@ tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享]
   icacls "%PROGRAMFILES%\sing-box" /grant[:r] SYSTEM:(OI)(CI)F
   icacls "%PROGRAMFILES%\sing-box" /grant[:r] Administrators:(OI)(CI)F
   icacls "%PROGRAMFILES%\sing-box" /grant[:r] Users:(OI)(CI)F
-  curl -o "%PROGRAMFILES%\sing-box\sing-box.exe" -L https://ghgo.xyz/https://github.com/DustinWin/clash_singbox-tools/releases/download/sing-box/sing-box-puernya-windows-amd64v3.exe
+  curl -o "%PROGRAMFILES%\sing-box\sing-box.exe" -L https://ghgo.xyz/https://github.com/DustinWin/proxy-tools/releases/download/sing-box/sing-box-puernya-windows-amd64v3.exe
   curl -o "%PROGRAMFILES%\sing-box\config.json" -L {.json 配置文件直链}
   echo 导入 sing-box 内核和配置文件成功
   pause
@@ -315,7 +315,7 @@ tags: [sing-box, sing-boxp, Windows, ruleset, rule_set, 分享]
 ```shell
 @echo off
 rem 下载 sing-box 相关文件
-curl -o "%USERPROFILE%\Downloads\sing-box.exe" -L https://github.com/DustinWin/clash_singbox-tools/releases/download/sing-box/sing-box-puernya-windows-amd64v3.exe
+curl -o "%USERPROFILE%\Downloads\sing-box.exe" -L https://github.com/DustinWin/proxy-tools/releases/download/sing-box/sing-box-puernya-windows-amd64v3.exe
 curl -o "%USERPROFILE%\Downloads\config.json" -L {.json 配置文件直链}
 echo 下载 sing-box 相关文件成功
 

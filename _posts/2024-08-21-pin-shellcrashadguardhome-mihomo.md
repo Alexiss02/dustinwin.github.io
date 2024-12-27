@@ -1,6 +1,6 @@
 ---
 title: 全网最详细的解锁 SSH ShellCrash 搭载 mihomo 内核搭配 AdGuard Home 安装和配置教程
-description: 此教程适用于 Clash，ShellCrash 搭载 mihomo 内核，搭配 AdGuard Home 作下游，配有详细图文
+description: 此教程适用于 mihomo，ShellCrash 搭载 mihomo 内核，搭配 AdGuard Home 作下游，配有详细图文
 date: 2024-08-21 18:29:59 +0800
 categories: [置顶]
 tags: [Clash, mihomo, ShellCrash, AdGuard Home, 解锁, SSH]
@@ -238,8 +238,8 @@ echo -e '12345678\n12345678' | passwd root
 启用推荐的自动任务配置  
 根据需要是否启用软固化（此处选择 1，解锁 SSH 时已成功启用软固化）  
 根据需要是否选择 1 确认导入配置文件（此处选择 0）  
-根据需要是否选择 1 立即启动 clash 服务（此处选择 0）  
-  - 注：强烈建议选择 0，待以下配置完成后，最后一步启动 clash 服务
+根据需要是否选择 1 立即启动服务（此处选择 0）  
+  - 注：强烈建议选择 0，待以下配置完成后，最后一步启动服务
 - ② 此时脚本会自动“发现可用的内核文件”，选择 1 加载，后选择 3 Clash-Meta 内核  
 <img src="/assets/img/pin/import-mihomo.png" alt="ShellCrash 配置 1" width="60%" />
 
@@ -268,7 +268,7 @@ echo -e '12345678\n12345678' | passwd root
   进入 4 安装本地 Dashboard 面板，选择 3 安装 MetaXD 面板
 
   注：
-  - ➊ 启动 Clash 服务后，面板 Dashboard 访问链接为：http://192.168.31.1:9999/ui
+  - ➊ 启动服务后，面板 Dashboard 访问链接为：http://192.168.31.1:9999/ui
   - ➋ 初次打开需要添加“后端地址”：http://192.168.31.1:9999
 
   <img src="/assets/img/pin/install-dashboard.png" alt="ShellCrash 配置 6" width="60%" />
@@ -276,7 +276,7 @@ echo -e '12345678\n12345678' | passwd root
 - ⑧ 进入主菜单 -> 6 导入配置文件  
 注：
   - ➊ 选择 1 在线生成 meta 配置文件，粘贴你的订阅链接并回车，输入“1”并再次回车即可
-  - ➋ 选择 2 在线获取完整配置文件，需要一定的 Clash 知识储备，请查看《[生成带有自定义策略组和规则的 Clash 配置文件直链-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-geodata)》或《[生成带有自定义策略组和规则的 Clash 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-clash-ruleset)》
+  - ➋ 选择 2 在线获取完整配置文件，需要一定的 mihomo 知识储备，请查看《[生成带有自定义策略组和规则的 mihomo 配置文件直链-geodata 方案](https://proxy-tutorials.dustinwin.top/posts/link-mihomo-geodata)》或《[生成带有自定义策略组和规则的 mihomo 配置文件直链-ruleset 方案](https://proxy-tutorials.dustinwin.top/posts/link-mihomo-ruleset)》
 
   导入配置文件完成后，选择 1 启动/重启服务  
   **ShellCrash 配置成功！**

@@ -41,15 +41,15 @@ export url='https://cdn.jsdelivr.net/gh/juewuy/ShellCrash@master' && sh -c "$(cu
 
 ```shell
 ## mihomo 内核 Meta 版
-curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@mihomo/mihomo-meta-linux-armv8.tar.gz | tar -zx -C /tmp/ && crash
+curl -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@mihomo/mihomo-meta-linux-armv8.tar.gz | tar -zx -C /tmp/ && crash
 ## mihomo 内核 Alpha 版
-curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@mihomo/mihomo-alpha-linux-armv8.tar.gz | tar -zx -C /tmp/ && crash
+curl -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@mihomo/mihomo-alpha-linux-armv8.tar.gz | tar -zx -C /tmp/ && crash
 ## sing-box 内核 PuerNya 版
-curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@sing-box/sing-box-puernya-linux-armv8.tar.gz | tar -zx -C /tmp/ && crash
+curl -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@sing-box/sing-box-puernya-linux-armv8.tar.gz | tar -zx -C /tmp/ && crash
 ## sing-box 内核 Release 版
-curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@sing-box/sing-box-release-linux-armv8.tar.gz | tar -zx -C /tmp/ && crash
+curl -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@sing-box/sing-box-release-linux-armv8.tar.gz | tar -zx -C /tmp/ && crash
 ## sing-box 内核 Dev 版
-curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@sing-box/sing-box-dev-linux-armv8.tar.gz | tar -zx -C /tmp/ && crash
+curl -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@sing-box/sing-box-dev-linux-armv8.tar.gz | tar -zx -C /tmp/ && crash
 ```
 
 此时脚本会自动“发现可用的内核文件”，选择 1 加载，后选择对应的内核类型
@@ -59,32 +59,31 @@ curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@sing-box/sing-
 
 ```shell
 ## mihomo 内核 Meta 版
-curl -o $CRASHDIR/CrashCore.tar.gz -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@mihomo/mihomo-meta-linux-armv8.tar.gz && $CRASHDIR/start.sh restart
+curl -o $CRASHDIR/CrashCore.tar.gz -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@mihomo/mihomo-meta-linux-armv8.tar.gz && $CRASHDIR/start.sh restart
 ## mihomo 内核 Alpha 版
-curl -o $CRASHDIR/CrashCore.tar.gz -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@mihomo/mihomo-alpha-linux-armv8.tar.gz && $CRASHDIR/start.sh restart
+curl -o $CRASHDIR/CrashCore.tar.gz -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@mihomo/mihomo-alpha-linux-armv8.tar.gz && $CRASHDIR/start.sh restart
 ## sing-box 内核 PuerNya 版
-curl -o $CRASHDIR/CrashCore.tar.gz -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@sing-box/sing-box-puernya-linux-armv8.tar.gz && $CRASHDIR/start.sh restart
+curl -o $CRASHDIR/CrashCore.tar.gz -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@sing-box/sing-box-puernya-linux-armv8.tar.gz && $CRASHDIR/start.sh restart
 ## sing-box 内核 Release 版
-curl -o $CRASHDIR/CrashCore.tar.gz -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools/@sing-box/sing-box-release-linux-armv8.tar.gz && $CRASHDIR/start.sh restart
+curl -o $CRASHDIR/CrashCore.tar.gz -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools/@sing-box/sing-box-release-linux-armv8.tar.gz && $CRASHDIR/start.sh restart
 ## sing-box 内核 Dev 版
-curl -o $CRASHDIR/CrashCore.tar.gz -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@sing-box/sing-box-dev-linux-armv8.tar.gz && $CRASHDIR/start.sh restart
+curl -o $CRASHDIR/CrashCore.tar.gz -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@sing-box/sing-box-dev-linux-armv8.tar.gz && $CRASHDIR/start.sh restart
 ```
 
-## 三、 安装 Clash dashboard 面板
-**Clash dashboard 面板对应文件名和在线地址关系如下表：**
+## 三、 安装 Dashboard 面板
+**Dashboard 面板对应文件名和在线地址关系如下表：**
 
-| 面板类型         | 文件名               | 在线地址                                  |
-| ---------------- | -------------------- | ----------------------------------------- |
-| Razord-meta 面板 | `Razord-meta.tar.gz` | <https://clash.metacubex.one>             |
-| yacd 面板        | `yacd.tar.gz`        | <https://yacd.haishan.me>                 |
-| Yacd-meta 面板   | `Yacd-meta.tar.gz`   | <https://yacd.metacubex.one>              |
-| metacubexd 面板  | `metacubexd.tar.gz`  | <https://metacubex.github.io/metacubexd/> |
-| zashboard 面板   | `zashboard.tar.gz`   | <https://board.zash.run.place>            |
+| 面板类型        | 文件名              | 在线地址                                  |
+| --------------- | ------------------- | ----------------------------------------- |
+| yacd 面板       | `yacd.tar.gz`       | <https://yacd.haishan.me>                 |
+| Yacd-meta 面板  | `Yacd-meta.tar.gz`  | <https://yacd.metacubex.one>              |
+| metacubexd 面板 | `metacubexd.tar.gz` | <https://metacubex.github.io/metacubexd/> |
+| zashboard 面板  | `zashboard.tar.gz`  | <https://board.zash.run.place>            |
 
 连接 SSH 后执行如下命令：
 
 ```shell
-curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@Dashboard/metacubexd.tar.gz | tar -zx -C $CRASHDIR/ui/ && $CRASHDIR/start.sh restart
+curl -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@Dashboard/metacubexd.tar.gz | tar -zx -C $CRASHDIR/ui/ && $CRASHDIR/start.sh restart
 ```
 
 ## 四、 安装 AdGuard Home
@@ -100,9 +99,9 @@ curl -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@Dashboard/meta
 ```shell
 mkdir -p /data/AdGuardHome/
 ## AdGuard Home Release 版
-curl -o /data/AdGuardHome/AdGuardHome -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@AdGuardHome/AdGuardHome_release_linux_armv8
+curl -o /data/AdGuardHome/AdGuardHome -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@AdGuardHome/AdGuardHome_release_linux_armv8
 ## AdGuard Home Beta 版
-curl -o /data/AdGuardHome/AdGuardHome -L https://cdn.jsdelivr.net/gh/DustinWin/clash_singbox-tools@AdGuardHome/AdGuardHome_beta_linux_armv8
+curl -o /data/AdGuardHome/AdGuardHome -L https://cdn.jsdelivr.net/gh/DustinWin/proxy-tools@AdGuardHome/AdGuardHome_beta_linux_armv8
 chmod +x /data/AdGuardHome/AdGuardHome
 /data/AdGuardHome/AdGuardHome -s install
 /data/AdGuardHome/AdGuardHome -s start
@@ -129,8 +128,8 @@ chmod +x /data/AdGuardHome/AdGuardHome
 
 ```shell
 ## AdGuard Home Release 版
-curl -o /data/AdGuardHome/AdGuardHome -L https://ghgo.xyz/https://github.com/DustinWin/clash_singbox-tools/releases/download/AdGuardHome/AdGuardHome_release_linux_armv8
+curl -o /data/AdGuardHome/AdGuardHome -L https://ghgo.xyz/https://github.com/DustinWin/proxy-tools/releases/download/AdGuardHome/AdGuardHome_release_linux_armv8
 ## AdGuard Home Beta 版
-curl -o /data/AdGuardHome/AdGuardHome -L https://ghgo.xyz/https://github.com/DustinWin/clash_singbox-tools/releases/download/AdGuardHome/AdGuardHome_beta_linux_armv8
+curl -o /data/AdGuardHome/AdGuardHome -L https://ghgo.xyz/https://github.com/DustinWin/proxy-tools/releases/download/AdGuardHome/AdGuardHome_beta_linux_armv8
 /data/AdGuardHome/AdGuardHome -s restart
 ```
