@@ -14,12 +14,12 @@ timezone: Asia/Shanghai
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Clash 和 sing-box 教程合集 # the main title
+title: mihomo 和 sing-box 教程合集 # the main title
 
 tagline: 包括安装、配置、自定义规则、DNS 分流等 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Clash 和 sing-box 教程合集——安装、配置、自定义规则、DNS 分流等
+  mihomo 和 sing-box 教程合集——安装、配置、自定义规则、DNS 分流等
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
